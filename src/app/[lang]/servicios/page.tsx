@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
@@ -17,6 +17,27 @@ export default function ServiciosPage() {
 
   const showPbi = activeFilter === "all" || activeFilter === "pbi";
   const showConsulting = activeFilter === "all" || activeFilter === "consulting";
+
+  // Re-trigger reveal animations when filter changes
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal:not(.active)');
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, [activeFilter]);
 
   return (
     <>
