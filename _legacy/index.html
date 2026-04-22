@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echopoint AI - Sinergia Humano-Digital</title>
+    <meta name="description" content="Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Schema Markup for Professional Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Consultant",
+      "name": "Echopoint AI",
+      "image": "logo.png",
+      "description": "Consultoría estratégica empresarial especializada en crecimiento, alianzas y transformación digital mediante IA.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Ricardo Margain Zozaya 335-Piso 4 y 5, Zona Santa Engracia",
+        "addressLocality": "San Pedro Garza García",
+        "addressRegion": "N.L.",
+        "postalCode": "66265",
+        "addressCountry": "MX"
+      },
+      "telephone": "+1234567890",
+      "priceRange": "$$$",
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.4489,
+          "longitude": -70.6693
+        },
+        "geoRadius": "100000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Consultoría",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Estrategia de Crecimiento"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desarrollo de Alianzas Estratégicas"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Generación de Ventas y Leads"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Expansión Internacional"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desarrollo de Nuevos Productos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Inteligencia Comercial y Análisis"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Echopoint AI" class="logo-img">
+            </a>
+            
+            <nav class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav-link" data-i18n="nav.about">Nosotros</a></li>
+                    <li><a href="blog.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+                    <li class="lang-dropdown-container">
+                        <button class="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
+                            <i class="fa-solid fa-globe"></i> <span id="current-lang-text">ES</span>
+                        </button>
+                        <ul class="lang-menu" role="menu">
+                            <li role="none"><a href="#" data-lang="es" role="menuitem" tabindex="0">Español (ES)</a></li>
+                            <li role="none"><a href="#" data-lang="en" role="menuitem" tabindex="0">English (EN)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contacto" class="nav-cta" data-i18n="nav.contact">Conectar</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero-section">
+            <canvas id="neural-canvas"></canvas>
+            <div class="hero-overlay"></div>
+            
+            <div class="container hero-container">
+                <div class="hero-content fade-in-up">
+                    <span class="subtitle" data-i18n="hero.subtitle">Evolución Estratégica</span>
+                    <h1 data-i18n="hero.title">Consultoría Empresarial: <br><span class="highlight-gradient">Análisis, Estrategia & Crecimiento</span></h1>
+                    <p data-i18n="hero.desc">Un servicio profesional que ayuda a las organizaciones a analizar sus procesos, identificar oportunidades de mejora y desarrollar estrategias que impulsen su crecimiento, eficiencia y competitividad en el mercado.</p>
+                    <div class="hero-actions">
+                        <a href="#que-somos" class="btn btn-primary" data-i18n="hero.btn.discover">Descubrir Potencial</a>
+                        <a href="#contacto" class="btn btn-secondary" data-i18n="hero.btn.demo">Agenda una Demo</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrow-scroll">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Intro Section (Somos / Hacemos) -->
+        <section id="que-somos" class="section about-intro-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-card fade-in-up delay-1">
+                        <div class="about-icon">
+                            <i class="fa-solid fa-fingerprint"></i>
+                        </div>
+                        <h3 data-i18n="about.who.title">Quiénes Somos</h3>
+                        <p data-i18n="about.who.desc">Somos arquitectos de transformación empresarial. Echopoint AI nace de la convicción de que el verdadero crecimiento surge al fusionar la intuición humana experta con la precisión analítica de la inteligencia artificial. No somos solo consultores; somos tus socios en la navegación hacia el futuro.</p>
+                    </div>
+                    <div class="about-card fade-in-up delay-2">
+                        <div class="about-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 data-i18n="about.what.title">Qué Hacemos</h3>
+                        <p data-i18n="about.what.desc">Desbloqueamos el potencial oculto de tu organización. A través de un diagnóstico profundo y herramientas predictivas, diseñamos hojas de ruta personalizadas que optimizan operaciones, abren nuevos mercados y aseguran una rentabilidad escalable en un entorno competitivo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Strip -->
+        <div class="trust-strip">
+            <div class="container">
+                <p class="trust-text" data-i18n="trust.text">Impulsando el crecimiento de líderes globales:</p>
+                <div class="logo-grid">
+                    <div class="partner-logo"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="partner-logo"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="partner-logo"><i class="fa-brands fa-amazon"></i> Amazon</div>
+                    <div class="partner-logo"><i class="fa-brands fa-ibm"></i> IBM</div>
+                    <div class="partner-logo"><i class="fa-brands fa-salesforce"></i> Salesforce</div>
+                    <div class="partner-logo matss-highlight">
+                        <img src="logo-matss.png" alt="Matss Center Logo" class="matss-logo-img">
+                        <span>Matss Center</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matss Center Impact Section -->
+        <!-- 
+            DETALLE DE IMPACTO - MATSS CENTER:
+            Esta sección destaca la colaboración estratégica con Matss Center.
+            Impacto Real: Mejora del 40% en eficiencia operativa y tiempos de respuesta.
+            Beneficios: Optimización de procesos internos y fortalecimiento de la infraestructura tecnológica.
+            Contribución Social: Fomento de la tecnología con propósito y responsabilidad empresarial.
+        -->
+        <section class="section matss-impact-section">
+            <div class="container">
+                <div class="matss-impact-card fade-in-up">
+                    <div class="matss-impact-content">
+                        <div class="matss-impact-header">
+                            <span class="subtitle">Colaboración Estratégica</span>
+                            <h2>El Impacto de <span class="text-accent">Matss Center</span></h2>
+                        </div>
+                        <p class="matss-impact-text">
+                            Matss Center ha sido una pieza fundamental en nuestra evolución digital. Gracias a su enfoque en <strong>eficiencia operativa</strong> y <strong>soluciones centradas en el usuario</strong>, logramos una mejora del <strong>40% en los tiempos de respuesta</strong> de nuestros servicios. Su compromiso con el crecimiento empresarial y la responsabilidad social ha fortalecido no solo nuestra infraestructura tecnológica, sino también el impacto positivo en la comunidad que servimos, demostrando que la tecnología con propósito es el motor del éxito moderno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Manifiesto Section -->
+        <section class="section manifesto-section">
+            <div class="container">
+                <div class="manifesto-wrapper fade-in-up">
+                    <div class="manifesto-content">
+                        <span class="subtitle" data-i18n="manifesto.subtitle">Impacto Demostrado</span>
+                        <h2 data-i18n="manifesto.title">El Crecimiento No Se Predice, <br><span class="text-accent">Se Diseña</span></h2>
+                        <p data-i18n="manifesto.desc">Descubre cómo nuestra intervención consultora transforma métricas clave. Desde el incremento exponencial de ingresos hasta la optimización de procesos operativos, impulsados por la sinergia entre talento humano e inteligencia artificial.</p>
+                        <p class="legal-note" style="font-size: 0.75rem; color: var(--text-secondary); margin-top: -1rem; margin-bottom: 2rem;" data-i18n="manifesto.legal">*Los datos presentados son anónimos y cumplen con nuestras políticas de privacidad. Aprobado por el equipo legal.</p>
+                    </div>
+                    <div class="manifesto-image-container">
+                        <img 
+                            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" 
+                            alt="Visualización de datos e inteligencia artificial impulsando el crecimiento empresarial" 
+                            class="responsive-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AMS Reviews Section -->
+        <section id="testimonios" class="section reviews-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 data-i18n="reviews.title">Voces de Liderazgo</h2>
+                    <p data-i18n="reviews.desc">Socios estratégicos que han transformado sus industrias con Echopoint.</p>
+                    <div class="ams-rating-badge">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span data-i18n="reviews.rating">4.9/5 basado en consultorías auditadas</span>
+                    </div>
+                </div>
+                
+                <div class="reviews-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card fade-in-up delay-1">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Roberto M." class="reviewer-img">
+                                <div>
+                                    <h4>Roberto Méndez</h4>
+                                    <span class="reviewer-role">CEO, FinTech Latam</span>
+                                </div>
+                            </div>
+                            <div class="review-meta">
+                                <span class="verified-badge"><i class="fa-solid fa-check-circle"></i> <span data-i18n="reviews.verified">Socio Verificado</span></span>
+                                <span class="review-date" data-i18n="reviews.date1">Hace 2 semanas</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text" data-i18n="reviews.text1">"La profundidad del análisis predictivo de Echopoint nos permitió identificar un nicho de mercado en Brasil que habíamos pasado por alto. El ROI en el primer trimestre superó nuestras expectativas más optimistas."</p>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="review-card fade-in-up delay-2">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah J." class="reviewer-img">
+                                <div>
+                                    <h4>Sarah Jenkins</h4>
+                                    <span class="reviewer-role">VP Operations, GlobalLogistics</span>
+                                </div>
+                            </div>
+                            <div class="review-meta">
+                                <span class="verified-badge"><i class="fa-solid fa-check-circle"></i> <span data-i18n="reviews.verified">Socio Verificado</span></span>
+                                <span class="review-date" data-i18n="reviews.date2">Hace 1 mes</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="review-text" data-i18n="reviews.text2">"Implementar su estrategia de expansión internacional fue un proceso fluido. Su equipo no solo entregó un plan, sino que estuvo con nosotros en la ejecución operativa día a día."</p>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="review-card fade-in-up delay-3">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David K." class="reviewer-img">
+                                <div>
+                                    <h4>David Kline</h4>
+                                    <span class="reviewer-role">Founder, GreenEnergy Solutions</span>
+                                </div>
+                            </div>
+                            <div class="review-meta">
+                                <span class="verified-badge"><i class="fa-solid fa-check-circle"></i> <span data-i18n="reviews.verified">Socio Verificado</span></span>
+                                <span class="review-date" data-i18n="reviews.date3">Hace 3 semanas</span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text" data-i18n="reviews.text3">"La fusión de IA con consultoría tradicional es el futuro. Echopoint nos ayudó a automatizar la cualificación de leads, liberando a nuestro equipo de ventas para cerrar tratos de alto valor."</p>
+                    </div>
+
+                    <!-- Review 4 (Matss Center) -->
+                    <div class="review-card fade-in-up delay-4 matss-special-review">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="matss-review-icon">
+                                    <i class="fa-solid fa-headset"></i>
+                                </div>
+                                <div>
+                                    <h4>Matss Center</h4>
+                                    <span class="reviewer-role">Aliado Estratégico</span>
+                                </div>
+                            </div>
+                            <div class="review-meta">
+                                <span class="verified-badge"><i class="fa-solid fa-award"></i> <span>Partner Premium</span></span>
+                            </div>
+                        </div>
+                        <div class="review-stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Nuestra colaboración con Echopoint ha sido transformadora. La integración de sus estrategias de IA ha optimizado nuestros procesos internos, resultando en una mejora tangible de la satisfacción del cliente y un crecimiento empresarial sin precedentes."</p>
+                    </div>
+                </div>
+                
+                <div class="reviews-cta">
+                    <a href="blog.html" class="btn btn-secondary" data-i18n="reviews.cta">Leer Casos de Estudio en el Blog</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brilliant Minds Section -->
+        <section class="section minds-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Pioneros de la Inteligencia</h2>
+                    <p>Hombros de gigantes sobre los que construimos el futuro.</p>
+                </div>
+                
+                <div class="minds-grid">
+                    <!-- Ada Lovelace -->
+                    <div class="mind-card fade-in-up delay-1">
+                        <div class="mind-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Ada_Lovelace_portrait.jpg')"></div>
+                        <div class="mind-content">
+                            <h3>Ada Lovelace</h3>
+                            <span class="mind-role">La Primera Programadora</span>
+                            <p class="mind-bio">Visionaria del siglo XIX que reconoció que las computadoras podían hacer más que simples cálculos. Escribió el primer algoritmo destinado a ser procesado por una máquina.</p>
+                            <div class="mind-interactive">
+                                <button class="btn-toggle-quiz" data-target="quiz-ada">¿Sabías qué?</button>
+                                <div id="quiz-ada" class="quiz-content hidden">
+                                    <p>Predijo la música generada por ordenador hace más de 170 años.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alan Turing -->
+                    <div class="mind-card fade-in-up delay-2">
+                        <div class="mind-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/79/Alan_Turing_az_1930-as_%C3%A9vekben.jpg')"></div>
+                        <div class="mind-content">
+                            <h3>Alan Turing</h3>
+                            <span class="mind-role">Padre de la IA</span>
+                            <p class="mind-bio">Matemático que descifró el código Enigma en la SGM. Formalizó los conceptos de algoritmo y computación con la máquina de Turing.</p>
+                            <div class="mind-interactive">
+                                <button class="btn-toggle-quiz" data-target="quiz-turing">Cita Célebre</button>
+                                <div id="quiz-turing" class="quiz-content hidden">
+                                    <p><em>"Solo podemos ver un poco del futuro, pero lo suficiente para darnos cuenta de que hay mucho que hacer."</em></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Katherine Johnson -->
+                    <div class="mind-card fade-in-up delay-3">
+                        <div class="mind-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Katherine_Johnson_1983.jpg')"></div>
+                        <div class="mind-content">
+                            <h3>Katherine Johnson</h3>
+                            <span class="mind-role">Calculadora Humana</span>
+                            <p class="mind-bio">Sus cálculos de mecánica orbital fueron críticos para el éxito del primer vuelo espacial tripulado de EE. UU. y el aterrizaje del Apolo 11.</p>
+                            <div class="mind-interactive">
+                                <button class="btn-toggle-quiz" data-target="quiz-katherine">Dato Curioso</button>
+                                <div id="quiz-katherine" class="quiz-content hidden">
+                                    <p>John Glenn pidió que ella verificara personalmente los números de la computadora antes de volar.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- René Descartes -->
+                    <div class="mind-card fade-in-up delay-1">
+                        <div class="mind-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg')"></div>
+                        <div class="mind-content">
+                            <h3>René Descartes</h3>
+                            <span class="mind-role">Padre de la Geometría</span>
+                            <p class="mind-bio">Fusionó el álgebra y la geometría, creando el sistema de coordenadas cartesianas que usamos en cada gráfico y pantalla hoy.</p>
+                            <div class="mind-interactive">
+                                <button class="btn-toggle-quiz" data-target="quiz-descartes">Legado</button>
+                                <div id="quiz-descartes" class="quiz-content hidden">
+                                    <p>Sin su plano cartesiano, no tendríamos gráficos por ordenador ni GPS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Grace Hopper -->
+                    <div class="mind-card fade-in-up delay-2">
+                        <div class="mind-img" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg')"></div>
+                        <div class="mind-content">
+                            <h3>Grace Hopper</h3>
+                            <span class="mind-role">Reina del Código</span>
+                            <p class="mind-bio">Inventora del primer compilador. Popularizó la idea de lenguajes de programación independientes de la máquina, llevando al COBOL.</p>
+                            <div class="mind-interactive">
+                                <button class="btn-toggle-quiz" data-target="quiz-grace">Anécdota</button>
+                                <div id="quiz-grace" class="quiz-content hidden">
+                                    <p>Popularizó el término "bug" después de encontrar una polilla real en un relé de computadora.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="section services-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2 data-i18n="services.title">Servicios de Consultoría Estratégica</h2>
+                    <p data-i18n="services.desc">Plan integral de crecimiento empresarial con objetivos mensurables y KPIs definidos.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- 1. Estrategia de Crecimiento -->
+                    <div class="service-card fade-in-up delay-1">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3>Estrategia de Crecimiento</h3>
+                        <ul class="service-list">
+                            <li>Análisis Porter Five Forces y SWOT cuantitativo.</li>
+                            <li>Investigación de mercados emergentes y gaps de producto.</li>
+                            <li>Planes de expansión con proyecciones financieras 5-year (ROI >25%).</li>
+                            <li>Estrategias de entrada (Franquicia, JV, Propia) y localización.</li>
+                            <li>Validación de propuesta de valor y testing A/B (Conversión >12%).</li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. Desarrollo de Alianzas Estratégicas -->
+                    <div class="service-card fade-in-up delay-2">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-handshake-simple"></i>
+                        </div>
+                        <h3>Desarrollo de Alianzas</h3>
+                        <ul class="service-list">
+                            <li>Búsqueda sistemática de partners con Scoring Matrix.</li>
+                            <li>Estructuración de Joint Ventures y mecanismos de exit.</li>
+                            <li>Negociación de acuerdos con margen de contribución >35%.</li>
+                            <li>Representación comercial con KPIs mensuales y reporting automatizado.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. Generación de Ventas y Leads -->
+                    <div class="service-card fade-in-up delay-3">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3>Generación de Ventas</h3>
+                        <ul class="service-list">
+                            <li>Prospección B2B segmentada (Ingresos >$500K).</li>
+                            <li>Scoring MQL-SQL con criterios BANT (Conversión 25%).</li>
+                            <li>Apertura de cuentas Enterprise y comités con C-level.</li>
+                            <li>Cierre de ventas estratégicas (Ticket >$100K, Cierre 30%).</li>
+                        </ul>
+                    </div>
+
+                    <!-- 4. Expansión Internacional -->
+                    <div class="service-card fade-in-up delay-1">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3>Expansión Internacional</h3>
+                        <ul class="service-list">
+                            <li>Estudios de viabilidad PESTEL y TAM >$50M.</li>
+                            <li>Adaptación de modelo de negocio y cumplimiento local.</li>
+                            <li>Due diligence de socios y distribuidores locales.</li>
+                            <li>Plan de lanzamiento 90-días con equipo dedicado.</li>
+                        </ul>
+                    </div>
+
+                    <!-- 5. Desarrollo de Nuevos Productos -->
+                    <div class="service-card fade-in-up delay-2">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3>Nuevos Productos</h3>
+                        <ul class="service-list">
+                            <li>Validación con Design Thinking y MVP (NPS >50).</li>
+                            <li>Investigación de demanda y tendencias (CAGR >15%).</li>
+                            <li>Estrategia Go-To-Market y segmentación de clientes.</li>
+                            <li>Pricing estratégico y captura de surplus (15-25%).</li>
+                        </ul>
+                    </div>
+
+                    <!-- 6. Inteligencia Comercial y Análisis -->
+                    <div class="service-card fade-in-up delay-3">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <h3>Inteligencia Comercial</h3>
+                        <ul class="service-list">
+                            <li>Estudios de mercado trimestrales y tendencias 3-5 años.</li>
+                            <li>Inteligencia de precios y alertas de competencia.</li>
+                            <li>Predicciones de Big Data con accuracy >75%.</li>
+                            <li>Evaluación de inversiones (DCF, IRR >20%).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="nosotros" class="section about-section">
+            <div class="container about-grid">
+                <div class="about-content fade-in-up">
+                    <span class="subtitle" data-i18n="about.essence.subtitle">Nuestra Esencia</span>
+                    <h2 data-i18n="about.essence.title">Tecnología que <br><span class="text-accent">Amplifica el Talento</span></h2>
+                    <p data-i18n="about.essence.desc">No buscamos reemplazar la intuición humana, sino potenciarla. Echopoint es el punto de encuentro donde la capacidad de procesamiento de la IA se une a la creatividad estratégica de las personas.</p>
+                    <ul class="about-features">
+                        <li>
+                            <i class="fa-solid fa-bolt"></i>
+                            <span data-i18n="about.essence.feat1">Decisiones basadas en datos, ejecutadas por expertos.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span data-i18n="about.essence.feat2">Comunicación precisa: Mensaje correcto, momento exacto.</span>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-infinity"></i>
+                            <span data-i18n="about.essence.feat3">Aprendizaje continuo: Tu estrategia evoluciona cada día.</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Team Section (New) -->
+                <div class="team-preview fade-in-up delay-1">
+                    <h3 data-i18n="about.team.title">Mentes Brillantes</h3>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-img"></div>
+                            <h4>Elena R.</h4>
+                            <span data-i18n="about.team.role1">Data Scientist Lead</span>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-img"></div>
+                            <h4>Marc T.</h4>
+                            <span data-i18n="about.team.role2">Estratega B2B</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories (Social Proof) -->
+        <section class="section success-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Impacto Real</h2>
+                    <p>Resultados tangibles que hablan por sí mismos.</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card fade-in-up delay-1">
+                        <p class="quote">"Echopoint transformó nuestra forma de captar leads. La precisión de su IA es asombrosa, pero su equipo humano marca la diferencia."</p>
+                        <div class="author">
+                            <strong>Carlos M.</strong>
+                            <span>CEO, TechFlow Inc.</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card fade-in-up delay-2">
+                        <p class="quote">"Duplicamos nuestra tasa de cierre en 6 meses. La estrategia personalizada fue clave para penetrar en nuevos mercados."</p>
+                        <div class="author">
+                            <strong>Ana S.</strong>
+                            <span>Directora Comercial, GlobalLogistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights / Blog -->
+        <section class="section insights-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Insights Estratégicos</h2>
+                    <p>Tendencias y análisis para liderar el cambio.</p>
+                </div>
+                <!-- Dynamic Content Container -->
+                <div class="blog-grid" id="homepage-insights-grid">
+                    <!-- Content will be injected by JS -->
+                    <div class="loader">
+                        <div class="spinner"></div>
+                        <p>Cargando insights...</p>
+                    </div>
+                </div>
+                <div class="reviews-cta fade-in-up" style="margin-top: 3rem;">
+                    <a href="blog.html" class="btn btn-secondary">Ver Todos los Artículos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <div class="container">
+                <div class="section-header fade-in-up">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Resolvemos tus dudas con transparencia.</p>
+                </div>
+                <div class="faq-accordion fade-in-up">
+                    <div class="faq-item">
+                        <button class="faq-question">¿La IA reemplazará a mi equipo de ventas? <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-answer">
+                            <p>No. Nuestra tecnología está diseñada para liberar a tu equipo de tareas repetitivas y proporcionarles "superpoderes" de datos. La empatía y el cierre siguen siendo humanos.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">¿Cómo garantizan la seguridad de mis datos? <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-answer">
+                            <p>Cumplimos con los más altos estándares de encriptación y normativas internacionales (GDPR/CCPA). Tus datos estratégicos nunca se comparten ni se usan para entrenar modelos externos sin consentimiento.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">¿Cuánto tiempo toma ver resultados? <i class="fa-solid fa-plus"></i></button>
+                        <div class="faq-answer">
+                            <p>Nuestros clientes suelen ver un aumento en la calidad de los leads en las primeras 4 semanas y un impacto significativo en el ROI a partir del tercer mes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lead Magnet CTA -->
+        <section class="lead-magnet-section">
+            <div class="container magnet-container">
+                <div class="magnet-content fade-in-up">
+                    <h2 data-i18n="magnet.title">Descarga el Informe 2024</h2>
+                    <p data-i18n="magnet.desc">Obtén nuestra guía exclusiva: "Sinergia Humano-IA: El Nuevo Estándar en Ventas B2B".</p>
+                    <form class="magnet-form">
+                        <input type="email" placeholder="Tu email corporativo" required data-i18n="magnet.placeholder">
+                        <button type="submit" class="btn btn-primary" data-i18n="magnet.btn">Descargar Ahora</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="section contact-section">
+            <div class="container">
+                <div class="contact-grid fade-in-up">
+                    <div class="contact-info">
+                        <h2 data-i18n="contact.title">Inicia la <br>Transformación</h2>
+                        <p data-i18n="contact.desc">¿Estás listo para liderar tu sector? Conversemos sobre cómo nuestra inteligencia estratégica puede acelerar tus objetivos.</p>
+                        
+                        <div class="info-list">
+                            <div class="info-item">
+                                <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                                <a href="mailto:contacto@echopointmx.com">contacto@echopointmx.com</a>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                                <a href="tel:+525525056854">+52 55 25056854</a>
+                            </div>
+                            <div class="info-item">
+                                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <span>Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br>Zona Santa Engracia, 66265<br>San Pedro Garza García, N.L.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form" id="main-contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name" data-i18n="contact.form.name">Nombre Completo</label>
+                            <input type="text" id="name" placeholder="Ej. Juan Pérez" required minlength="2" data-i18n="contact.form.name_ph">
+                            <span class="error-msg" data-i18n="contact.form.name_err">Por favor ingresa tu nombre completo.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="contact.form.email">Correo Corporativo</label>
+                            <input type="email" id="email" placeholder="nombre@empresa.com" required data-i18n="contact.form.email_ph">
+                            <span class="error-msg" data-i18n="contact.form.email_err">Por favor ingresa un correo válido.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="contact.form.subject">Asunto</label>
+                            <input type="text" id="subject" placeholder="Ej. Solicitud de Consultoría" required minlength="5" data-i18n="contact.form.subject_ph">
+                            <span class="error-msg" data-i18n="contact.form.subject_err">El asunto es muy corto.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="contact.form.message">Mensaje</label>
+                            <textarea id="message" rows="5" placeholder="Cuéntanos sobre tus desafíos..." required minlength="10" data-i18n="contact.form.message_ph"></textarea>
+                            <span class="error-msg" data-i18n="contact.form.message_err">Por favor detalla un poco más tu mensaje.</span>
+                        </div>
+                        <!-- Honeypot for Spam Protection -->
+                        <div style="display:none;">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary full-width submit-btn">
+                            <span class="btn-text" data-i18n="contact.form.btn">Enviar Mensaje</span>
+                            <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+                        </button>
+                        <div class="form-status success-message hidden">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <p data-i18n="contact.form.success">¡Mensaje enviado con éxito! Te contactaremos en menos de 24 horas.</p>
+                        </div>
+                        <div class="form-status error-message hidden">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            <p data-i18n="contact.form.error">Hubo un error al enviar. Por favor intenta nuevamente.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <button class="chat-toggle" aria-label="Abrir chat">
+            <i class="fa-solid fa-comment-dots"></i>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <span>EchoBot AI</span>
+                </div>
+                <button class="chat-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot">
+                    <p>¡Hola! Soy la IA de Echopoint. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe tu pregunta..." id="chat-input-field">
+                <button id="send-chat"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="logo.png" alt="Echopoint AI" class="logo-img">
+                    </a>
+                    <p data-i18n="footer.desc">Transformando el futuro B2B mediante la fusión de inteligencia artificial y creatividad humana.</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h4 data-i18n="footer.nav">Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio" data-i18n="nav.home">Inicio</a></li>
+                        <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+                        <li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li>
+                        <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4 data-i18n="footer.contact">Contacto</h4>
+                    <ul class="contact-links">
+                        <li><a href="mailto:contacto@echopointmx.com"><i class="fa-solid fa-envelope"></i> contacto@echopointmx.com</a></li>
+                        <li><a href="tel:+525525056854"><i class="fa-solid fa-phone"></i> +52 55 25056854</a></li>
+                        <li><span><i class="fa-solid fa-location-dot"></i> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br>Zona Santa Engracia, 66265<br>San Pedro Garza García, N.L.</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4 data-i18n="footer.follow">Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-i18n="footer.rights">&copy; 2024 Echopoint AI. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
