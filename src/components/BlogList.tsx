@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BlogPost } from "@/data/posts";
 import BlogCard from "./BlogCard";
 import { useLanguage } from "@/context/LanguageContext";
@@ -17,6 +17,27 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
       post.excerpt.toLowerCase().includes(search.toLowerCase());
     return matchesFilter && matchesSearch;
   });
+
+  // Re-trigger reveal animations when filter or search changes
+  useEffect(() => {
+    const elements = document.querySelectorAll('.reveal:not(.active)');
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, [filter, search]);
 
   return (
     <>
