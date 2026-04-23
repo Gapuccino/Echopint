@@ -23,68 +23,66 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: {
-    default: "Echopoint AI - Consultoría Empresarial Estratégica",
-    template: "%s | Echopoint AI",
-  },
-  description:
-    "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras. Consultoría empresarial, análisis predictivo y expansión internacional.",
-  keywords: [
-    "consultoría empresarial",
-    "estrategia B2B",
-    "inteligencia artificial",
-    "crecimiento empresarial",
-    "expansión internacional",
-    "análisis predictivo",
-    "Echopoint AI",
-  ],
-  authors: [{ name: "Echopoint AI" }],
-  creator: "Echopoint AI",
-  openGraph: {
-    title: "Echopoint AI - Consultoría Empresarial Estratégica",
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const baseUrl = "https://echopint.vercel.app";
+
+  return {
+    title: {
+      default: "Echopoint AI - Consultoría Empresarial Estratégica",
+      template: "%s | Echopoint AI",
+    },
     description:
-      "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras.",
-    url: "https://echopointmx.com",
-    siteName: "Echopoint AI",
-    images: [
-      {
-        url: "/logo.webp",
-        width: 800,
-        height: 600,
-        alt: "Echopoint AI Logo",
-      },
+      "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras. Consultoría empresarial, análisis predictivo y expansión internacional.",
+    keywords: [
+      "consultoría empresarial", "estrategia B2B", "inteligencia artificial", 
+      "crecimiento empresarial", "expansión internacional", "análisis predictivo", "Echopoint AI"
     ],
-    locale: "es_MX",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Echopoint AI - Consultoría Empresarial Estratégica",
-    description:
-      "Fusión de inteligencia artificial y creatividad humana para estrategias B2B.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    metadataBase: new URL(baseUrl),
+    alternates: {
+      canonical: `${baseUrl}/${lang}`,
+      languages: {
+        "es-MX": `${baseUrl}/es`,
+        "en-US": `${baseUrl}/en`,
+        "fr-FR": `${baseUrl}/fr`,
+        "pt-BR": `${baseUrl}/pt`,
+      },
+    },
+    openGraph: {
+      title: "Echopoint AI - Consultoría Empresarial Estratégica",
+      description: "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras.",
+      url: `${baseUrl}/${lang}`,
+      siteName: "Echopoint AI",
+      images: [{ url: "/logo.webp", width: 800, height: 600, alt: "Echopoint AI Logo" }],
+      locale: lang === 'es' ? 'es_MX' : lang === 'en' ? 'en_US' : lang === 'fr' ? 'fr_FR' : 'pt_BR',
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Echopoint AI - Consultoría Empresarial Estratégica",
+      description: "Fusión de inteligencia artificial y creatividad humana para estrategias B2B.",
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  metadataBase: new URL("https://echopointmx.com"),
-};
+  };
+}
 
 // JSON-LD Structured Data
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Echopoint AI",
-  url: "https://echopointmx.com",
-  logo: "https://echopointmx.com/logo.webp",
+  url: "https://echopint.vercel.app",
+  logo: "https://echopint.vercel.app/logo.webp",
   description: "Consultoría empresarial estratégica que fusiona inteligencia artificial y creatividad humana para estrategias B2B transformadoras.",
   address: {
     "@type": "PostalAddress",
@@ -108,7 +106,7 @@ const jsonLdWebSite = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Echopoint AI",
-  url: "https://echopointmx.com",
+  url: "https://echopint.vercel.app",
 };
 
 export default async function RootLayout({

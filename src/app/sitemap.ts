@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { blogPosts } from '@/data/posts';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://echopointmx.com';
+  const baseUrl = 'https://echopint.vercel.app';
 
   const locales = ['es', 'en', 'fr', 'pt'];
   const allUrls: MetadataRoute.Sitemap = [];
