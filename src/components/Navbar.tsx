@@ -5,8 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
@@ -53,7 +51,7 @@ export default function Navbar() {
             <li><Link href={getLocalizedPath(lang, "/blog")} className={`nav-link ${pathname.includes("blog") ? "active" : ""}`}>{t('nav.blog')}</Link></li>
             <li className="lang-dropdown-container">
               <button className="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
-                <FontAwesomeIcon icon={faGlobe} /> {lang}
+                <span aria-hidden="true">🌐</span> {lang}
               </button>
               <ul className="lang-menu" role="menu">
                 <li role="none"><button onClick={() => setLang("ES")} role="menuitem">Español (ES)</button></li>

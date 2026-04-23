@@ -70,10 +70,11 @@
     color: var(--tech-cyan);
 }
 
-.footerContact svg {
+.contactIcon {
     color: var(--tech-cyan);
     margin-top: 0.3rem;
-    width: 16px;
+    min-width: 16px;
+    display: inline-block;
 }
 
 .socialLinks {

@@ -4,17 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faEnvelope, 
-  faPhone, 
-  faLocationDot 
-} from "@fortawesome/free-solid-svg-icons";
-import { 
-  faLinkedinIn, 
-  faXTwitter, 
-  faInstagram 
-} from "@fortawesome/free-brands-svg-icons";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -55,18 +44,18 @@ export default function Footer() {
           <div className={styles.footerContact}>
             <h3>{t('footer.contact')}</h3>
             <ul className={styles.contactLinks}>
-              <li><a href="mailto:contacto@echopointmx.com"><FontAwesomeIcon icon={faEnvelope} /> contacto@echopointmx.com</a></li>
-              <li><a href="tel:+525525056854"><FontAwesomeIcon icon={faPhone} /> +52 55 25056854</a></li>
-              <li><span><FontAwesomeIcon icon={faLocationDot} /> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.</span></li>
+              <li><a href="mailto:contacto@echopointmx.com"><span className={styles.contactIcon} aria-hidden="true">✉</span> contacto@echopointmx.com</a></li>
+              <li><a href="tel:+525525056854"><span className={styles.contactIcon} aria-hidden="true">☎</span> +52 55 25056854</a></li>
+              <li><span><span className={styles.contactIcon} aria-hidden="true">📍</span> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.</span></li>
             </ul>
           </div>
           
           <div className={styles.footerSocial}>
             <h3>{t('footer.follow')}</h3>
             <div className={styles.socialLinks}>
-              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faXTwitter} /></a>
-              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
+              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
+              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
+              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
             </div>
           </div>
         </div>

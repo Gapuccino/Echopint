@@ -5,8 +5,6 @@ import Link from "next/link";
 import { BlogPost } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export default function BlogCard({ post, delay = 1, isPriority = false }: { post: BlogPost; delay?: number; isPriority?: boolean }) {
   const { t, lang } = useLanguage();
@@ -35,7 +33,7 @@ export default function BlogCard({ post, delay = 1, isPriority = false }: { post
         <h2 style={{ fontSize: '1.4rem', margin: '0.5rem 0', lineHeight: '1.3' }}>{post.title}</h2>
         <p>{post.excerpt}</p>
         <Link href={getLocalizedPath(lang, `/blog/${post.slug}`)} className="read-more">
-          {t('insights.readMore') || 'Leer Artículo'} <FontAwesomeIcon icon={faArrowRight} />
+          {t('insights.readMore') || 'Leer Artículo'} <span aria-hidden="true">→</span>
         </Link>
       </div>
     </article>

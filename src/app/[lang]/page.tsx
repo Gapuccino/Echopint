@@ -12,21 +12,6 @@ import { blogPosts } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { 
-  faStar, 
-  faStarHalfStroke, 
-  faCheckCircle, 
-  faCircleExclamation,
-  faArrowRight 
-} from "@fortawesome/free-solid-svg-icons";
-import { 
-  faGoogle, 
-  faMicrosoft, 
-  faAmazon, 
-  faMeta, 
-  faSalesforce 
-} from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
   const { t, lang } = useLanguage();
@@ -116,11 +101,11 @@ export default function Home() {
           <div className="container">
             <p className="trust-text">{t('trust')}</p>
             <div className="logo-grid">
-              <div className="partner-logo"><FontAwesomeIcon icon={faGoogle} /> Google</div>
-              <div className="partner-logo"><FontAwesomeIcon icon={faMicrosoft} /> Microsoft</div>
-              <div className="partner-logo"><FontAwesomeIcon icon={faAmazon} /> Amazon</div>
-              <div className="partner-logo"><FontAwesomeIcon icon={faMeta} /> Meta</div>
-              <div className="partner-logo"><FontAwesomeIcon icon={faSalesforce} /> Salesforce</div>
+              <div className="partner-logo">Google</div>
+              <div className="partner-logo">Microsoft</div>
+              <div className="partner-logo">Amazon</div>
+              <div className="partner-logo">Meta</div>
+              <div className="partner-logo">Salesforce</div>
             </div>
           </div>
         </div>
@@ -159,11 +144,7 @@ export default function Home() {
             <p>{t('reviews.desc')}</p>
               <div className="ams-rating-badge">
                 <div className="stars">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  ★★★★★
                 </div>
                 <span>{t('reviews.rating')}</span>
               </div>
@@ -181,16 +162,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="review-meta">
-                    <span className="verified-badge"><FontAwesomeIcon icon={faCheckCircle} /> <span>{t('reviews.verified')}</span></span>
+                    <span className="verified-badge"><span aria-hidden="true">✓</span> <span>{t('reviews.verified')}</span></span>
                     <span className="review-date">{t('reviews.r1.date')}</span>
                   </div>
                 </div>
                 <div className="review-stars">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  ★★★★★
                 </div>
                 <p className="review-text">{t('reviews.r1.text')}</p>
               </div>
@@ -206,16 +183,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="review-meta">
-                    <span className="verified-badge"><FontAwesomeIcon icon={faCheckCircle} /> <span>{t('reviews.verified')}</span></span>
+                    <span className="verified-badge"><span aria-hidden="true">✓</span> <span>{t('reviews.verified')}</span></span>
                     <span className="review-date">{t('reviews.r2.date')}</span>
                   </div>
                 </div>
                 <div className="review-stars">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStarHalfStroke} />
+                  ★★★★☆
                 </div>
                 <p className="review-text">{t('reviews.r2.text')}</p>
               </div>
@@ -231,16 +204,12 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="review-meta">
-                    <span className="verified-badge"><FontAwesomeIcon icon={faCheckCircle} /> <span>{t('reviews.verified')}</span></span>
+                    <span className="verified-badge"><span aria-hidden="true">✓</span> <span>{t('reviews.verified')}</span></span>
                     <span className="review-date">{t('reviews.r3.date')}</span>
                   </div>
                 </div>
                 <div className="review-stars">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  ★★★★★
                 </div>
                 <p className="review-text">{t('reviews.r3.text')}</p>
               </div>
@@ -268,7 +237,7 @@ export default function Home() {
             </div>
             
             <div className="reviews-cta fade-in-up" style={{marginTop: '3rem'}}>
-              <Link href={getLocalizedPath(lang, "/blog")} className="btn btn-secondary">{t('insights.cta')} <FontAwesomeIcon icon={faArrowRight} /></Link>
+              <Link href={getLocalizedPath(lang, "/blog")} className="btn btn-secondary">{t('insights.cta')} <span aria-hidden="true">→</span></Link>
             </div>
           </div>
         </section>
@@ -287,13 +256,13 @@ export default function Home() {
               </form>
               {magnetStatus === "success" && (
                 <p style={{color: 'var(--success-green)', marginTop: '1rem', fontSize: '0.9rem'}}>
-                  <FontAwesomeIcon icon={faCheckCircle} style={{marginRight: '0.5rem'}} />
+                  <span aria-hidden="true" style={{marginRight: '0.5rem'}}>✓</span>
                   {t('magnet.success') || '¡Enviado con éxito!'}
                 </p>
               )}
               {magnetStatus === "error" && (
                 <p style={{color: 'var(--error-red)', marginTop: '1rem', fontSize: '0.9rem'}}>
-                  <FontAwesomeIcon icon={faCircleExclamation} style={{marginRight: '0.5rem'}} />
+                  <span aria-hidden="true" style={{marginRight: '0.5rem'}}>!</span>
                   Error. Intenta de nuevo.
                 </p>
               )}
