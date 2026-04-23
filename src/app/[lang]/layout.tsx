@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { getDictionary } from "@/i18n/dictionaries";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../globals.css";
+
+// Prevent Font Awesome from adding its CSS since we did it above
+config.autoAddCss = false;
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -117,16 +122,7 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          as="style"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        />
+        <link rel="preconnect" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}

@@ -5,8 +5,10 @@ import Link from "next/link";
 import { BlogPost } from "@/data/posts";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-export default function BlogCard({ post, delay = 1 }: { post: BlogPost; delay?: number }) {
+export default function BlogCard({ post, delay = 1, isPriority = false }: { post: BlogPost; delay?: number; isPriority?: boolean }) {
   const { t, lang } = useLanguage();
 
   return (
@@ -16,6 +18,9 @@ export default function BlogCard({ post, delay = 1 }: { post: BlogPost; delay?: 
           src={post.image} 
           alt={post.title} 
           fill 
+          priority={isPriority}
+          fetchPriority={isPriority ? "high" : "auto"}
+          loading={isPriority ? "eager" : "lazy"}
           style={{ objectFit: 'cover' }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -29,7 +34,7 @@ export default function BlogCard({ post, delay = 1 }: { post: BlogPost; delay?: 
         <h2 style={{ fontSize: '1.4rem', margin: '0.5rem 0', lineHeight: '1.3' }}>{post.title}</h2>
         <p>{post.excerpt}</p>
         <Link href={getLocalizedPath(lang, `/blog/${post.slug}`)} className="read-more">
-          {t('insights.readMore') || 'Leer Artículo'} <i className="fa-solid fa-arrow-right"></i>
+          {t('insights.readMore') || 'Leer Artículo'} <FontAwesomeIcon icon={faArrowRight} />
         </Link>
       </div>
     </article>

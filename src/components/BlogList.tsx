@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { BlogPost } from "@/data/posts";
 import BlogCard from "./BlogCard";
 import { useLanguage } from "@/context/LanguageContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] }) {
   const [filter, setFilter] = useState("all");
@@ -43,7 +45,7 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
     <>
       <div className="blog-controls fade-in-up">
         <div className="search-bar">
-          <i className="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <FontAwesomeIcon icon={faMagnifyingGlass} aria-hidden="true" />
           <input 
             type="text" 
             placeholder={t('insights.search') || "Buscar artículos..."} 
@@ -67,7 +69,7 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
 
       <div className="blog-grid-feed spectacular-grid">
         {filteredPosts.map((post, i) => (
-          <BlogCard key={post.id} post={post} delay={(i % 3) + 1} />
+          <BlogCard key={post.id} post={post} delay={(i % 3) + 1} isPriority={i === 0} />
         ))}
         {filteredPosts.length === 0 && (
           <p style={{ gridColumn: "1 / -1", textAlign: "center", padding: "2rem" }}>
