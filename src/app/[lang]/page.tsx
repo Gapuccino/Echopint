@@ -113,7 +113,7 @@ export default function Home() {
                   width={1470}
                   height={827}
                   priority={false}
-                  quality={60}
+                  quality={45}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 />
               </div>
