@@ -551,6 +551,39 @@ h4 {
     flex-wrap: wrap;
 }
 
+/* Hero entrance animation (lightweight, no observer dependency) */
+.hero-intro .subtitle,
+.hero-intro h1,
+.hero-intro p,
+.hero-intro .hero-actions {
+    opacity: 0;
+    transform: translateY(14px);
+    animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero-intro .subtitle { animation-delay: 0.08s; }
+.hero-intro h1 { animation-delay: 0.16s; }
+.hero-intro p { animation-delay: 0.24s; }
+.hero-intro .hero-actions { animation-delay: 0.32s; }
+
+@keyframes heroFadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-intro .subtitle,
+    .hero-intro h1,
+    .hero-intro p,
+    .hero-intro .hero-actions {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
@@ -1582,31 +1615,42 @@ h4 {
 }
 
 .search-bar {
-    position: relative;
     width: 100%;
     max-width: 400px;
 }
 
-.search-bar i {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
+.search-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-glass);
+    border-radius: 50px;
+}
+
+.search-input-wrap svg {
     color: var(--text-secondary);
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .search-bar input {
     width: 100%;
-    padding: 0.8rem 1rem 0.8rem 2.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-glass);
-    border-radius: 50px;
+    padding: 0.8rem 0;
+    background: transparent;
+    border: none;
     color: var(--text-primary);
     font-family: var(--font-main);
 }
 
 .search-bar input:focus {
     outline: none;
+}
+
+.search-input-wrap:focus-within {
     border-color: var(--tech-cyan);
 }
 

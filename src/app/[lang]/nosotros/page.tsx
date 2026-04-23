@@ -4,6 +4,15 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBolt,
+  faBullseye,
+  faChartLine,
+  faFingerprint,
+  faInfinity,
+} from "@fortawesome/free-solid-svg-icons";
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -46,15 +55,15 @@ export default function NosotrosPage() {
             <p>{t('about.essDesc')}</p>
             <ul className="about-features" style={{ marginTop: "2rem" }}>
               <li>
-                <i className="fa-solid fa-bolt text-accent"></i>
+                <FontAwesomeIcon icon={faBolt} className="text-accent" />
                 <span>{t('about.essF1')}</span>
               </li>
               <li>
-                <i className="fa-solid fa-bullseye text-accent"></i>
+                <FontAwesomeIcon icon={faBullseye} className="text-accent" />
                 <span>{t('about.essF2')}</span>
               </li>
               <li>
-                <i className="fa-solid fa-infinity text-accent"></i>
+                <FontAwesomeIcon icon={faInfinity} className="text-accent" />
                 <span>{t('about.essF3')}</span>
               </li>
             </ul>
@@ -74,14 +83,14 @@ export default function NosotrosPage() {
         <div className="about-grid" style={{ marginTop: "6rem" }}>
           <div className="about-card reveal reveal-delay-1">
             <div className="about-icon">
-              <i className="fa-solid fa-fingerprint"></i>
+              <FontAwesomeIcon icon={faFingerprint} />
             </div>
             <h3>{t('about.whoTitle')}</h3>
             <p>{t('about.whoDesc')}</p>
           </div>
           <div className="about-card reveal reveal-delay-2">
             <div className="about-icon pbi-icon-blue">
-              <i className="fa-solid fa-chart-line"></i>
+              <FontAwesomeIcon icon={faChartLine} />
             </div>
             <h3>{t('about.whatTitle')}</h3>
             <p>{t('about.whatDesc')}</p>
@@ -106,7 +115,7 @@ export default function NosotrosPage() {
                     <h3>Elena R.</h3>
                     <span>{t('about.role1')}</span>
                     <div className="member-social">
-                      <i className="fa-brands fa-linkedin"></i>
+                      <FontAwesomeIcon icon={faLinkedinIn} />
                     </div>
                   </div>
                 </div>
@@ -125,7 +134,7 @@ export default function NosotrosPage() {
                     <h3>Marc T.</h3>
                     <span>{t('about.role2')}</span>
                     <div className="member-social">
-                      <i className="fa-brands fa-linkedin"></i>
+                      <FontAwesomeIcon icon={faLinkedinIn} />
                     </div>
                   </div>
                 </div>
@@ -144,7 +153,7 @@ export default function NosotrosPage() {
                     <h3>David K.</h3>
                     <span>VP of Operations</span>
                     <div className="member-social">
-                      <i className="fa-brands fa-linkedin"></i>
+                      <FontAwesomeIcon icon={faLinkedinIn} />
                     </div>
                   </div>
                 </div>

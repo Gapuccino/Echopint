@@ -71,10 +71,17 @@
 }
 
 .contactIcon {
-    color: var(--tech-cyan);
+    color: var(--text-secondary);
     margin-top: 0.3rem;
     min-width: 16px;
     display: inline-block;
+}
+
+.contactIconSvg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    display: block;
 }
 
 .socialLinks {

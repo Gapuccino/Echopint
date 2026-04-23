@@ -45,14 +45,16 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
     <>
       <div className="blog-controls fade-in-up">
         <div className="search-bar">
-          <FontAwesomeIcon icon={faMagnifyingGlass} aria-hidden="true" />
-          <input 
-            type="text" 
-            placeholder={t('insights.search') || "Buscar artículos..."} 
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            aria-label={t('insights.search') || "Buscar artículos..."}
-          />
+          <div className="search-input-wrap">
+            <FontAwesomeIcon icon={faMagnifyingGlass} aria-hidden="true" />
+            <input 
+              type="text" 
+              placeholder={t('insights.search') || "Buscar artículos..."} 
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              aria-label={t('insights.search') || "Buscar artículos..."}
+            />
+          </div>
         </div>
         <div className="category-filters">
           {["all", "Estrategia", "Tecnología", "Ventas", "Expansión"].map(cat => (

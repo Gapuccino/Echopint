@@ -83,7 +83,7 @@ export default function Home() {
           <div className="hero-overlay"></div>
           
           <div className="container hero-container">
-            <div className="hero-content">
+            <div className="hero-content hero-intro">
               <span className="subtitle">{t('hero.subtitle')}</span>
               <h1 dangerouslySetInnerHTML={{__html: t('hero.title')}}></h1>
               <p>{t('hero.desc')}</p>

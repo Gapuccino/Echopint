@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram, faLinkedinIn, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -46,16 +48,25 @@ export default function Footer() {
             <ul className={styles.contactLinks}>
               <li><a href="mailto:contacto@echopointmx.com"><span className={styles.contactIcon} aria-hidden="true">✉</span> contacto@echopointmx.com</a></li>
               <li><a href="tel:+525525056854"><span className={styles.contactIcon} aria-hidden="true">☎</span> +52 55 25056854</a></li>
-              <li><span><span className={styles.contactIcon} aria-hidden="true">📍</span> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.</span></li>
+              <li>
+                <span>
+                  <span className={styles.contactIcon} aria-hidden="true">
+                    <svg viewBox="0 0 24 24" className={styles.contactIconSvg} focusable="false" aria-hidden="true">
+                      <path d="M12 2.75A7.25 7.25 0 0 0 4.75 10c0 5.6 6.48 10.65 6.76 10.86a.8.8 0 0 0 .98 0c.28-.21 6.76-5.26 6.76-10.86A7.25 7.25 0 0 0 12 2.75Zm0 16.43C10.5 17.9 6.25 13.9 6.25 10A5.75 5.75 0 1 1 17.75 10c0 3.9-4.25 7.9-5.75 9.18Zm0-12.93A3.25 3.25 0 1 0 15.25 9.5 3.25 3.25 0 0 0 12 6.25Zm0 5A1.75 1.75 0 1 1 13.75 9.5 1.75 1.75 0 0 1 12 11.25Z" />
+                    </svg>
+                  </span>
+                  Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.
+                </span>
+              </li>
             </ul>
           </div>
           
           <div className={styles.footerSocial}>
             <h3>{t('footer.follow')}</h3>
             <div className={styles.socialLinks}>
-              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>
-              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer">X</a>
-              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer">IG</a>
+              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faXTwitter} /></a>
+              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
             </div>
           </div>
         </div>
