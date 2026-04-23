@@ -1,0 +1,106 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
+import { getLocalizedPath } from "@/i18n/routing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import styles from "./Navbar.module.css";
+
+export default function Navbar() {
+  const { lang, setLang, t } = useLanguage();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  return (
+    <header className={styles.header}>
+      <div className={`container ${styles.navbar}`}>
+        <Link href={getLocalizedPath(lang, "/")} className={styles.logo} onClick={() => setMobileOpen(false)}>
+          <img 
+            src="/logo.webp" 
+            srcSet="/logo-mobile.webp 200w, /logo.webp 400w"
+            sizes="(max-width: 768px) 200px, 400px"
+            alt="Echopoint AI" 
+            className={styles.logoImg} 
+            width="164" 
+            height="88" 
+            fetchPriority="high" 
+            decoding="sync"
+          />
+        </Link>
+
+        {/* Desktop nav */}
+        <nav className={`${styles.navMenu} ${styles.navDesktop}`}>
+          <ul className={styles.navList}>
+            <li><Link href={getLocalizedPath(lang, "/servicios")} className={`${styles.navLink} ${pathname.includes("servicios") || pathname.includes("services") || pathname.includes("servicos") ? styles.navLinkActive : ""}`}>{t('nav.services')}</Link></li>
+            <li><Link href={getLocalizedPath(lang, "/nosotros")} className={`${styles.navLink} ${pathname.includes("nosotros") || pathname.includes("about") || pathname.includes("a-propos") || pathname.includes("sobre-nos") ? styles.navLinkActive : ""}`}>{t('nav.about')}</Link></li>
+            <li><Link href={getLocalizedPath(lang, "/blog")} className={`${styles.navLink} ${pathname.includes("blog") ? styles.navLinkActive : ""}`}>{t('nav.blog')}</Link></li>
+            <li className={styles.langDropdownContainer}>
+              <button className={styles.langToggle} aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
+                <FontAwesomeIcon icon={faGlobe} /> {lang}
+              </button>
+              <ul className={styles.langMenu} role="menu">
+                <li role="none"><button className={styles.langItem} onClick={() => setLang("ES")} role="menuitem">Español (ES)</button></li>
+                <li role="none"><button className={styles.langItem} onClick={() => setLang("EN")} role="menuitem">English (EN)</button></li>
+                <li role="none"><button className={styles.langItem} onClick={() => setLang("FR")} role="menuitem">Français (FR)</button></li>
+                <li role="none"><button className={styles.langItem} onClick={() => setLang("PT")} role="menuitem">Português (PT)</button></li>
+              </ul>
+            </li>
+            <li><Link href={getLocalizedPath(lang, "/contacto")} className={styles.navCta}>{t('nav.contact')}</Link></li>
+          </ul>
+        </nav>
+
+        {/* Mobile hamburger button */}
+        <button
+          className={`${styles.mobileMenuBtn} ${mobileOpen ? styles.mobileMenuBtnOpen : ""}`}
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Menu"
+          aria-expanded={mobileOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      {/* Mobile overlay menu */}
+      <div className={`${styles.mobileOverlay} ${mobileOpen ? styles.mobileOverlayActive : ""}`}>
+        <nav className={styles.mobileNav}>
+          <Link href={getLocalizedPath(lang, "/servicios")} className={styles.mobileLink} onClick={() => setMobileOpen(false)}>{t('nav.services')}</Link>
+          <Link href={getLocalizedPath(lang, "/nosotros")} className={styles.mobileLink} onClick={() => setMobileOpen(false)}>{t('nav.about')}</Link>
+          <Link href={getLocalizedPath(lang, "/blog")} className={styles.mobileLink} onClick={() => setMobileOpen(false)}>{t('nav.blog')}</Link>
+          <Link href={getLocalizedPath(lang, "/contacto")} className={`${styles.mobileLink} ${styles.mobileCta}`} onClick={() => setMobileOpen(false)}>{t('nav.contact')}</Link>
+
+          <div className={styles.mobileLangSelector}>
+            {(["ES", "EN", "FR", "PT"] as const).map((code) => (
+              <button
+                key={code}
+                className={`${styles.mobileLangBtn} ${lang === code ? styles.mobileLangBtnActive : ""}`}
+                onClick={() => { setLang(code); setMobileOpen(false); }}
+              >
+                {code}
+              </button>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}

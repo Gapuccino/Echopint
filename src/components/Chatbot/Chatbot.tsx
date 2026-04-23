@@ -2,13 +2,21 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleNotch,
+  faCommentDots,
+  faPaperPlane,
+  faRobot,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 
 type Message = {
   text: string;
   sender: "bot" | "user";
 };
 
-// Knowledge base for the chatbot — keyword matching approach
+// Knowledge base for the chatbot â€” keyword matching approach
 const knowledgeBase: Record<string, Record<string, string>> = {
   ES: {
     _greeting: "¡Hola! Soy el asistente de Echopoint. ¿En qué puedo ayudarte? Puedes preguntar sobre nuestros servicios, precios, IA, o agendar una reunión.",
@@ -28,7 +36,7 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     services: "We offer 6 pillars: Growth Strategy, Alliance Development, Sales Generation, International Expansion, New Products, and Commercial Intelligence. Which would you like to learn about?",
     pricing: "Our pricing depends on the project scope. We invite you to schedule a free consultation at /contacto for a personalized quote.",
     price: "Our pricing depends on the project scope. We invite you to schedule a free consultation at /contacto for a personalized quote.",
-    ai: "We use AI for predictive analysis, lead qualification, and process optimization. We don't replace humans — we amplify their talent.",
+    ai: "We use AI for predictive analysis, lead qualification, and process optimization. We don't replace humans â€” we amplify their talent.",
     meeting: "You can schedule a demo or meeting from our contact page: /contacto. We'll respond within 24 hours.",
     contact: "You can email us at contacto@echopointmx.com or call +52 55 25056854. You can also use the form at /contacto.",
     growth: "Our Growth Strategy includes Porter's analysis, quantitative SWOT, 5-year expansion plans, and A/B validation.",
@@ -42,7 +50,7 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     prix: "Nos tarifs dépendent de la portée du projet. Planifiez une consultation gratuite sur /contacto.",
     ia: "Nous utilisons l'IA pour l'analyse prédictive, la qualification des prospects et l'optimisation des processus.",
     reunion: "Vous pouvez planifier une démo depuis notre page de contact : /contacto.",
-    contact: "Écrivez-nous à contacto@echopointmx.com ou appelez le +52 55 25056854.",
+    contact: "Écrivez-nous Ã  contacto@echopointmx.com ou appelez le +52 55 25056854.",
     _fallback: "Excellente question. Je vous recommande de contacter directement notre équipe via /contacto ou contacto@echopointmx.com."
   },
   PT: {
@@ -76,6 +84,8 @@ const chatPlaceholders: Record<string, string> = {
   FR: "Écrivez votre question...",
   PT: "Digite sua pergunta...",
 };
+
+import styles from "./Chatbot.module.css";
 
 export default function Chatbot() {
   const { lang } = useLanguage();
@@ -118,37 +128,36 @@ export default function Chatbot() {
   };
 
   return (
-    <div className="chatbot-widget">
+    <div className={styles.chatbotWidget}>
       <button
-        className="chat-toggle"
-        aria-label="Abrir chat"
+        className={styles.chatToggle}
+        aria-label={isOpen ? "Cerrar chat" : "Abrir chat"}
         onClick={() => setIsOpen(!isOpen)}
-        style={{ transform: isOpen ? "scale(0)" : "scale(1)" }}
       >
-        <i className="fa-solid fa-comment-dots"></i>
+        <FontAwesomeIcon icon={isOpen ? faXmark : faCommentDots} />
       </button>
 
-      <div className={`chat-window ${isOpen ? "active" : ""}`}>
-        <div className="chat-header">
-          <div className="bot-info">
-            <div className="bot-avatar"><i className="fa-solid fa-robot"></i></div>
+      <div className={`${styles.chatWindow} ${isOpen ? styles.active : ""}`}>
+        <div className={styles.chatHeader}>
+          <div className={styles.botInfo}>
+            <div className={styles.botAvatar}><FontAwesomeIcon icon={faRobot} /></div>
             <span>EchoBot AI</span>
           </div>
-          <button className="chat-close" onClick={() => setIsOpen(false)} aria-label="Close chat">
-            <i className="fa-solid fa-xmark"></i>
+          <button className={styles.chatClose} onClick={() => setIsOpen(false)} aria-label="Close chat">
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
 
-        <div className="chat-messages" id="chat-messages">
+        <div className={styles.chatMessages} id="chat-messages">
           {messages.map((msg, i) => (
-            <div key={i} className={`message ${msg.sender}`}>
+            <div key={i} className={`${styles.message} ${styles[msg.sender]}`}>
               <p>{msg.text}</p>
             </div>
           ))}
           {isTyping && (
-            <div className="message bot">
+            <div className={`${styles.message} ${styles.bot}`}>
               <p style={{ opacity: 0.6 }}>
-                <i className="fa-solid fa-circle-notch fa-spin" style={{ marginRight: '0.5rem' }}></i>
+                <FontAwesomeIcon icon={faCircleNotch} spin style={{ marginRight: "0.5rem" }} />
                 {lang === "EN" ? "Thinking..." : lang === "FR" ? "Réflexion..." : lang === "PT" ? "Pensando..." : "Pensando..."}
               </p>
             </div>
@@ -156,7 +165,7 @@ export default function Chatbot() {
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="chat-input">
+        <div className={styles.chatInput}>
           <input
             type="text"
             placeholder={chatPlaceholders[lang] || chatPlaceholders.ES}
@@ -164,7 +173,7 @@ export default function Chatbot() {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSend()}
           />
-          <button onClick={handleSend} aria-label="Send message"><i className="fa-solid fa-paper-plane"></i></button>
+          <button onClick={handleSend} aria-label="Send message"><FontAwesomeIcon icon={faPaperPlane} /></button>
         </div>
       </div>
     </div>

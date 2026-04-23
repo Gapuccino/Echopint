@@ -1,0 +1,136 @@
+﻿.svcHero {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 10rem 2rem 6rem;
+    background: linear-gradient(135deg, #050a14 0%, #0f172a 100%);
+    color: white;
+    overflow: hidden;
+}
+
+.svcHero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.svcHeroLine {
+    width: 80px;
+    height: 4px;
+    background: var(--tech-cyan);
+    margin: 0 auto;
+}
+
+.pbiCatalog {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.pbiSidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.pbiCatList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pbiCatItem {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 1rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-left: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.pbiCatItem:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pbiCatItemActive {
+    color: var(--tech-cyan);
+    border-left-color: var(--tech-cyan);
+    background: rgba(6, 182, 212, 0.05);
+}
+
+.pbiGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pbiCard {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s;
+}
+
+.pbiCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--tech-cyan);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.pbiIcon {
+    width: 50px;
+    height: 50px;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--tech-cyan);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pbiIconBlue {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
+.pbiIconAmber {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.pbiCta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    color: var(--tech-cyan);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.pbiCta:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px) {
+    .pbiCatalog {
+        grid-template-columns: 1fr;
+    }
+    
+    .pbiSidebar {
+        position: static;
+    }
+}

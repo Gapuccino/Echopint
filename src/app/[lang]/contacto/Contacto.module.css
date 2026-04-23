@@ -1,0 +1,60 @@
+﻿.contactGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contactInfo h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contactInfo p {
+    color: var(--text-secondary);
+}
+
+.infoList {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.infoItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.infoItem .icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--tech-cyan);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.infoItem a {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.infoItem a:hover {
+    color: var(--tech-cyan);
+}
+
+.faqSection {
+    background: rgba(15, 23, 42, 0.3);
+}
+
+@media (max-width: 900px) {
+    .contactGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}

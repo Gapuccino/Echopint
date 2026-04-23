@@ -7,6 +7,25 @@ import AnimationObserver from "@/components/AnimationObserver";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBrain,
+  faBriefcase,
+  faBullseye,
+  faCartShopping,
+  faChartLine,
+  faChartPie,
+  faChevronRight,
+  faCoins,
+  faGears,
+  faGlobe,
+  faGaugeHigh,
+  faHandshake,
+  faLayerGroup,
+  faLightbulb,
+  faMagnifyingGlassChart,
+  faRobot,
+} from "@fortawesome/free-solid-svg-icons";
 
 type CategoryFilter = "all" | "pbi" | "consulting";
 
@@ -64,7 +83,7 @@ export default function ServiciosPage() {
                     onClick={() => setActiveFilter("all")}
                     aria-pressed={activeFilter === "all"}
                   >
-                    <i className="fa-solid fa-layer-group"></i>
+                    <FontAwesomeIcon icon={faLayerGroup} />
                     {t('pbi.cat.all')}
                   </button>
                 </li>
@@ -74,7 +93,7 @@ export default function ServiciosPage() {
                     onClick={() => setActiveFilter("pbi")}
                     aria-pressed={activeFilter === "pbi"}
                   >
-                    <i className="fa-solid fa-chart-pie"></i>
+                    <FontAwesomeIcon icon={faChartPie} />
                     Power BI
                   </button>
                 </li>
@@ -84,7 +103,7 @@ export default function ServiciosPage() {
                     onClick={() => setActiveFilter("consulting")}
                     aria-pressed={activeFilter === "consulting"}
                   >
-                    <i className="fa-solid fa-briefcase"></i>
+                    <FontAwesomeIcon icon={faBriefcase} />
                     {t('services.title')}
                   </button>
                 </li>
@@ -105,40 +124,40 @@ export default function ServiciosPage() {
 
                 <div className="pbi-grid">
                   <div className="pbi-card reveal reveal-delay-1">
-                    <div className="pbi-icon"><i className="fa-solid fa-gauge-high"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faGaugeHigh} /></div>
                     <h3>{t('pbi.p1.title')}</h3>
                     <p>{t('pbi.p1.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p1.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p1.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card reveal reveal-delay-2">
-                    <div className="pbi-icon pbi-icon-blue"><i className="fa-solid fa-coins"></i></div>
+                    <div className="pbi-icon pbi-icon-blue"><FontAwesomeIcon icon={faCoins} /></div>
                     <h3>{t('pbi.p2.title')}</h3>
                     <p>{t('pbi.p2.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p2.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p2.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card reveal reveal-delay-3">
-                    <div className="pbi-icon"><i className="fa-solid fa-cart-shopping"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faCartShopping} /></div>
                     <h3>{t('pbi.p3.title')}</h3>
                     <p>{t('pbi.p3.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p3.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p3.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon pbi-icon-amber"><i className="fa-solid fa-gears"></i></div>
+                    <div className="pbi-icon pbi-icon-amber"><FontAwesomeIcon icon={faGears} /></div>
                     <h3>{t('pbi.p4.title')}</h3>
                     <p>{t('pbi.p4.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p4.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p4.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon"><i className="fa-solid fa-magnifying-glass-chart"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faMagnifyingGlassChart} /></div>
                     <h3>{t('pbi.p5.title')}</h3>
                     <p>{t('pbi.p5.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p5.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p5.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon pbi-icon-amber"><i className="fa-solid fa-robot"></i></div>
+                    <div className="pbi-icon pbi-icon-amber"><FontAwesomeIcon icon={faRobot} /></div>
                     <h3>{t('pbi.p6.title')}</h3>
                     <p>{t('pbi.p6.desc')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p6.slug')}`)} className="pbi-cta">{t('pbi.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('pbi.p6.slug')}`)} className="pbi-cta">{t('pbi.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                 </div>
               </div>
@@ -154,40 +173,40 @@ export default function ServiciosPage() {
 
                 <div className="pbi-grid">
                   <div className="pbi-card">
-                    <div className="pbi-icon"><i className="fa-solid fa-chart-line"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faChartLine} /></div>
                     <h3>{t('services.s1.title')}</h3>
                     <p>{t('services.s1.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s1.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s1.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon pbi-icon-amber"><i className="fa-solid fa-handshake-simple"></i></div>
+                    <div className="pbi-icon pbi-icon-amber"><FontAwesomeIcon icon={faHandshake} /></div>
                     <h3>{t('services.s2.title')}</h3>
                     <p>{t('services.s2.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s2.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s2.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon"><i className="fa-solid fa-bullseye"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faBullseye} /></div>
                     <h3>{t('services.s3.title')}</h3>
                     <p>{t('services.s3.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s3.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s3.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon pbi-icon-amber"><i className="fa-solid fa-globe"></i></div>
+                    <div className="pbi-icon pbi-icon-amber"><FontAwesomeIcon icon={faGlobe} /></div>
                     <h3>{t('services.s4.title')}</h3>
                     <p>{t('services.s4.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s4.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s4.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon"><i className="fa-solid fa-lightbulb"></i></div>
+                    <div className="pbi-icon"><FontAwesomeIcon icon={faLightbulb} /></div>
                     <h3>{t('services.s5.title')}</h3>
                     <p>{t('services.s5.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s5.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s5.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                   <div className="pbi-card">
-                    <div className="pbi-icon pbi-icon-amber"><i className="fa-solid fa-brain"></i></div>
+                    <div className="pbi-icon pbi-icon-amber"><FontAwesomeIcon icon={faBrain} /></div>
                     <h3>{t('services.s6.title')}</h3>
                     <p>{t('services.s6.i1')}</p>
-                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s6.slug')}`)} className="pbi-cta">{t('services.cta')} <i className="fa-solid fa-chevron-right"></i></Link>
+                    <Link href={getLocalizedPath(lang, `/servicios/${t('services.s6.slug')}`)} className="pbi-cta">{t('services.cta')} <FontAwesomeIcon icon={faChevronRight} /></Link>
                   </div>
                 </div>
               </div>
