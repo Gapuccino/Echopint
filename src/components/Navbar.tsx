@@ -38,8 +38,7 @@ export default function Navbar() {
             className="logo-img" 
             width="164" 
             height="88" 
-            fetchPriority="high" 
-            decoding="sync"
+            decoding="async"
           />
         </Link>
 

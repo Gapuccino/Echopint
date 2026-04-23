@@ -100,7 +100,7 @@ export default function Home() {
           <div className={styles.heroOverlay}></div>
           
           <div className={`container ${styles.heroContainer}`}>
-            <div className={`${styles.heroContent} reveal`}>
+            <div className={styles.heroContent}>
               <span className="subtitle">{t('hero.subtitle')}</span>
               <h1 dangerouslySetInnerHTML={{__html: t('hero.title')}}></h1>
               <p>{t('hero.desc')}</p>
@@ -114,7 +114,7 @@ export default function Home() {
         </section>
 
         {/* Trust Strip */}
-        <div className={styles.trustStrip}>
+        <div className={`${styles.trustStrip} cv-auto`}>
           <div className="container">
             <p className={styles.trustText}>{t('trust')}</p>
             <div className={styles.logoGrid}>
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
 
         {/* Video Manifiesto Section */}
-        <section className={`section ${styles.manifestoSection} reveal`}>
+        <section className={`section ${styles.manifestoSection} reveal cv-auto`}>
           <div className="container">
             <div className={styles.manifestoWrapper}>
               <div className="manifesto-content reveal-delay-1">
@@ -154,7 +154,7 @@ export default function Home() {
         </section>
 
         {/* AMS Reviews Section */}
-        <section id="testimonios" className={`section ${styles.reviewsSection}`}>
+        <section id="testimonios" className={`section ${styles.reviewsSection} cv-auto`}>
           <div className="container">
           <div className="section-header reveal">
             <h2>{t('reviews.title')}</h2>
@@ -256,7 +256,7 @@ export default function Home() {
         </section>
 
         {/* Insights / Blog */}
-        <section className={`section ${styles.insightsSection}`}>
+        <section className={`section ${styles.insightsSection} cv-auto`}>
           <div className="container">
             <div className="section-header fade-in-up">
               <h2>{t('insights.title')}</h2>
@@ -276,7 +276,7 @@ export default function Home() {
         </section>
 
         {/* Lead Magnet CTA */}
-        <section className={styles.leadMagnetSection}>
+        <section className={`${styles.leadMagnetSection} cv-auto`}>
           <div className={`container ${styles.magnetContainer}`}>
             <div className="magnet-content fade-in-up">
               <h2>{t('magnet.title')}</h2>

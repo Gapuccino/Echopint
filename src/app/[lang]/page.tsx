@@ -83,7 +83,7 @@ export default function Home() {
           <div className="hero-overlay"></div>
           
           <div className="container hero-container">
-            <div className="hero-content reveal">
+            <div className="hero-content">
               <span className="subtitle">{t('hero.subtitle')}</span>
               <h1 dangerouslySetInnerHTML={{__html: t('hero.title')}}></h1>
               <p>{t('hero.desc')}</p>
@@ -97,7 +97,7 @@ export default function Home() {
         </section>
 
         {/* Trust Strip */}
-        <div className="trust-strip">
+        <div className="trust-strip cv-auto">
           <div className="container">
             <p className="trust-text">{t('trust')}</p>
             <div className="logo-grid">
@@ -111,7 +111,7 @@ export default function Home() {
         </div>
 
         {/* Video Manifiesto Section */}
-        <section className="section manifesto-section reveal">
+        <section className="section manifesto-section reveal cv-auto">
           <div className="container">
             <div className="manifesto-wrapper">
               <div className="manifesto-content reveal-delay-1">
@@ -137,7 +137,7 @@ export default function Home() {
         </section>
 
         {/* AMS Reviews Section */}
-        <section id="testimonios" className="section reviews-section">
+        <section id="testimonios" className="section reviews-section cv-auto">
           <div className="container">
           <div className="section-header reveal">
             <h2>{t('reviews.title')}</h2>
@@ -223,7 +223,7 @@ export default function Home() {
         </section>
 
         {/* Insights / Blog */}
-        <section className="section insights-section">
+        <section className="section insights-section cv-auto">
           <div className="container">
             <div className="section-header fade-in-up">
               <h2>{t('insights.title')}</h2>
@@ -243,7 +243,7 @@ export default function Home() {
         </section>
 
         {/* Lead Magnet CTA */}
-        <section className="lead-magnet-section">
+        <section className="lead-magnet-section cv-auto">
           <div className="container magnet-container">
             <div className="magnet-content fade-in-up">
               <h2>{t('magnet.title')}</h2>

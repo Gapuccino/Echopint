@@ -193,6 +193,12 @@ h4 {
     width: 100%;
 }
 
+/* Performance utility: skip heavy below-the-fold layout/paint until needed */
+.cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 900px;
+}
+
 /* Header & Nav */
 .header {
     position: fixed;
