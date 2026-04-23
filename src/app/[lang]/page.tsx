@@ -97,7 +97,8 @@ export default function Home() {
                   className="responsive-image"
                   width={1470}
                   height={827}
-                  priority={false}
+                  priority={true}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
                 />
               </div>
             </div>

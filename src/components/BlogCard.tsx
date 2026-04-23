@@ -26,7 +26,7 @@ export default function BlogCard({ post, delay = 1 }: { post: BlogPost; delay?: 
           <span>{post.author}</span>
         </div>
         <span className="blog-tag">{post.category}</span>
-        <h4>{post.title}</h4>
+        <h3>{post.title}</h3>
         <p>{post.excerpt}</p>
         <Link href={getLocalizedPath(lang, `/blog/${post.slug}`)} className="read-more">
           {t('insights.readMore') || 'Leer Artículo'} <i className="fa-solid fa-arrow-right"></i>

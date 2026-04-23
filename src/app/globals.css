@@ -1153,7 +1153,8 @@ h4 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    opacity: 0.5; /* Static elegant opacity */
+    opacity: 0.8; /* Increased for accessibility/contrast */
+    color: var(--text-primary);
 }
 
 /* Removed hover state to avoid fake button feeling */
