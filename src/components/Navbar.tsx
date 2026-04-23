@@ -36,8 +36,8 @@ export default function Navbar() {
             src="/logo.webp" 
             alt="Echopoint AI" 
             className="logo-img" 
-            width="200" 
-            height="65" 
+            width="164" 
+            height="88" 
             fetchPriority="high" 
             decoding="sync"
           />
