@@ -56,7 +56,7 @@ export default function ServiciosPage() {
         <div className="pbi-catalog">
 
           <aside className="pbi-sidebar reveal">
-            <h4 className="reveal-delay-1">{t('services.filterTitle') || 'Categorías'}</h4>
+            <h2 className="reveal-delay-1" style={{ fontSize: '1.2rem', marginBottom: '1.5rem' }}>{t('services.filterTitle') || 'Categorías'}</h2>
             <nav aria-label="Filtrar servicios">
               <ul className="pbi-cat-list" role="list">
                 <li>

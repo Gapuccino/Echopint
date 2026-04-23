@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
           
           <div className="footer-nav">
-            <h4>{t('footer.nav')}</h4>
+            <h3>{t('footer.nav')}</h3>
             <ul>
               <li><Link href={getLocalizedPath(lang, "/")}>Home</Link></li>
               <li><Link href={getLocalizedPath(lang, "/nosotros")}>{t('nav.about')}</Link></li>
@@ -31,7 +31,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-nav">
-            <h4>{t('services.title')}</h4>
+            <h3>{t('services.title')}</h3>
             <ul>
               <li><Link href={getLocalizedPath(lang, "/servicios")}>Power BI</Link></li>
               <li><Link href={getLocalizedPath(lang, "/servicios")}>{t('services.s1.title')}</Link></li>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-contact">
-            <h4>{t('footer.contact')}</h4>
+            <h3>{t('footer.contact')}</h3>
             <ul className="contact-links">
               <li><a href="mailto:contacto@echopointmx.com"><i className="fa-solid fa-envelope"></i> contacto@echopointmx.com</a></li>
               <li><a href="tel:+525525056854"><i className="fa-solid fa-phone"></i> +52 55 25056854</a></li>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
           
           <div className="footer-social">
-            <h4>{t('footer.follow')}</h4>
+            <h3>{t('footer.follow')}</h3>
             <div className="social-links">
               <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
               <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter"></i></a>

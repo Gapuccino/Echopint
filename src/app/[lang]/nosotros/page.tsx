@@ -103,7 +103,7 @@ export default function NosotrosPage() {
                 />
                 <div className="member-overlay">
                   <div className="member-info">
-                    <h4>Elena R.</h4>
+                    <h3>Elena R.</h3>
                     <span>{t('about.role1')}</span>
                     <div className="member-social">
                       <i className="fa-brands fa-linkedin"></i>
@@ -122,7 +122,7 @@ export default function NosotrosPage() {
                 />
                 <div className="member-overlay">
                   <div className="member-info">
-                    <h4>Marc T.</h4>
+                    <h3>Marc T.</h3>
                     <span>{t('about.role2')}</span>
                     <div className="member-social">
                       <i className="fa-brands fa-linkedin"></i>
@@ -141,7 +141,7 @@ export default function NosotrosPage() {
                 />
                 <div className="member-overlay">
                   <div className="member-info">
-                    <h4>David K.</h4>
+                    <h3>David K.</h3>
                     <span>VP of Operations</span>
                     <div className="member-social">
                       <i className="fa-brands fa-linkedin"></i>

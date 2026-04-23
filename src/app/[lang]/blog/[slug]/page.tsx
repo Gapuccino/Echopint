@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
               height={100}
             />
             <div className="author-info">
-              <h4>{post.author}</h4>
+              <h3>{post.author}</h3>
               <p>Estratega B2B Senior con más de 15 años de experiencia liderando transformaciones digitales y expansiones de mercado.</p>
             </div>
           </div>
