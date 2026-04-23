@@ -4,6 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { 
+  faEnvelope, 
+  faPhone, 
+  faLocationDot 
+} from "@fortawesome/free-solid-svg-icons";
+import { 
+  faLinkedinIn, 
+  faXTwitter, 
+  faInstagram 
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer() {
   const { t, lang } = useLanguage();
@@ -31,7 +42,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-nav">
-            <h3>{t('services.title')}</h3>
+            <h3>{t('nav.services')}</h3>
             <ul>
               <li><Link href={getLocalizedPath(lang, "/servicios")}>Power BI</Link></li>
               <li><Link href={getLocalizedPath(lang, "/servicios")}>{t('services.s1.title')}</Link></li>
@@ -43,18 +54,18 @@ export default function Footer() {
           <div className="footer-contact">
             <h3>{t('footer.contact')}</h3>
             <ul className="contact-links">
-              <li><a href="mailto:contacto@echopointmx.com"><i className="fa-solid fa-envelope"></i> contacto@echopointmx.com</a></li>
-              <li><a href="tel:+525525056854"><i className="fa-solid fa-phone"></i> +52 55 25056854</a></li>
-              <li><span><i className="fa-solid fa-location-dot"></i> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.</span></li>
+              <li><a href="mailto:contacto@echopointmx.com"><FontAwesomeIcon icon={faEnvelope} /> contacto@echopointmx.com</a></li>
+              <li><a href="tel:+525525056854"><FontAwesomeIcon icon={faPhone} /> +52 55 25056854</a></li>
+              <li><span><FontAwesomeIcon icon={faLocationDot} /> Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br />Zona Santa Engracia, 66265<br />San Pedro Garza García, N.L.</span></li>
             </ul>
           </div>
           
           <div className="footer-social">
             <h3>{t('footer.follow')}</h3>
             <div className="social-links">
-              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-linkedin-in"></i></a>
-              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-x-twitter"></i></a>
-              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://linkedin.com/company/echopoint-ai" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+              <a href="https://x.com/echopoint_ai" aria-label="X (Twitter)" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faXTwitter} /></a>
+              <a href="https://instagram.com/echopoint_ai" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faInstagram} /></a>
             </div>
           </div>
         </div>

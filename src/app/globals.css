@@ -2378,9 +2378,15 @@ h4 {
     line-height: 1.5;
 }
 
-.footer-contact i {
+.footer-contact .contact-links li a:hover {
+    color: var(--tech-cyan);
+}
+
+.footer-contact i,
+.footer-contact svg {
     color: var(--tech-cyan);
     margin-top: 0.3rem;
+    width: 16px;
 }
 
 .social-links {
