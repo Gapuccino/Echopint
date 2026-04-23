@@ -122,7 +122,6 @@ export default async function RootLayout({
   return (
     <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}

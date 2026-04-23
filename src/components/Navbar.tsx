@@ -34,6 +34,8 @@ export default function Navbar() {
         <Link href={getLocalizedPath(lang, "/")} className="logo" onClick={() => setMobileOpen(false)}>
           <img 
             src="/logo.webp" 
+            srcset="/logo-mobile.webp 200w, /logo.webp 400w"
+            sizes="(max-width: 768px) 200px, 400px"
             alt="Echopoint AI" 
             className="logo-img" 
             width="164" 
