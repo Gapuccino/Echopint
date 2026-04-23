@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
 import ContactForm from "@/components/ContactForm";
-import Chatbot from "@/components/Chatbot";
+
 import { useLanguage } from "@/context/LanguageContext";
 
 import { dictionaries } from "@/i18n/dictionaries";
@@ -95,7 +95,7 @@ export default function ServiceDetailPage() {
         </section>
       </main>
 
-      <Chatbot />
+
       <Footer />
     </>
   );

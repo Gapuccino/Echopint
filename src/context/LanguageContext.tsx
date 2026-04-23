@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode, useEffect, useTransition } from "react";
 import { useRouter, usePathname } from "next/navigation";
-import { dictionaries } from "@/i18n/dictionaries";
+import { dictionaries, Dictionary } from "@/i18n/dictionaries";
 import { getInternalPath, getLocalizedPath } from "@/i18n/routing";
 
 export type Language = "ES" | "EN" | "FR" | "PT";
@@ -16,7 +16,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children, initialLang }: { children: ReactNode, initialLang?: Language }) => {
+export const LanguageProvider = ({ children, initialLang, dictionary }: { children: ReactNode, initialLang?: Language, dictionary: Dictionary }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -54,7 +54,7 @@ export const LanguageProvider = ({ children, initialLang }: { children: ReactNod
   };
 
   const t = (key: string): string => {
-    const dict = dictionaries[lang];
+    const dict = dictionary;
     const keys = key.split(".");
     let value: any = dict;
 

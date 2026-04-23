@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
-import Chatbot from "@/components/Chatbot";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
 import Link from "next/link";
@@ -199,7 +198,7 @@ export default function ServiciosPage() {
 
       </main>
 
-      <Chatbot />
+
       <Footer />
     </>
   );

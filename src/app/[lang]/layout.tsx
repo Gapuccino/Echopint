@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { getDictionary } from "@/i18n/dictionaries";
+import dynamic from "next/dynamic";
 import "../globals.css";
+
+const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -113,13 +117,23 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
+  const dictionary = getDictionary(lang);
   return (
     <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          as="style"
+        />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          media="print"
+          onLoad={(e) => {
+            (e.target as HTMLLinkElement).media = 'all';
+          }}
         />
         <script
           type="application/ld+json"
@@ -131,7 +145,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <LanguageProvider initialLang={lang as any}>
+        <LanguageProvider initialLang={lang as any} dictionary={dictionary}>
           <a
             href="#main-content"
             className="sr-only"
@@ -148,6 +162,7 @@ export default async function RootLayout({
             Skip to content
           </a>
           {children}
+          <Chatbot />
         </LanguageProvider>
       </body>
     </html>

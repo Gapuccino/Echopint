@@ -747,3 +747,8 @@ export const dictionaries = {
 
 export type Dictionary = typeof dictionaries.ES;
 export type DictionaryKey = keyof typeof dictionaries;
+
+export const getDictionary = (lang: string): Dictionary => {
+  const upper = lang.toUpperCase() as DictionaryKey;
+  return dictionaries[upper] || dictionaries.ES;
+};

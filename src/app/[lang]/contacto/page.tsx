@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
 import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
-import Chatbot from "@/components/Chatbot";
+
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function ContactoPage() {
@@ -57,7 +57,7 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      <Chatbot />
+
       <Footer />
     </>
   );

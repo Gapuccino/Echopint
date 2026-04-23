@@ -4,7 +4,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
-import Chatbot from "@/components/Chatbot";
+
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function NosotrosPage() {
@@ -155,7 +155,7 @@ export default function NosotrosPage() {
 
       </main>
 
-      <Chatbot />
+
       <Footer />
     </>
   );

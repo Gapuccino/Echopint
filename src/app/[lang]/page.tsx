@@ -4,8 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import NeuralCanvas from "@/components/NeuralCanvas";
-import Chatbot from "@/components/Chatbot";
+import dynamic from "next/dynamic";
+const NeuralCanvas = dynamic(() => import("@/components/NeuralCanvas"), { ssr: false });
 import AnimationObserver from "@/components/AnimationObserver";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts } from "@/data/posts";
@@ -241,7 +241,7 @@ export default function Home() {
 
       </main>
 
-      <Chatbot />
+
       <Footer />
     </>
   );
