@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -34,6 +34,36 @@ export default function Home() {
   const { t, lang } = useLanguage();
   const topInsights = blogPosts.slice(0, 3);
   const [magnetStatus, setMagnetStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [showCanvas, setShowCanvas] = useState(false);
+
+  useEffect(() => {
+    let mounted = true;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const isSmallScreen = window.matchMedia("(max-width: 767px)").matches;
+
+    if (prefersReducedMotion || isSmallScreen) return;
+
+    const revealCanvas = () => {
+      if (!mounted) return;
+      setShowCanvas(true);
+    };
+
+    if (typeof window.requestIdleCallback === "function") {
+      const idleId = window.requestIdleCallback(revealCanvas, { timeout: 2500 });
+      return () => {
+        mounted = false;
+        if (typeof window.cancelIdleCallback === "function") {
+          window.cancelIdleCallback(idleId);
+        }
+      };
+    }
+
+    const timeoutId = setTimeout(revealCanvas, 1600);
+    return () => {
+      mounted = false;
+      clearTimeout(timeoutId);
+    };
+  }, []);
 
   const handleMagnetSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -66,7 +96,7 @@ export default function Home() {
       <main id="main-content">
         {/* Hero Section */}
         <section id="inicio" className={styles.heroSection}>
-          <NeuralCanvas />
+          {showCanvas ? <NeuralCanvas /> : null}
           <div className={styles.heroOverlay}></div>
           
           <div className={`container ${styles.heroContainer}`}>

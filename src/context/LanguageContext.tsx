@@ -8,6 +8,11 @@ import dynamic from "next/dynamic";
 
 const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
+type IdleWindow = Window & {
+  requestIdleCallback?: (callback: () => void, options?: { timeout: number }) => number;
+  cancelIdleCallback?: (handle: number) => void;
+};
+
 export type Language = "ES" | "EN" | "FR" | "PT";
 
 interface LanguageContextType {
@@ -23,6 +28,7 @@ export const LanguageProvider = ({ children, initialLang }: { children: ReactNod
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
+  const [showChatbot, setShowChatbot] = useState(false);
   
   // Derive active language completely from the Server URL parameter
   const upperInitial = initialLang ? (initialLang.toUpperCase() as Language) : undefined;
@@ -33,6 +39,47 @@ export const LanguageProvider = ({ children, initialLang }: { children: ReactNod
     document.documentElement.lang = lang.toLowerCase();
     localStorage.setItem("lang", lang);
   }, [lang]);
+
+  useEffect(() => {
+    let mounted = true;
+    let idleId: number | null = null;
+    let timeoutId: ReturnType<typeof setTimeout> | null = null;
+
+    const reveal = () => {
+      if (!mounted) return;
+      setShowChatbot(true);
+      window.removeEventListener("pointerdown", reveal);
+      window.removeEventListener("keydown", reveal);
+      window.removeEventListener("scroll", reveal);
+      window.removeEventListener("touchstart", reveal);
+    };
+
+    window.addEventListener("pointerdown", reveal, { passive: true });
+    window.addEventListener("keydown", reveal);
+    window.addEventListener("scroll", reveal, { passive: true });
+    window.addEventListener("touchstart", reveal, { passive: true });
+
+    const win = window as IdleWindow;
+    if (typeof win.requestIdleCallback === "function") {
+      idleId = win.requestIdleCallback(reveal, { timeout: 2500 });
+    } else {
+      timeoutId = setTimeout(reveal, 1800);
+    }
+
+    return () => {
+      mounted = false;
+      window.removeEventListener("pointerdown", reveal);
+      window.removeEventListener("keydown", reveal);
+      window.removeEventListener("scroll", reveal);
+      window.removeEventListener("touchstart", reveal);
+      if (idleId !== null && typeof win.cancelIdleCallback === "function") {
+        win.cancelIdleCallback(idleId);
+      }
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, []);
 
   const setLang = (newLang: Language) => {
     if (newLang === lang) return;
@@ -72,7 +119,7 @@ export const LanguageProvider = ({ children, initialLang }: { children: ReactNod
   return (
     <LanguageContext.Provider value={{ lang, setLang, t, isPending }}>
       {children}
-      <Chatbot />
+      {showChatbot ? <Chatbot /> : null}
     </LanguageContext.Provider>
   );
 }

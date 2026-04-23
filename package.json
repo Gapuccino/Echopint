@@ -27,10 +27,9 @@
     "typescript": "^5"
   },
   "browserslist": [
-    "> 0.3%",
-    "not dead",
-    "not op_mini all",
-    "not IE 11",
-    "last 2 versions"
+    "chrome 111",
+    "edge 111",
+    "firefox 111",
+    "safari 16.4"
   ]
 }

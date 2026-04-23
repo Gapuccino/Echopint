@@ -22,8 +22,8 @@ export default function BlogCard({ post, delay = 1, isPriority = false }: { post
           fetchPriority={isPriority ? "high" : "auto"}
           loading={isPriority ? "eager" : "lazy"}
           style={{ objectFit: 'cover' }}
-          quality={45}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          quality={35}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 45vw, 30vw"
         />
       </div>
       <div className="blog-content">
