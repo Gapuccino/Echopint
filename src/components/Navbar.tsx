@@ -41,6 +41,7 @@ export default function Navbar() {
             height={65} 
             priority 
             fetchPriority="high"
+            loading="eager"
             sizes="200px"
           />
         </Link>

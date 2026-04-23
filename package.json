@@ -27,10 +27,10 @@
     "typescript": "^5"
   },
   "browserslist": [
-    "Chrome >= 90",
-    "Edge >= 90",
-    "Safari >= 15",
-    "Firefox >= 90",
-    "not op_mini all"
+    "> 0.3%",
+    "not dead",
+    "not op_mini all",
+    "not IE 11",
+    "last 2 versions"
   ]
 }
