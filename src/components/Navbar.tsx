@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useLanguage } from "@/context/LanguageContext";
 import { getLocalizedPath } from "@/i18n/routing";
@@ -33,16 +32,14 @@ export default function Navbar() {
     <header className="header">
       <div className="container navbar">
         <Link href={getLocalizedPath(lang, "/")} className="logo" onClick={() => setMobileOpen(false)}>
-          <Image 
+          <img 
             src="/logo.webp" 
             alt="Echopoint AI" 
             className="logo-img" 
-            width={200} 
-            height={65} 
-            priority 
-            fetchPriority="high"
-            loading="eager"
-            sizes="200px"
+            width="200" 
+            height="65" 
+            fetchPriority="high" 
+            decoding="sync"
           />
         </Link>
 
