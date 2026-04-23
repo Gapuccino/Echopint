@@ -126,7 +126,7 @@ export default function Home() {
                   <div className="reviewer-info">
                     <Image src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Roberto Méndez, CEO de FinTech Latam" className="reviewer-img" width={100} height={100} />
                     <div>
-                      <h4>Roberto Méndez</h4>
+                      <h3>Roberto Méndez</h3>
                       <span className="reviewer-role">CEO, FinTech Latam</span>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export default function Home() {
                   <div className="reviewer-info">
                     <Image src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Jenkins, VP Operations de GlobalLogistics" className="reviewer-img" width={100} height={100} />
                     <div>
-                      <h4>Sarah Jenkins</h4>
+                      <h3>Sarah Jenkins</h3>
                       <span className="reviewer-role">VP Operations, GlobalLogistics</span>
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function Home() {
                   <div className="reviewer-info">
                     <Image src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="David Kline, Founder de GreenEnergy Solutions" className="reviewer-img" width={100} height={100} />
                     <div>
-                      <h4>David Kline</h4>
+                      <h3>David Kline</h3>
                       <span className="reviewer-role">Founder, GreenEnergy Solutions</span>
                     </div>
                   </div>

@@ -31,7 +31,16 @@ export default function Navbar() {
     <header className="header">
       <div className="container navbar">
         <Link href={getLocalizedPath(lang, "/")} className="logo" onClick={() => setMobileOpen(false)}>
-          <Image src="/logo.webp" alt="Echopoint AI" className="logo-img" width={200} height={65} priority />
+          <Image 
+            src="/logo.webp" 
+            alt="Echopoint AI" 
+            className="logo-img" 
+            width={200} 
+            height={65} 
+            priority 
+            fetchPriority="high"
+            sizes="200px"
+          />
         </Link>
 
         {/* Desktop nav */}
