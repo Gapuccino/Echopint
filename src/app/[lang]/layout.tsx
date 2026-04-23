@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { getDictionary } from "@/i18n/dictionaries";
-import dynamic from "next/dynamic";
 import "../globals.css";
-
-const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -162,7 +159,6 @@ export default async function RootLayout({
             Skip to content
           </a>
           {children}
-          <Chatbot />
         </LanguageProvider>
       </body>
     </html>

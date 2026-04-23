@@ -4,6 +4,9 @@ import { createContext, useContext, useState, ReactNode, useEffect, useTransitio
 import { useRouter, usePathname } from "next/navigation";
 import { dictionaries, Dictionary } from "@/i18n/dictionaries";
 import { getInternalPath, getLocalizedPath } from "@/i18n/routing";
+import dynamic from "next/dynamic";
+
+const Chatbot = dynamic(() => import("@/components/Chatbot"), { ssr: false });
 
 export type Language = "ES" | "EN" | "FR" | "PT";
 
@@ -69,6 +72,7 @@ export const LanguageProvider = ({ children, initialLang, dictionary }: { childr
   return (
     <LanguageContext.Provider value={{ lang, setLang, t, isPending }}>
       {children}
+      <Chatbot />
     </LanguageContext.Provider>
   );
 }
