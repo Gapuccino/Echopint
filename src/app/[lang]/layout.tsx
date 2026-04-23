@@ -114,7 +114,6 @@ export default async function RootLayout({
   params: Promise<{ lang: string }>;
 }>) {
   const { lang } = await params;
-  const dictionary = getDictionary(lang);
   return (
     <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
       <head>
@@ -127,10 +126,6 @@ export default async function RootLayout({
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-          media="print"
-          onLoad={(e) => {
-            (e.target as HTMLLinkElement).media = 'all';
-          }}
         />
         <script
           type="application/ld+json"
@@ -142,7 +137,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
-        <LanguageProvider initialLang={lang as any} dictionary={dictionary}>
+        <LanguageProvider initialLang={lang as any}>
           <a
             href="#main-content"
             className="sr-only"

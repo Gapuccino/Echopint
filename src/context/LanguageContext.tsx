@@ -19,7 +19,7 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider = ({ children, initialLang, dictionary }: { children: ReactNode, initialLang?: Language, dictionary: Dictionary }) => {
+export const LanguageProvider = ({ children, initialLang }: { children: ReactNode, initialLang?: Language }) => {
   const router = useRouter();
   const pathname = usePathname();
   const [isPending, startTransition] = useTransition();
@@ -57,7 +57,7 @@ export const LanguageProvider = ({ children, initialLang, dictionary }: { childr
   };
 
   const t = (key: string): string => {
-    const dict = dictionary;
+    const dict = dictionaries[lang];
     const keys = key.split(".");
     let value: any = dict;
 
