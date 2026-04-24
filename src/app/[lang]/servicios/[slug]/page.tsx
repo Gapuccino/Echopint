@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -62,6 +63,9 @@ export default function ServiceDetailPage() {
         <section className="svc-hero-detail fade-in-up">
           <div className="container svc-hero-grid">
             <div className="svc-hero-text">
+              <Link href={`/${lang}/servicios`} className="back-link">
+                <i className="fa-solid fa-arrow-left"></i> {t('nav.backToServices')}
+              </Link>
               <span className="subtitle">{service.title}</span>
               <h1>{service.heroTitle}</h1>
               <p className="long-desc">{service.longDesc}</p>

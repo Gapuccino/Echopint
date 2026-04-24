@@ -1,6 +1,6 @@
 export const dictionaries = {
   ES: {
-    nav: { services: "Servicios", about: "Nosotros", blog: "Blog", contact: "Conectar" },
+    nav: { services: "Servicios", about: "Nosotros", blog: "Blog", contact: "Conectar", backToServices: "Volver a servicios" },
     hero: {
       subtitle: "Evolución Estratégica",
       title: 'Consultoría Empresarial: <br/><span class="highlight-gradient">Análisis, Estrategia & Crecimiento</span>',
@@ -186,7 +186,7 @@ export const dictionaries = {
     }
   },
   EN: {
-    nav: { services: "Services", about: "About Us", blog: "Blog", contact: "Connect" },
+    nav: { services: "Services", about: "About Us", blog: "Blog", contact: "Connect", backToServices: "Back to services" },
     hero: {
       subtitle: "Strategic Evolution",
       title: 'Business Consulting: <br/><span class="highlight-gradient">Analysis, Strategy & Growth</span>',
@@ -372,7 +372,7 @@ export const dictionaries = {
     }
   },
   FR: {
-    nav: { services: "Services", about: "À Propos", blog: "Blog", contact: "Connecter" },
+    nav: { services: "Services", about: "À Propos", blog: "Blog", contact: "Connecter", backToServices: "Retour aux services" },
     hero: {
       subtitle: "Évolution Stratégique",
       title: 'Conseil en Entreprise : <br/><span class="highlight-gradient">Analyse, Stratégie & Croissance</span>',
@@ -558,7 +558,7 @@ export const dictionaries = {
     }
   },
   PT: {
-    nav: { services: "Serviços", about: "Sobre Nós", blog: "Blog", contact: "Conectar" },
+    nav: { services: "Serviços", about: "Sobre Nós", blog: "Blog", contact: "Conectar", backToServices: "Voltar para serviços" },
     hero: {
       subtitle: "Evolução Estratégica",
       title: 'Consultoria Empresarial: <br/><span class="highlight-gradient">Análise, Estratégia e Crescimento</span>',

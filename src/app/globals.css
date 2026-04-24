@@ -835,6 +835,30 @@ h4 {
     position: relative;
 }
 
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    transition: var(--transition-fast);
+    font-weight: 500;
+}
+
+.back-link i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--tech-cyan);
+}
+
+.back-link:hover i {
+    transform: translateX(-5px);
+}
+
 .svc-hero-grid {
     display: grid;
     grid-template-columns: 1fr 450px;
