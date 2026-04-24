@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
 import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -29,15 +31,15 @@ export default function ContactoPage() {
             
             <div className="info-list" style={{ marginTop: "2rem" }}>
               <div className="info-item">
-                <div className="icon"><i className="fa-solid fa-envelope"></i></div>
+                <div className="icon"><FontAwesomeIcon icon={faEnvelope} /></div>
                 <a href="mailto:contacto@echopointmx.com">contacto@echopointmx.com</a>
               </div>
               <div className="info-item">
-                <div className="icon"><i className="fa-solid fa-phone"></i></div>
+                <div className="icon"><FontAwesomeIcon icon={faPhone} /></div>
                 <a href="tel:+525525056854">+52 55 25056854</a>
               </div>
               <div className="info-item">
-                <div className="icon"><i className="fa-solid fa-location-dot"></i></div>
+                <div className="icon"><FontAwesomeIcon icon={faLocationDot} /></div>
                 <span>Av. Ricardo Margain Zozaya 335-Piso 4 y 5,<br/>Zona Santa Engracia, 66265<br/>San Pedro Garza García, N.L.</span>
               </div>
             </div>

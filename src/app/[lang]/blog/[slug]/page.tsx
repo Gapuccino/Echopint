@@ -2,6 +2,13 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowLeft,
+  faArrowRight,
+  faCalendarDays,
+  faClock,
+} from "@fortawesome/free-solid-svg-icons";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
@@ -57,14 +64,14 @@ export default async function BlogPostPage({ params }: Props) {
         <article className="blog-post fade-in-up">
           <header className="article-header">
             <Link href="/blog" className="back-link" style={{ display: "inline-block", marginBottom: "2rem", color: "var(--text-secondary)", fontSize: "0.9rem" }}>
-              <i className="fa-solid fa-arrow-left"></i> Volver al Blog
+              <FontAwesomeIcon icon={faArrowLeft} /> Volver al Blog
             </Link>
             <br />
             <span className="article-category">{post.category}</span>
             <h1 className="article-title">{post.title}</h1>
             <div className="article-meta">
-              <span><i className="fa-regular fa-calendar"></i> {post.date}</span>
-              <span><i className="fa-regular fa-clock"></i> 5 min de lectura</span>
+              <span><FontAwesomeIcon icon={faCalendarDays} /> {post.date}</span>
+              <span><FontAwesomeIcon icon={faClock} /> 5 min de lectura</span>
             </div>
           </header>
 
@@ -101,7 +108,7 @@ export default async function BlogPostPage({ params }: Props) {
               {nextPost && (
                 <>
                   <span>Siguiente Artículo</span>
-                  <Link href={`/blog/${nextPost.slug}`}>{nextPost.title} <i className="fa-solid fa-arrow-right"></i></Link>
+                  <Link href={`/blog/${nextPost.slug}`}>{nextPost.title} <FontAwesomeIcon icon={faArrowRight} /></Link>
                 </>
               )}
             </div>

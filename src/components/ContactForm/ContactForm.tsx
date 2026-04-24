@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCheckCircle,
+  faCircleExclamation,
+  faCircleNotch,
+} from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./ContactForm.module.css";
 
@@ -199,18 +205,18 @@ export default function ContactForm() {
         disabled={status === "loading"}
       >
         <span className={styles.btnText}>{labels.btn}</span>
-        <span className={styles.btnLoader}><i className="fa-solid fa-circle-notch fa-spin"></i></span>
+        <span className={styles.btnLoader}><FontAwesomeIcon icon={faCircleNotch} spin /></span>
       </button>
 
       {status === "success" && (
         <div className={`${styles.formStatus} ${styles.successMessage}`}>
-          <i className="fa-solid fa-check-circle"></i>
+          <FontAwesomeIcon icon={faCheckCircle} />
           <p>{labels.success}</p>
         </div>
       )}
       {status === "error" && (
         <div className={`${styles.formStatus} ${styles.errorMessage}`}>
-          <i className="fa-solid fa-circle-exclamation"></i>
+          <FontAwesomeIcon icon={faCircleExclamation} />
           <p>{errorMsg}</p>
         </div>
       )}

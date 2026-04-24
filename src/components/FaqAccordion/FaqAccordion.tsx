@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "@/context/LanguageContext";
 import styles from "./FaqAccordion.module.css";
 
@@ -50,7 +52,7 @@ export default function FaqAccordion() {
             aria-expanded={activeIndex === i}
           >
             {faq.q}
-            <i className="fa-solid fa-plus"></i>
+            <FontAwesomeIcon icon={faPlus} />
           </button>
           <div className={`${styles.faqAnswer} ${activeIndex === i ? styles.active : ""}`} style={activeIndex === i ? { maxHeight: '500px' } : {}}>
             <p>{faq.a}</p>
