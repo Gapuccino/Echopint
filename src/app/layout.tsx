@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import ExternalStyles from "@/components/ExternalStyles";
 
 const montserrat = Montserrat({
   subsets: ["latin", "latin-ext"],
@@ -30,9 +29,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
       <head>
-        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
         <link rel="preload" href="/logo.webp" as="image" fetchPriority="high" />
-        <ExternalStyles />
       </head>
       <body>
         {children}
