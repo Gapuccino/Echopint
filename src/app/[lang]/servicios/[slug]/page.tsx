@@ -63,7 +63,7 @@ export default function ServiceDetailPage() {
         <section className="svc-hero-detail fade-in-up">
           <div className="container svc-hero-grid">
             <div className="svc-hero-text">
-              <Link href={`/${lang}/servicios`} className="back-link">
+              <Link href={`/${lang.toLowerCase()}/servicios`} className="back-link">
                 <i className="fa-solid fa-arrow-left"></i> {t('nav.backToServices')}
               </Link>
               <span className="subtitle">{service.title}</span>
