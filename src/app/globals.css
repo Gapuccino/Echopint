@@ -836,14 +836,15 @@ h4 {
 }
 
 .back-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 0.5rem;
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
     transition: var(--transition-fast);
     font-weight: 500;
+    width: fit-content;
 }
 
 .back-link i {
