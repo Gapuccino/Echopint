@@ -25,8 +25,9 @@ export default function NeuralCanvas() {
 
     function resize() {
       if (!canvas) return;
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const rect = canvas.getBoundingClientRect();
+      width = rect.width;
+      height = rect.height;
       canvas.width = width;
       canvas.height = height;
     }
@@ -146,8 +147,10 @@ export default function NeuralCanvas() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
+        if (!canvas) return;
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
     };
 
     const handleMouseLeave = () => {
