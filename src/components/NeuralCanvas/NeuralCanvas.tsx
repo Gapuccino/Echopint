@@ -163,9 +163,14 @@ export default function NeuralCanvas() {
     window.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
 
-    resize();
-    initParticles();
-    animate();
+    const handleInitialInit = () => {
+      resize();
+      initParticles();
+      animate();
+    };
+
+    // Use requestAnimationFrame to avoid forced reflow during initial mount
+    requestAnimationFrame(handleInitialInit);
 
     return () => {
       window.removeEventListener("resize", handleResize);
