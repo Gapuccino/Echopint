@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
+import styles from "./ContactForm.module.css";
 
 const formLabels: Record<string, Record<string, string>> = {
   ES: {
@@ -67,11 +68,11 @@ const formLabels: Record<string, Record<string, string>> = {
     emailErr: "Por favor, insira um email válido.",
     subject: "Assunto",
     subjectPh: "Ex. Solicitação de Consultoria",
-    subjectErr: "O assunto é muito curto.",
+    subjectErr: "O asunto é muito curto.",
     message: "Mensagem",
     messagePh: "Conte-nos sobre seus desafios...",
     messageErr: "Por favor, forneça mais detalhes.",
-    btn: "Enviar Mensagem",
+    btn: "Enviar Mensaje",
     success: "Mensagem enviada com sucesso! Entraremos em contato em até 24 horas.",
     errorFields: "Erro ao enviar. Por favor, preencha todos os campos corretamente.",
     errorServer: "Erro do servidor. Tente novamente mais tarde."
@@ -133,8 +134,8 @@ export default function ContactForm() {
   };
 
   return (
-    <form className="contact-form" id="main-contact-form" onSubmit={handleSubmit} noValidate>
-      <div className="form-group">
+    <form className={styles.contactForm} id="main-contact-form" onSubmit={handleSubmit} noValidate>
+      <div className={styles.formGroup}>
         <label htmlFor="name">{labels.name}</label>
         <input
           type="text"
@@ -145,9 +146,9 @@ export default function ContactForm() {
           value={formData.name}
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
         />
-        <span className="error-msg">{labels.nameErr}</span>
+        <span className={styles.errorMsg}>{labels.nameErr}</span>
       </div>
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="email">{labels.email}</label>
         <input
           type="email"
@@ -157,9 +158,9 @@ export default function ContactForm() {
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
         />
-        <span className="error-msg">{labels.emailErr}</span>
+        <span className={styles.errorMsg}>{labels.emailErr}</span>
       </div>
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="subject">{labels.subject}</label>
         <input
           type="text"
@@ -170,9 +171,9 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
         />
-        <span className="error-msg">{labels.subjectErr}</span>
+        <span className={styles.errorMsg}>{labels.subjectErr}</span>
       </div>
-      <div className="form-group">
+      <div className={styles.formGroup}>
         <label htmlFor="message">{labels.message}</label>
         <textarea
           id="message"
@@ -183,7 +184,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         ></textarea>
-        <span className="error-msg">{labels.messageErr}</span>
+        <span className={styles.errorMsg}>{labels.messageErr}</span>
       </div>
 
       {/* Honeypot for Spam Protection */}
@@ -194,21 +195,21 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className={`btn btn-primary full-width submit-btn ${status === "loading" ? "loading" : ""}`}
+        className={`btn btn-primary full-width ${styles.submitBtn} ${status === "loading" ? styles.loading : ""}`}
         disabled={status === "loading"}
       >
-        <span className="btn-text">{labels.btn}</span>
-        <span className="btn-loader"><i className="fa-solid fa-circle-notch fa-spin"></i></span>
+        <span className={styles.btnText}>{labels.btn}</span>
+        <span className={styles.btnLoader}><i className="fa-solid fa-circle-notch fa-spin"></i></span>
       </button>
 
       {status === "success" && (
-        <div className="form-status success-message">
+        <div className={`${styles.formStatus} ${styles.successMessage}`}>
           <i className="fa-solid fa-check-circle"></i>
           <p>{labels.success}</p>
         </div>
       )}
       {status === "error" && (
-        <div className="form-status error-message">
+        <div className={`${styles.formStatus} ${styles.errorMessage}`}>
           <i className="fa-solid fa-circle-exclamation"></i>
           <p>{errorMsg}</p>
         </div>

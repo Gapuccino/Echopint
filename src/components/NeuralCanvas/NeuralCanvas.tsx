@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import styles from "./NeuralCanvas.module.css";
 
 export default function NeuralCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -174,5 +175,5 @@ export default function NeuralCanvas() {
     };
   }, []);
 
-  return <canvas id="neural-canvas" ref={canvasRef}></canvas>;
+  return <canvas className={styles.neuralCanvas} ref={canvasRef}></canvas>;
 }

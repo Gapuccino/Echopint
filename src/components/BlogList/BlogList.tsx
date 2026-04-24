@@ -2,10 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { BlogPost } from "@/data/posts";
-import BlogCard from "./BlogCard";
+import BlogCard from "../BlogCard";
 import { useLanguage } from "@/context/LanguageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import styles from "./BlogList.module.css";
 
 export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] }) {
   const [filter, setFilter] = useState("all");
@@ -43,9 +44,9 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
 
   return (
     <>
-      <div className="blog-controls fade-in-up">
-        <div className="search-bar">
-          <div className="search-input-wrap">
+      <div className={`${styles.blogControls} fade-in-up`}>
+        <div className={styles.searchBar}>
+          <div className={styles.searchInputWrap}>
             <FontAwesomeIcon icon={faMagnifyingGlass} aria-hidden="true" />
             <input 
               type="text" 
@@ -56,11 +57,11 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
             />
           </div>
         </div>
-        <div className="category-filters">
+        <div className={styles.categoryFilters}>
           {["all", "Estrategia", "Tecnología", "Ventas", "Expansión"].map(cat => (
             <button 
               key={cat}
-              className={`filter-btn ${filter === cat ? "active" : ""}`} 
+              className={`${styles.filterBtn} ${filter === cat ? styles.active : ""}`} 
               onClick={() => setFilter(cat)}
             >
               {cat === "all" ? "Todos" : cat}
@@ -69,7 +70,7 @@ export default function BlogList({ initialPosts }: { initialPosts: BlogPost[] })
         </div>
       </div>
 
-      <div className="blog-grid-feed spectacular-grid">
+      <div className={styles.blogGridFeed}>
         {filteredPosts.map((post, i) => (
           <BlogCard key={post.id} post={post} delay={(i % 3) + 1} isPriority={i === 0} />
         ))}
