@@ -18,8 +18,9 @@ export function middleware(request: NextRequest) {
   }
 
   // Check if there is any supported locale in the pathname
+  const pathnameLower = pathname.toLowerCase();
   const pathnameHasLocale = locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    (locale) => pathnameLower.startsWith(`/${locale}/`) || pathnameLower === `/${locale}`
   );
 
   if (pathnameHasLocale) {

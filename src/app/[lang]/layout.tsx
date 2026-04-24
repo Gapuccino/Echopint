@@ -1,27 +1,11 @@
 import type { Metadata } from "next";
-import { Montserrat, Space_Grotesk } from "next/font/google";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { getDictionary } from "@/i18n/dictionaries";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import "../globals.css";
 
 // Prevent Font Awesome from adding its CSS since we did it above
 config.autoAddCss = false;
-
-const montserrat = Montserrat({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-main",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
@@ -118,45 +102,24 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
   return (
-    <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
-      <head>
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-          crossOrigin="anonymous" 
-          referrerPolicy="no-referrer" 
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite) }}
-        />
-      </head>
-      <body>
-        <LanguageProvider initialLang={lang as any}>
-          <a
-            href="#main-content"
-            className="sr-only"
-            style={{
-              position: "absolute",
-              top: "-100px",
-              left: 0,
-              background: "var(--tech-cyan)",
-              color: "var(--bg-dark)",
-              padding: "0.5rem 1rem",
-              zIndex: 9999,
-            }}
-          >
-            Skip to content
-          </a>
-          {children}
-        </LanguageProvider>
-      </body>
-    </html>
+    <LanguageProvider initialLang={lang as any}>
+      <a
+        href="#main-content"
+        className="sr-only"
+        style={{
+          position: "absolute",
+          top: "-100px",
+          left: 0,
+          background: "var(--tech-cyan)",
+          color: "var(--bg-dark)",
+          padding: "0.5rem 1rem",
+          zIndex: 9999,
+        }}
+      >
+        Skip to content
+      </a>
+      {children}
+    </LanguageProvider>
   );
 }
 
