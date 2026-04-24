@@ -139,6 +139,33 @@
     transform: translateY(0);
 }
 
+.langMenu li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.langMenu button {
+    width: 100%;
+    text-align: left;
+    padding: 0.7rem 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: var(--font-main);
+    display: block;
+}
+
+.langMenu button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--tech-cyan);
+}
+
 .mobileMenuBtn {
     display: none;
     flex-direction: column;
