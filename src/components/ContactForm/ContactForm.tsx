@@ -177,7 +177,7 @@ export default function ContactForm() {
         <label htmlFor="message">{labels.message}</label>
         <textarea
           id="message"
-          rows={5}
+          rows={2}
           placeholder={labels.messagePh}
           required
           minLength={10}
