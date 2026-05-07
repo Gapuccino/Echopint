@@ -240,7 +240,7 @@ h1, h2, h3, h4 {
 /* Section snap — Nuclear Fix (Smoother) */
 html[data-snap="true"], 
 html[data-snap="true"] body {
-    scroll-snap-type: y mandatory !important;
+    scroll-snap-type: y proximity !important;
     scroll-behavior: smooth !important;
 }
 
@@ -269,12 +269,16 @@ html[data-snap="true"] #main-content > section#popular-services {
     padding: 2.5rem 0 !important;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
     html[data-snap="true"],
     html[data-snap="true"] body {
         scroll-snap-type: none !important;
     }
     html[data-snap="true"] #main-content > * {
         scroll-snap-align: none !important;
+        scroll-snap-stop: normal !important;
+    }
+    html[data-snap="true"] #main-content > section.section {
+        min-height: auto !important;
     }
 }

@@ -109,4 +109,10 @@
     .arrowButton {
         display: none;
     }
+    .carouselContainer {
+        scroll-snap-type: none;
+    }
+    .carouselItem {
+        scroll-snap-align: none;
+    }
 }
