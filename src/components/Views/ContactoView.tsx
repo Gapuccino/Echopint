@@ -7,6 +7,7 @@ import ContactForm from "@/components/ContactForm";
 import FaqAccordion from "@/components/FaqAccordion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import ProtectedEmail from "@/components/ProtectedEmail/ProtectedEmail";
 
 import { useLanguage } from "@/context/LanguageContext";
 import NeuralCanvas from "@/components/NeuralCanvas/NeuralCanvasLoader";
@@ -39,7 +40,7 @@ export default function ContactoPage() {
                 <div className={styles.iconWrapper}><FontAwesomeIcon icon={faEnvelope} /></div>
                 <div className={styles.infoText}>
                   <h3>{t('contact.email') || 'Email'}</h3>
-                  <a href="mailto:contacto@echopointmx.com" title="Enviar correo a contacto@echopointmx.com">contacto@echopointmx.com</a>
+                  <ProtectedEmail email="contacto@echopointmx.com" title="Enviar correo a contacto@echopointmx.com" />
                 </div>
               </div>
               <div className={`${styles.infoItem} reveal reveal-delay-2`}>

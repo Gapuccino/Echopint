@@ -8,6 +8,7 @@ import { getLocalizedPath } from "@/i18n/routing";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faLinkedinIn, faXTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import ProtectedEmail from "@/components/ProtectedEmail/ProtectedEmail";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -71,7 +72,7 @@ export default function Footer() {
           <div className={styles.footerContact}>
             <h3>{t('footer.contact')}</h3>
             <ul className={styles.contactLinks}>
-              <li><a href="mailto:contacto@echopointmx.com" title="Enviar correo a contacto@echopointmx.com"><span className={styles.contactIcon} aria-hidden="true">✉</span> contacto@echopointmx.com</a></li>
+              <li><span className={styles.contactIcon} aria-hidden="true">✉</span> <ProtectedEmail email="contacto@echopointmx.com" title="Enviar correo a contacto@echopointmx.com" /></li>
               <li><a href="tel:+525525056854" title="Llamar a +52 55 25056854"><span className={styles.contactIcon} aria-hidden="true">☎</span> +52 55 25056854</a></li>
               <li>
                 <span>
@@ -88,7 +89,7 @@ export default function Footer() {
         </div>
         
         <div className={styles.footerBottom}>
-          <p>&copy; {new Date().getFullYear()} Echopoint AI. {t('footer.rights')}</p>
+          <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Echopoint AI. {t('footer.rights')}</p>
           <div className={styles.legalLinks}>
             <Link href={getLocalizedPath(lang, "/privacy")} title={t('footer.privacy')}>{t('footer.privacy')}</Link>
             <Link href={getLocalizedPath(lang, "/terms")} title={t('footer.terms')}>{t('footer.terms')}</Link>

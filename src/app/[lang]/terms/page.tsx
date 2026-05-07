@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ProtectedEmail from "@/components/ProtectedEmail/ProtectedEmail";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function TermsPage() {
@@ -17,9 +18,7 @@ export default function TermsPage() {
         <p style={{ color: "var(--text-muted, #94a3b8)", lineHeight: 1.7 }}>
           Próximamente publicaremos nuestros términos de servicio completos.
           Si tienes preguntas, contáctanos en{" "}
-          <a href="mailto:contacto@echopointmx.com" style={{ color: "var(--tech-cyan, #06b6d4)" }}>
-            contacto@echopointmx.com
-          </a>
+          <ProtectedEmail email="contacto@echopointmx.com" style={{ color: "var(--tech-cyan, #06b6d4)" }} />
           .
         </p>
       </main>

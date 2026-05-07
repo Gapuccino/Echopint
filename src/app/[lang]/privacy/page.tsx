@@ -2,6 +2,7 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ProtectedEmail from "@/components/ProtectedEmail/ProtectedEmail";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function PrivacyPage() {
@@ -17,9 +18,7 @@ export default function PrivacyPage() {
         <p style={{ color: "var(--text-muted, #94a3b8)", lineHeight: 1.7 }}>
           Próximamente publicaremos nuestra política de privacidad completa.
           Si tienes preguntas sobre el uso de tus datos, contáctanos en{" "}
-          <a href="mailto:contacto@echopointmx.com" style={{ color: "var(--tech-cyan, #06b6d4)" }}>
-            contacto@echopointmx.com
-          </a>
+          <ProtectedEmail email="contacto@echopointmx.com" style={{ color: "var(--tech-cyan, #06b6d4)" }} />
           .
         </p>
       </main>
