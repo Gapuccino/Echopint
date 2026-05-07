@@ -32,7 +32,7 @@ export default async function BlogPage({ params }: Props) {
       <AnimationObserver />
       <Navbar />
 
-      <main id="main-content" className={`container section ${styles.blogContainer}`} style={{ paddingTop: "8rem" }}>
+      <main id="main-content" className={`container section ${styles.blogContainer}`}>
         <div className={`${styles.blogHeader} reveal`}>
           <span className="subtitle">{t("insights.pageSubtitle")}</span>
           <h1 className="reveal-delay-1">{t("insights.title")}</h1>

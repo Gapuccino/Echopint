@@ -274,3 +274,18 @@
 .aboutFeatures i {
     color: var(--human-blue);
 }
+
+@media (max-width: 768px) {
+    .aboutHero {
+        padding: 6rem 1.5rem 3rem;
+    }
+    .aboutHeroContent h1 {
+        font-size: 2.2rem;
+    }
+    .aboutCard {
+        padding: 1.5rem;
+    }
+    .aboutGrid, .executiveGrid, .splitSection {
+        padding: 0 1rem;
+    }
+}

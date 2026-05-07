@@ -1,4 +1,4 @@
-﻿.blogContainer {
+.blogContainer {
     padding-top: 8rem;
     min-height: 100vh;
 }
@@ -18,4 +18,23 @@
     font-size: 1.2rem;
     max-width: 600px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .blogContainer {
+        padding-top: 6rem;
+    }
+    
+    .blogHeader {
+        margin-bottom: 2rem;
+    }
+
+    .blogHeader h1 {
+        font-size: 2.2rem;
+    }
+
+    .blogHeader p {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
 }

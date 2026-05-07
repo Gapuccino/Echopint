@@ -115,15 +115,34 @@
 @media (max-width: 1024px) {
     .svcHeroGrid {
         grid-template-columns: 1fr;
-        gap: 4rem;
+        gap: 2rem;
     }
 
     .svcHeroText {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .svcHeroText h1 {
+        font-size: 1.8rem;
+    }
+
+    .backLink {
+        align-self: flex-start;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .svcFeaturesList {
+        text-align: left;
+        width: 100%;
+        max-width: 500px;
     }
 
     .svcFeaturesList li {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 
@@ -243,4 +262,16 @@
 
 .whySection {
     padding-top: 2rem !important;
+}
+
+@media (max-width: 768px) {
+    .serviceCard {
+        padding: 1.5rem;
+    }
+    .whySection p {
+        padding: 0 1rem;
+    }
+    .servicesGrid {
+        padding: 0 1rem;
+    }
 }
