@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema } from "@/lib/validations/contact";
 
+export const runtime = "edge";
+
 // In-memory rate limiter: max 5 requests per 60 s per IP
 // Note: resets per serverless instance restart; sufficient for this use case
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();

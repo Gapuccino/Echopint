@@ -49,11 +49,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  output: "export",
   trailingSlash: true,
   devIndicators: false,
   images: {
-    unoptimized: true, // Requerido para Cloudflare Pages en plan gratuito
+    unoptimized: true, // Requerido para Cloudflare Pages
     remotePatterns: [
       {
         protocol: "https",
