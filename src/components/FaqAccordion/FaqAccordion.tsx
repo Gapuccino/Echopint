@@ -45,8 +45,8 @@ export default function FaqAccordion() {
   return (
     <div className={styles.faqAccordion}>
       {faqs.map((faq, i) => (
-        <div key={i} className={`${styles.faqItem} ${activeIndex === i ? styles.itemActive : ""}`}>
-          <button 
+        <div key={faq.q} className={`${styles.faqItem} ${activeIndex === i ? styles.itemActive : ""}`}>
+          <button
             className={`${styles.faqQuestion} ${activeIndex === i ? styles.active : ""}`}
             onClick={() => toggleFaq(i)}
             aria-expanded={activeIndex === i}

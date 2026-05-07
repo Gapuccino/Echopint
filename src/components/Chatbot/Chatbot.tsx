@@ -16,7 +16,10 @@ type Message = {
   sender: "bot" | "user";
 };
 
-// Knowledge base for the chatbot â€” keyword matching approach
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contacto@echopointmx.com";
+const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+52 55 25056854";
+
+// Knowledge base for the chatbot — keyword matching approach
 const knowledgeBase: Record<string, Record<string, string>> = {
   ES: {
     _greeting: "¡Hola! Soy el asistente de Echopoint. ¿En qué puedo ayudarte? Puedes preguntar sobre nuestros servicios, precios, IA, o agendar una reunión.",
@@ -24,11 +27,11 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     precio: "Nuestras tarifas dependen del alcance del proyecto. Te invitamos a agendar una consulta gratuita en /contacto para darte una cotización personalizada.",
     ia: "Utilizamos IA para análisis predictivo, cualificación de leads y optimización de procesos. No reemplazamos humanos, amplificamos su talento.",
     reunion: "Puedes agendar una demo o reunión desde nuestra página de contacto: /contacto. Te responderemos en menos de 24 horas.",
-    contacto: "Puedes escribirnos a contacto@echopointmx.com o llamar al +52 55 25056854. También puedes usar el formulario en /contacto.",
+    contacto: `Puedes escribirnos a ${CONTACT_EMAIL} o llamar al ${CONTACT_PHONE}. También puedes usar el formulario en /contacto.`,
     crecimiento: "Nuestra Estrategia de Crecimiento incluye análisis Porter, SWOT cuantitativo, planes de expansión con proyecciones a 5 años y validación A/B.",
     ventas: "Generamos ventas B2B mediante prospección segmentada, scoring MQL-SQL con criterios BANT, y apertura de cuentas Enterprise.",
     expansion: "Te ayudamos a expandir internacionalmente con estudios PESTEL, adaptación de modelo de negocio, due diligence y planes de lanzamiento de 90 días.",
-    _fallback: "Interesante pregunta. Te recomiendo hablar con nuestro equipo directamente para una respuesta más detallada. Puedes agendar una cita en /contacto o escribir a contacto@echopointmx.com."
+    _fallback: `Interesante pregunta. Te recomiendo hablar con nuestro equipo directamente para una respuesta más detallada. Puedes agendar una cita en /contacto o escribir a ${CONTACT_EMAIL}.`
   },
   EN: {
     _greeting: "Hello! I'm the Echopoint assistant. How can I help? You can ask about our services, pricing, AI capabilities, or scheduling a meeting.",
@@ -36,13 +39,13 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     services: "We offer 6 pillars: Growth Strategy, Alliance Development, Sales Generation, International Expansion, New Products, and Commercial Intelligence. Which would you like to learn about?",
     pricing: "Our pricing depends on the project scope. We invite you to schedule a free consultation at /contacto for a personalized quote.",
     price: "Our pricing depends on the project scope. We invite you to schedule a free consultation at /contacto for a personalized quote.",
-    ai: "We use AI for predictive analysis, lead qualification, and process optimization. We don't replace humans â€” we amplify their talent.",
+    ai: "We use AI for predictive analysis, lead qualification, and process optimization. We don't replace humans — we amplify their talent.",
     meeting: "You can schedule a demo or meeting from our contact page: /contacto. We'll respond within 24 hours.",
-    contact: "You can email us at contacto@echopointmx.com or call +52 55 25056854. You can also use the form at /contacto.",
+    contact: `You can email us at ${CONTACT_EMAIL} or call ${CONTACT_PHONE}. You can also use the form at /contacto.`,
     growth: "Our Growth Strategy includes Porter's analysis, quantitative SWOT, 5-year expansion plans, and A/B validation.",
     sales: "We generate B2B sales through segmented prospecting, MQL-SQL scoring with BANT criteria, and Enterprise account opening.",
     expansion: "We help you expand internationally with PESTEL studies, business model adaptation, due diligence, and 90-day launch plans.",
-    _fallback: "Great question. I'd recommend talking to our team directly for a more detailed answer. You can schedule a meeting at /contacto or email contacto@echopointmx.com."
+    _fallback: `Great question. I'd recommend talking to our team directly for a more detailed answer. You can schedule a meeting at /contacto or email ${CONTACT_EMAIL}.`
   },
   FR: {
     _greeting: "Bonjour ! Je suis l'assistant d'Echopoint. Comment puis-je vous aider ? Vous pouvez poser des questions sur nos services, tarifs, IA ou planifier une réunion.",
@@ -50,8 +53,8 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     prix: "Nos tarifs dépendent de la portée du projet. Planifiez une consultation gratuite sur /contacto.",
     ia: "Nous utilisons l'IA pour l'analyse prédictive, la qualification des prospects et l'optimisation des processus.",
     reunion: "Vous pouvez planifier une démo depuis notre page de contact : /contacto.",
-    contact: "Écrivez-nous Ã  contacto@echopointmx.com ou appelez le +52 55 25056854.",
-    _fallback: "Excellente question. Je vous recommande de contacter directement notre équipe via /contacto ou contacto@echopointmx.com."
+    contact: `Écrivez-nous à ${CONTACT_EMAIL} ou appelez le ${CONTACT_PHONE}.`,
+    _fallback: `Excellente question. Je vous recommande de contacter directement notre équipe via /contacto ou ${CONTACT_EMAIL}.`
   },
   PT: {
     _greeting: "Olá! Sou o assistente da Echopoint. Como posso ajudar? Pergunte sobre nossos serviços, preços, IA ou agendar uma reunião.",
@@ -59,13 +62,13 @@ const knowledgeBase: Record<string, Record<string, string>> = {
     preco: "Nossos preços dependem do escopo do projeto. Agende uma consulta gratuita em /contacto.",
     ia: "Usamos IA para análise preditiva, qualificação de leads e otimização de processos.",
     reuniao: "Você pode agendar uma demo na nossa página de contato: /contacto.",
-    contato: "Escreva para contacto@echopointmx.com ou ligue para +52 55 25056854.",
-    _fallback: "Ótima pergunta. Recomendo falar diretamente com nossa equipe via /contacto ou contacto@echopointmx.com."
+    contato: `Escreva para ${CONTACT_EMAIL} ou ligue para ${CONTACT_PHONE}.`,
+    _fallback: `Ótima pergunta. Recomendo falar diretamente com nossa equipe via /contacto ou ${CONTACT_EMAIL}.`
   }
 };
 
 function findResponse(input: string, lang: string): string {
-  const lowerInput = input.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const lowerInput = input.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
   const kb = knowledgeBase[lang] || knowledgeBase.ES;
 
   for (const [keyword, response] of Object.entries(kb)) {
@@ -154,7 +157,7 @@ export default function Chatbot() {
 
         <div className={styles.chatMessages} id="chat-messages">
           {messages.map((msg, i) => (
-            <div key={i} className={`${styles.message} ${styles[msg.sender]}`}>
+            <div key={`${msg.sender}-${i}`} className={`${styles.message} ${styles[msg.sender]}`}>
               <p>{msg.text}</p>
             </div>
           ))}
@@ -162,7 +165,7 @@ export default function Chatbot() {
             <div className={`${styles.message} ${styles.bot}`}>
               <p style={{ opacity: 0.6 }}>
                 <FontAwesomeIcon icon={faCircleNotch} spin style={{ marginRight: "0.5rem" }} />
-                {lang === "EN" ? "Thinking..." : lang === "FR" ? "Réflexion..." : lang === "PT" ? "Pensando..." : "Pensando..."}
+                {lang === "EN" ? "Thinking..." : lang === "FR" ? "Réflexion..." : "Pensando..."}
               </p>
             </div>
           )}

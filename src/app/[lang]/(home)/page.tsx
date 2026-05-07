@@ -23,14 +23,8 @@ import Button from "@/components/common/Button/Button";
 import AutoCarousel from "@/components/AutoCarousel/AutoCarousel";
 
 
+import { createTranslator } from "@/lib/translator";
 import styles from "./Home.module.css";
-
-function createTranslator(dictionary: Record<string, any>) {
-  return (key: string): string => {
-    const value = key.split(".").reduce<any>((current, part) => current?.[part], dictionary);
-    return typeof value === "string" ? value : key;
-  };
-}
 
 export default async function Home({
   params,

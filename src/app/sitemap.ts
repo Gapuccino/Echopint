@@ -16,7 +16,7 @@ function parseBlogDate(dateStr: string): Date {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://echopoint.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://echopointmx.com';
 
   const locales = ['es', 'en', 'fr', 'pt'];
   const allUrls: MetadataRoute.Sitemap = [];

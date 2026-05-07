@@ -1,27 +1,8 @@
 import type { Metadata } from "next";
-import "../globals.css";
-import { LanguageProvider } from "@/context/LanguageContext";
+import { LanguageProvider, type Language } from "@/context/LanguageContext";
 import ChatbotReveal from "@/components/Chatbot/ChatbotReveal";
 import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import { Montserrat, Space_Grotesk } from "next/font/google";
-
-// FA styles inlined in globals.css — no external CSS import needed
-config.autoAddCss = false;
-
-const montserrat = Montserrat({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-main",
-  display: "swap",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-display",
-  display: "swap",
-});
+import LangSetter from "@/components/LangSetter/LangSetter";
 
 export function generateStaticParams() {
   return [{ lang: "es" }, { lang: "en" }, { lang: "fr" }, { lang: "pt" }];
@@ -29,7 +10,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const baseUrl = "https://echopoint.vercel.app";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://echopointmx.com";
 
   return {
     title: {
@@ -39,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     description:
       "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras. Consultoría empresarial, análisis predictivo y expansión internacional.",
     keywords: [
-      "consultoría empresarial", "estrategia B2B", "inteligencia artificial", 
+      "consultoría empresarial", "estrategia B2B", "inteligencia artificial",
       "crecimiento empresarial", "expansión internacional", "análisis predictivo", "Echopoint AI"
     ],
     metadataBase: new URL(baseUrl),
@@ -81,13 +62,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 }
 
 // JSON-LD Structured Data
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://echopointmx.com";
+const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "contacto@echopointmx.com";
+const CONTACT_PHONE = process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "+52-55-25056854";
+
 const jsonLdOrganization = {
   "@context": "https://schema.org",
-  "@id": "https://echopoint.vercel.app/#organization",
+  "@id": `${SITE_URL}/#organization`,
   "@type": "Organization",
   name: "Echopoint AI",
-  url: "https://echopoint.vercel.app",
-  logo: "https://echopoint.vercel.app/logo.webp",
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.webp`,
   description: "Consultoría empresarial estratégica que fusiona inteligencia artificial y creatividad humana para estrategias B2B transformadoras.",
   address: {
     "@type": "PostalAddress",
@@ -99,9 +84,9 @@ const jsonLdOrganization = {
   },
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+52-55-25056854",
+    telephone: CONTACT_PHONE,
     contactType: "sales",
-    email: "contacto@echopointmx.com",
+    email: CONTACT_EMAIL,
     availableLanguage: ["Spanish", "English", "French", "Portuguese"],
   },
   sameAs: [],
@@ -109,15 +94,15 @@ const jsonLdOrganization = {
 
 const jsonLdWebSite = {
   "@context": "https://schema.org",
-  "@id": "https://echopoint.vercel.app/#website",
+  "@id": `${SITE_URL}/#website`,
   "@type": "WebSite",
   name: "Echopoint AI",
-  url: "https://echopoint.vercel.app",
+  url: SITE_URL,
 };
 
 const serializeJsonLd = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
 
-export default async function RootLayout({
+export default async function LangLayout({
   children,
   params,
 }: Readonly<{
@@ -126,51 +111,47 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
   return (
-    <html lang={lang} className={`${montserrat.variable} ${spaceGrotesk.variable}`}>
-      <head>
-        <link
-          rel="preload"
-          href="/logo.webp"
-          as="image"
-          fetchPriority="high"
-          imageSrcSet="/logo-mobile.webp 200w, /logo.webp 400w"
-          imageSizes="(max-width: 768px) 200px, 400px"
-        />
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
-      </head>
-      <body>
-        <LanguageProvider initialLang={lang as any}>
-          <ScrollToTop />
-          <a
-            href="#main-content"
-            title="Skip to content"
-            className="sr-only"
-            style={{
-              position: "absolute",
-              top: "-100px",
-              left: 0,
-              background: "var(--tech-cyan)",
-              color: "var(--bg-dark)",
-              padding: "0.5rem 1rem",
-              zIndex: 9999,
-            }}
-          >
-            Skip to content
-          </a>
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLdOrganization) }}
-          />
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLdWebSite) }}
-          />
-          {children}
-          <ChatbotReveal />
-        </LanguageProvider>
-      </body>
-    </html>
+    <>
+      <LangSetter lang={lang} />
+      <link
+        rel="preload"
+        href="/logo.webp"
+        as="image"
+        fetchPriority="high"
+        imageSrcSet="/logo-mobile.webp 200w, /logo.webp 400w"
+        imageSizes="(max-width: 768px) 200px, 400px"
+      />
+      <link rel="preconnect" href="https://images.unsplash.com" />
+      <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLdOrganization) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLdWebSite) }}
+      />
+      <LanguageProvider initialLang={lang.toUpperCase() as Language}>
+        <ScrollToTop />
+        <a
+          href="#main-content"
+          title="Skip to content"
+          className="sr-only"
+          style={{
+            position: "absolute",
+            top: "-100px",
+            left: 0,
+            background: "var(--tech-cyan)",
+            color: "var(--bg-dark)",
+            padding: "0.5rem 1rem",
+            zIndex: 9999,
+          }}
+        >
+          Skip to content
+        </a>
+        {children}
+        <ChatbotReveal />
+      </LanguageProvider>
+    </>
   );
 }
-

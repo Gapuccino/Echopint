@@ -65,14 +65,6 @@ export async function POST(request: Request) {
   //   });
   // ───────────────────────────────────────────────────────────────────────────
 
-  console.log("📩 New contact form submission:", {
-    name,
-    email,
-    subject,
-    message,
-    timestamp: new Date().toISOString(),
-  });
-
   return NextResponse.json(
     { success: true, message: "Form submitted successfully." },
     { status: 200 }

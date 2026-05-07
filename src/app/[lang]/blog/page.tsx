@@ -5,18 +5,12 @@ import BlogList from "@/components/BlogList";
 import AnimationObserver from "@/components/AnimationObserver";
 import { getBlogPosts } from "@/lib/content/posts";
 import { getDictionary } from "@/i18n/dictionaries";
+import { createTranslator } from "@/lib/translator";
 import styles from "./BlogPage.module.css";
 
 type Props = {
   params: Promise<{ lang: string }>;
 };
-
-function createTranslator(dictionary: Record<string, any>) {
-  return (key: string): string => {
-    const value = key.split(".").reduce<any>((current, part) => current?.[part], dictionary);
-    return typeof value === "string" ? value : key;
-  };
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;

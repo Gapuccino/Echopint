@@ -12,6 +12,7 @@ import styles from "./Navbar.module.css";
 export default function Navbar() {
   const { lang, setLang, t } = useLanguage();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const pathname = usePathname();
 
   // Close mobile menu on route change
@@ -54,7 +55,14 @@ export default function Navbar() {
             <li><Link href={getLocalizedPath(lang, "/nosotros")} title={t('nav.about')} className={`${styles.navLink} ${pathname.includes("nosotros") || pathname.includes("about") || pathname.includes("a-propos") || pathname.includes("sobre-nos") ? styles.active : ""}`}>{t('nav.about')}</Link></li>
             <li><Link href={getLocalizedPath(lang, "/blog")} title={t('nav.blog')} className={`${styles.navLink} ${pathname.includes("blog") ? styles.active : ""}`}>{t('nav.blog')}</Link></li>
             <li className={styles.langDropdownContainer}>
-              <button className={styles.langToggle} aria-haspopup="true" aria-expanded="false" aria-label="Cambiar idioma">
+              <button
+                className={styles.langToggle}
+                aria-haspopup="listbox"
+                aria-expanded={langOpen}
+                aria-label="Cambiar idioma"
+                onClick={() => setLangOpen(!langOpen)}
+                onBlur={() => setLangOpen(false)}
+              >
                 <FontAwesomeIcon icon={faGlobe} /> {lang}
               </button>
               <ul className={styles.langMenu} role="menu">

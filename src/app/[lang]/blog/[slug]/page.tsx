@@ -15,18 +15,12 @@ import AnimationObserver from "@/components/AnimationObserver";
 import { blogPosts, getBlogPosts } from "@/lib/content/posts";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getLocalizedPath } from "@/i18n/routing";
+import { createTranslator } from "@/lib/translator";
 import styles from "./BlogPost.module.css";
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
 };
-
-function createTranslator(dictionary: Record<string, any>) {
-  return (key: string): string => {
-    const value = key.split(".").reduce<any>((current, part) => current?.[part], dictionary);
-    return typeof value === "string" ? value : key;
-  };
-}
 
 export async function generateStaticParams() {
   const langs = ["es", "en", "fr", "pt"];
