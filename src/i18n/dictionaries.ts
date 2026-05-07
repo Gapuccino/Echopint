@@ -160,7 +160,7 @@ export const dictionaries = {
       },
       p6: { 
         slug: "analisis-predictivo",
-        title: "Modelos Predictivos", 
+        title: "Inteligencia Artificial", 
         desc: "Machine Learning para previsión de demanda.",
         heroTitle: "Anticipa el futuro del mercado",
         longDesc: "Implementamos algoritmos de ML que analizan datos históricos para predecir tendencias de ventas y comportamiento del consumidor.",
@@ -395,7 +395,7 @@ export const dictionaries = {
       },
       p6: { 
         slug: "predictive-analytics",
-        title: "Predictive Models", 
+        title: "Artificial Intelligence", 
         desc: "Machine Learning for demand forecasting.",
         heroTitle: "Anticipate market trends",
         longDesc: "We implement ML algorithms that analyze historical data to predict sales trends and consumer behavior.",
@@ -630,7 +630,7 @@ export const dictionaries = {
       },
       p6: { 
         slug: "analyse-predictive",
-        title: "Modèles Prédictifs", 
+        title: "Intelligence Artificielle", 
         desc: "Machine Learning pour la prévision de la demande.",
         heroTitle: "Anticipez les tendances du marché",
         longDesc: "Nous mettons en œuvre des algorithmes de ML qui analysent les données historiques pour prédire les tendances de vente et le comportement des consommateurs.",
@@ -866,7 +866,7 @@ export const dictionaries = {
       },
       p6: { 
         slug: "analise-preditiva",
-        title: "Modelos Preditivos", 
+        title: "Inteligência Artificial", 
         desc: "Machine Learning para previsão de demanda.",
         heroTitle: "Antecipe o futuro do mercado",
         longDesc: "Implementamos algoritmos de ML que analisam dados históricos para prever tendências de vendas e comportamento do consumidor.",
