@@ -49,6 +49,7 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  output: "export",
   trailingSlash: true,
   devIndicators: false,
   images: {
