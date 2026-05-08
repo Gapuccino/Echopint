@@ -5,15 +5,18 @@ export async function onRequest(context) {
 
   // Si el host es el subdominio de la tarjeta
   if (host.startsWith("card.")) {
-    // Si es la raíz (/), mostramos la VCard internamente
-    if (url.pathname === "/" || url.pathname === "") {
+    // Verificamos si tiene la "llave" de acceso del QR
+    const hasQrKey = url.searchParams.get("source") === "qr";
+
+    // Si es la raíz (/) y TIENE la llave, mostramos la VCard
+    if ((url.pathname === "/" || url.pathname === "") && hasQrKey) {
       const newUrl = new URL("/es/card/", url.origin);
       return context.env.ASSETS.fetch(newUrl);
     } 
     
-    // Si intenta acceder a cualquier otra ruta (ej: /es/, /blog) desde card.
-    // lo mandamos al dominio principal para que no se "quede" en el subdominio.
-    return Response.redirect(`https://${mainDomain}${url.pathname}${url.search}`, 301);
+    // Si NO tiene la llave o intenta entrar a otra ruta desde el subdominio,
+    // lo mandamos al dominio principal por seguridad.
+    return Response.redirect(`https://${mainDomain}${url.pathname}${url.search}`, 302);
   }
 
   // Para el dominio principal y otras rutas, continuar normalmente

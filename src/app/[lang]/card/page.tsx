@@ -12,6 +12,15 @@ interface Props {
   params: Promise<{ lang: string }>;
 }
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default async function VCardV2Page({ params }: Props) {
   const { lang } = await params;
   const dict = getDictionary(lang);
