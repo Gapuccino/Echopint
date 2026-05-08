@@ -20,6 +20,7 @@ export default function NeuralCanvas() {
     let particles: Particle[] = [];
     let animationFrameId: number;
     let mouse = { x: -1000, y: -1000 };
+    let cachedRect: { left: number; top: number } = { left: 0, top: 0 };
 
     const colorTech = "6, 182, 212"; // Cyan
     const colorBlue = "59, 130, 246"; // Blue
@@ -27,6 +28,7 @@ export default function NeuralCanvas() {
     function resize() {
       if (!canvas) return;
       const rect = canvas.getBoundingClientRect();
+      cachedRect = { left: rect.left, top: rect.top };
       width = rect.width;
       height = rect.height;
       canvas.width = width;
@@ -151,10 +153,8 @@ export default function NeuralCanvas() {
     };
 
     const handleMouseMove = (e: MouseEvent) => {
-        if (!canvas) return;
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
+        mouse.x = e.clientX - cachedRect.left;
+        mouse.y = e.clientY - cachedRect.top;
     };
 
     const handleMouseLeave = () => {

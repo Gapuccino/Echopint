@@ -321,12 +321,17 @@ html[data-snap="true"] #main-content > section#popular-services {
 /* Hero Intro Entrance Animations */
 .hero-intro .subtitle,
 .hero-intro h1,
-.hero-intro p,
 .hero-intro .hero-actions,
 .hero-trust-strip {
     opacity: 0;
     transform: translateY(14px);
     animation: heroFadeUp 0.7s ease forwards;
+}
+
+/* LCP element: no opacity:0 so browser paints it on first render, only translate animates */
+.hero-intro p {
+    transform: translateY(14px);
+    animation: heroFadeUpTransform 0.7s ease forwards;
 }
 
 .hero-intro .subtitle { animation-delay: 0.08s; }
@@ -340,4 +345,26 @@ html[data-snap="true"] #main-content > section#popular-services {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+@keyframes heroFadeUpTransform {
+    to { transform: translateY(0); }
+}
+
+.manifesto-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.manifesto-content p {
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.magnet-content h2 {
+    margin-bottom: 1rem;
+}
+
+.magnet-content p {
+    margin-bottom: 1.5rem;
 }
