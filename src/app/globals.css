@@ -380,4 +380,9 @@ html[data-snap="true"] #main-content > section#popular-services {
         transform: none !important;
         animation: none !important;
     }
+
+    /* Use system font for h1 on mobile — eliminates Space Grotesk swap as LCP candidate */
+    h1 {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif !important;
+    }
 }

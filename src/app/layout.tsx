@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin", "latin-ext"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["700"],
   variable: "--font-display",
   display: "swap",
 });
