@@ -368,3 +368,16 @@ html[data-snap="true"] #main-content > section#popular-services {
 .magnet-content p {
     margin-bottom: 1.5rem;
 }
+
+/* Mobile: skip hero entrance animations so h1 paints on first frame (no font-swap LCP delay) */
+@media (max-width: 767px) {
+    .hero-intro .subtitle,
+    .hero-intro h1,
+    .hero-intro p,
+    .hero-intro .hero-actions,
+    .hero-trust-strip {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+}
