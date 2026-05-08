@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import "./AnimationObserver.module.css";
 
 export default function AnimationObserver() {
   const pathname = usePathname();

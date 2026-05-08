@@ -117,18 +117,11 @@ export default async function LangLayout({
       <LangSetter lang={lang} />
       <link
         rel="preload"
-        href="/logo.webp"
+        href="/logo-mobile.webp"
         as="image"
         fetchPriority="high"
         imageSrcSet="/logo-mobile.webp 200w, /logo.webp 400w"
-        imageSizes="(max-width: 768px) 200px, 400px"
-      />
-      <link
-        rel="preload"
-        href="/photo-1551288049-bebda4e38f71.webp"
-        as="image"
-        fetchPriority="high"
-        media="(max-width: 768px)"
+        imageSizes="(max-width: 768px) 113px, 164px"
       />
       <script
         type="application/ld+json"

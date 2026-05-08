@@ -41,7 +41,8 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://images.unsplash.com",
-      "connect-src 'self'",
+      "connect-src 'self' https://bam.nr-data.net https://log.api.drift.com https://js-agent.newrelic.com",
+      "script-src-elem 'self' 'unsafe-inline' https://js-agent.newrelic.com https://js.driftt.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -53,6 +54,7 @@ const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
   devIndicators: false,
+  turbopack: {},
   images: {
     unoptimized: true, // Requerido para Cloudflare Pages
     remotePatterns: [],
@@ -64,7 +66,7 @@ const nextConfig: NextConfig = {
       "@fortawesome/free-brands-svg-icons",
       "@fortawesome/fontawesome-svg-core",
     ],
-    cssChunking: false,
+    cssChunking: true,
   },
 };
 

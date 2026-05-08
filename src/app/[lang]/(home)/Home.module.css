@@ -65,6 +65,9 @@
     margin: 0 auto 1.5rem;
     max-width: 700px;
     line-height: 1.6;
+    opacity: 0;
+    transform: translateY(14px);
+    animation: heroFadeUp 0.7s ease 0.24s forwards;
 }
 
 .heroActions {
@@ -689,43 +692,18 @@
     gap: 0.6rem;
 }
 
-:global(html[data-snap="true"]) .servicePreviewAction {
-    margin-top: 0.3rem;
-    font-size: 0.75rem;
-}
-
-/* Hero Intro Entrance Animations */
-:global(.hero-intro) :global(.subtitle),
-:global(.hero-intro) h1,
-:global(.hero-intro) :global(.hero-actions),
-:global(.hero-trust-strip) {
-    opacity: 0;
-    transform: translateY(14px);
-    animation: heroFadeUp 0.7s ease forwards;
-}
-
-:global(.hero-intro) :global(.subtitle) {
-    animation-delay: 0.08s;
-}
-
-:global(.hero-intro) h1 {
-    animation-delay: 0.16s;
-}
-
-:global(.hero-intro) :global(.hero-actions) {
-    animation-delay: 0.24s;
-}
-
-:global(.hero-trust-strip) {
-    animation-delay: 0.32s;
-}
-
 @keyframes heroFadeUp {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
+
+:global(html[data-snap="true"]) .servicePreviewAction {
+    margin-top: 0.3rem;
+    font-size: 0.75rem;
+}
+
 
 /* Home page inline class typography */
 :global(.manifesto-content) h2 {

@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx tsx scripts/optimize-images.ts && next build",
+    "analyze": "npx tsx scripts/optimize-images.ts && cross-env ANALYZE=true next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "translate": "npx tsx scripts/translate.ts"
@@ -28,16 +29,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.5.0",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.4",
     "postcss": "^8.5.12",
     "tailwindcss": "^4.2.4",
     "typescript": "^5"
-  },
-  "browserslist": [
-    "chrome 111",
-    "edge 111",
-    "firefox 111",
-    "safari 16.4"
-  ]
+  }
 }

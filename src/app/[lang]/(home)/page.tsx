@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
@@ -143,16 +142,25 @@ export default async function Home({
                 <p className="legal-note" style={{fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '-1rem', marginBottom: '2rem'}}>{t('manifesto.legal')}</p>
               </div>
               <div className={`${styles.manifestoImageContainer} reveal reveal-delay-2`}>
-                <Image
-                  src="/photo-1551288049-bebda4e38f71.webp"
-                  alt="Visualización de datos e inteligencia artificial impulsando el crecimiento empresarial"
-                  title="Visualización de datos e inteligencia artificial impulsando el crecimiento empresarial"
-                  className={styles.responsiveImage}
-                  width={800}
-                  height={451}
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 800px"
-                />
+                <picture>
+                  <source
+                    media="(max-width: 768px)"
+                    srcSet="/photo-1551288049-bebda4e38f71-400.webp"
+                    type="image/webp"
+                    width={400}
+                    height={226}
+                  />
+                  <img
+                    src="/photo-1551288049-bebda4e38f71.webp"
+                    alt="Visualización de datos e inteligencia artificial impulsando el crecimiento empresarial"
+                    title="Visualización de datos e inteligencia artificial impulsando el crecimiento empresarial"
+                    className={styles.responsiveImage}
+                    width={800}
+                    height={451}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             </div>
           </div>
