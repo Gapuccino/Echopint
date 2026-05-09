@@ -12,6 +12,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimationObserver from "@/components/AnimationObserver";
+import DOMPurify from "isomorphic-dompurify";
 import { blogPosts, getBlogPosts } from "@/lib/content/posts";
 import { getDictionary } from "@/i18n/dictionaries";
 import { getLocalizedPath } from "@/i18n/routing";
@@ -107,7 +108,10 @@ export default async function BlogPostPage({ params }: Props) {
           <div
             className={styles.articleContent}
             dangerouslySetInnerHTML={{
-              __html: post.content || `<p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--text-primary); margin-bottom: 3rem;">${post.excerpt}</p><p>${t("insights.comingSoon")}</p>`,
+              __html: DOMPurify.sanitize(
+                post.content || `<p class="lead" style="font-size: 1.3rem; font-weight: 500; color: var(--text-primary); margin-bottom: 3rem;">${post.excerpt}</p><p>${t("insights.comingSoon")}</p>`,
+                { USE_PROFILES: { html: true } }
+              ),
             }}
           />
 

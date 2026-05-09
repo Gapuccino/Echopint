@@ -11,6 +11,7 @@ import {
   faMessage
 } from "@fortawesome/free-solid-svg-icons";
 import { useLanguage } from "@/context/LanguageContext";
+import { contactSchema } from "@/lib/validations/contact";
 import Button from "@/components/common/Button/Button";
 import styles from "./ContactForm.module.css";
 
@@ -116,10 +117,11 @@ export default function ContactForm({ isCompact = false }: ContactFormProps) {
     setStatus("loading");
     setErrorMsg("");
 
-    // Validate
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    // Validate with Zod (same schema as the backend)
+    const validation = contactSchema.safeParse(formData);
+    if (!validation.success) {
       setStatus("error");
-      setErrorMsg(labels.errorFields);
+      setErrorMsg(validation.error.issues[0]?.message ?? labels.errorFields);
       return;
     }
 

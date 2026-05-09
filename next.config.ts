@@ -46,6 +46,8 @@ const securityHeaders = [
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
+      "object-src 'none'",
+      "upgrade-insecure-requests",
     ].join("; "),
   },
 ];
@@ -57,7 +59,13 @@ const nextConfig: NextConfig = {
   turbopack: {},
   images: {
     unoptimized: true, // Requerido para Cloudflare Pages
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        pathname: "/photo-*",
+      },
+    ],
   },
   experimental: {
     optimizePackageImports: [

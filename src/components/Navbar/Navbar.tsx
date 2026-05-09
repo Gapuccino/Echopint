@@ -51,9 +51,9 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className={styles.navDesktop}>
           <ul className={styles.navList}>
-            <li><Link href={getLocalizedPath(lang, "/servicios")} title={t('nav.services')} className={`${styles.navLink} ${pathname.includes("servicios") || pathname.includes("services") || pathname.includes("servicos") ? styles.active : ""}`}>{t('nav.services')}</Link></li>
-            <li><Link href={getLocalizedPath(lang, "/nosotros")} title={t('nav.about')} className={`${styles.navLink} ${pathname.includes("nosotros") || pathname.includes("about") || pathname.includes("a-propos") || pathname.includes("sobre-nos") ? styles.active : ""}`}>{t('nav.about')}</Link></li>
-            <li><Link href={getLocalizedPath(lang, "/blog")} title={t('nav.blog')} className={`${styles.navLink} ${pathname.includes("blog") ? styles.active : ""}`}>{t('nav.blog')}</Link></li>
+            <li><Link href={getLocalizedPath(lang, "/servicios")} title={t('nav.services')} className={`${styles.navLink} ${pathname.includes("servicios") || pathname.includes("services") || pathname.includes("servicos") ? styles.active : ""}`} aria-current={pathname.includes("servicios") || pathname.includes("services") || pathname.includes("servicos") ? "page" : undefined}>{t('nav.services')}</Link></li>
+            <li><Link href={getLocalizedPath(lang, "/nosotros")} title={t('nav.about')} className={`${styles.navLink} ${pathname.includes("nosotros") || pathname.includes("about") || pathname.includes("a-propos") || pathname.includes("sobre-nos") ? styles.active : ""}`} aria-current={pathname.includes("nosotros") || pathname.includes("about") || pathname.includes("a-propos") || pathname.includes("sobre-nos") ? "page" : undefined}>{t('nav.about')}</Link></li>
+            <li><Link href={getLocalizedPath(lang, "/blog")} title={t('nav.blog')} className={`${styles.navLink} ${pathname.includes("blog") ? styles.active : ""}`} aria-current={pathname.includes("blog") ? "page" : undefined}>{t('nav.blog')}</Link></li>
             <li className={styles.langDropdownContainer}>
               <button
                 className={styles.langToggle}

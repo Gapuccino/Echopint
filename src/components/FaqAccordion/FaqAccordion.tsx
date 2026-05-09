@@ -44,23 +44,36 @@ export default function FaqAccordion() {
 
   return (
     <div className={styles.faqAccordion}>
-      {faqs.map((faq, i) => (
-        <div key={faq.q} className={`${styles.faqItem} ${activeIndex === i ? styles.itemActive : ""}`}>
-          <button
-            className={`${styles.faqQuestion} ${activeIndex === i ? styles.active : ""}`}
-            onClick={() => toggleFaq(i)}
-            aria-expanded={activeIndex === i}
-          >
-            {faq.q}
-            <div className={styles.iconWrapper}>
-              <FontAwesomeIcon icon={faPlus} />
+      {faqs.map((faq, i) => {
+        const buttonId = `faq-btn-${i}`;
+        const panelId = `faq-panel-${i}`;
+        const isOpen = activeIndex === i;
+        return (
+          <div key={faq.q} className={`${styles.faqItem} ${isOpen ? styles.itemActive : ""}`}>
+            <button
+              id={buttonId}
+              className={`${styles.faqQuestion} ${isOpen ? styles.active : ""}`}
+              onClick={() => toggleFaq(i)}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+            >
+              {faq.q}
+              <div className={styles.iconWrapper}>
+                <FontAwesomeIcon icon={faPlus} />
+              </div>
+            </button>
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={buttonId}
+              hidden={!isOpen}
+              className={`${styles.faqAnswer} ${isOpen ? styles.active : ""}`}
+            >
+              <p>{faq.a}</p>
             </div>
-          </button>
-          <div className={`${styles.faqAnswer} ${activeIndex === i ? styles.active : ""}`}>
-            <p>{faq.a}</p>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

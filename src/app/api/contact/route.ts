@@ -23,7 +23,23 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function POST(request: Request) {
+  // CSRF: only accept requests from the same origin
+  const origin = request.headers.get("origin");
+  const allowedOrigin = process.env.NEXT_PUBLIC_SITE_URL ?? "https://echopointmx.com";
+  if (!origin || origin !== allowedOrigin) {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
     request.headers.get("x-real-ip") ??
@@ -43,6 +59,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
   }
 
+  // Honeypot: bots fill this hidden field; legitimate users never see it
+  if ((body as Record<string, unknown>).website) {
+    return NextResponse.json({ success: true });
+  }
+
   const result = contactSchema.safeParse(body);
   if (!result.success) {
     return NextResponse.json(
@@ -58,12 +79,12 @@ export async function POST(request: Request) {
     from: "noreply@echopoint-intsolutions.com",
     to: "contacto@echopointmx.com",
     replyTo: email,
-    subject: `[Web Contact] ${subject}`,
-    html: `<p><strong>Nombre:</strong> ${name}</p>
-           <p><strong>Email:</strong> ${email}</p>
-           <p><strong>Asunto:</strong> ${subject}</p>
+    subject: `[Web Contact] ${escapeHtml(subject)}`,
+    html: `<p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+           <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+           <p><strong>Asunto:</strong> ${escapeHtml(subject)}</p>
            <p><strong>Mensaje:</strong></p>
-           <p>${message}</p>`,
+           <p>${escapeHtml(message).replace(/\n/g, "<br>")}</p>`,
   });
 
   if (error) {
