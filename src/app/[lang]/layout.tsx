@@ -48,6 +48,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,
     },
+    icons: {
+      icon: "/favicon.ico",
+      shortcut: "/favicon.ico",
+    },
     robots: {
       index: true,
       follow: true,

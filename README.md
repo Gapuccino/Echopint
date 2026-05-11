@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EchoPoint — echopointmx.com
 
-## Getting Started
+Sitio web corporativo B2B de EchoPoint. Next.js 16 con exportación estática desplegado en Cloudflare Pages.
 
-First, run the development server:
+## Requisitos
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Crea un archivo `.env.local` en la raíz con las siguientes variables:
+
+```env
+RESEND_API_KEY=...          # Para envío de formularios de contacto
+DEEPL_API_KEY=...           # Para el script de traducción automática
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Comandos
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Servidor de desarrollo
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Traducir contenido con DeepL (ES → EN, FR, PT)
+npm run translate
 
-## Learn More
+# Compilar para producción
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Analizar bundle
+npm run analyze
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Linter
+npm run lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Traducciones
 
-## Deploy on Vercel
+Los textos del sitio están en `src/i18n/`. El script de traducción usa la API de DeepL para generar automáticamente las versiones en inglés, francés y portugués a partir del español.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Después de modificar textos en español, ejecuta:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run translate
+```
+
+## Despliegue
+
+El sitio genera una exportación estática (`out/`) lista para Cloudflare Pages. El build se ejecuta automáticamente en cada push al repositorio.

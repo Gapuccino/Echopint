@@ -20,7 +20,7 @@ export const EN = {
     "subtitle": "Strategic Consulting",
     "title": "Strategic Solutions",
     "cta": "See All Solutions",
-    "viewAll": "View all services"
+    "viewAll": "See all services"
   },
   "manifesto": {
     "subtitle": "Proven Impact",
@@ -58,7 +58,7 @@ export const EN = {
     "pageSubtitle": "Thought Leadership",
     "pageDesc": "Trends, analysis, and strategies for driving B2B growth in the digital age.",
     "backToBlog": "Back to the Blog",
-    "minRead": "Reading time: min",
+    "minRead": "reading time: 1 min",
     "readArticle": "Read article",
     "filterAll": "Everyone",
     "nextArticle": "Next Article",
@@ -95,7 +95,7 @@ export const EN = {
     "filterTitle": "Browse Categories",
     "desc": "Comprehensive business growth plan with measurable goals and defined KPIs.",
     "heroTitle": "All the tools you need to grow your business",
-    "heroDesc": "Strategic consulting, advanced analytics, and AI solutions all under one roof.",
+    "heroDesc": "Strategic consulting, advanced analytics, and AI solutions—all under one roof.",
     "cta": "Schedule a Consultation",
     "s1": {
       "slug": "estrategia-crecimiento",
@@ -224,7 +224,7 @@ export const EN = {
       "slug": "estrategia-datos",
       "title": "Data Strategy",
       "desc": "Enterprise Data Architecture and Governance.",
-      "heroTitle": "A True Data-Driven Culture",
+      "heroTitle": "A Truly Data-Driven Culture",
       "longDesc": "We don't just visualize; we structure your data architecture so that information flows seamlessly.",
       "i1": "Data governance and security.",
       "i2": "Database cleaning and normalization.",
@@ -316,12 +316,12 @@ export const EN = {
     "phone": "Phone",
     "address": "Location",
     "faqTitle": "Frequently Asked Questions",
-    "faqDesc": "We’ll address your questions openly and transparently before our first meeting."
+    "faqDesc": "We’ll address your questions openly before our first meeting."
   },
   "metadata": {
     "title": "Echopoint AI - Strategic Business Consulting",
-    "description": "Echopoint merges human intuition and AI power for transformative B2B strategies. Business consulting, predictive analytics, and international expansion.",
+    "description": "Echopoint combines human intuition with the power of AI to deliver transformative B2B strategies. Business consulting, predictive analytics, and international expansion.",
     "siteName": "Echopoint AI",
-    "orgDescription": "Strategic business consulting that merges artificial intelligence and human creativity for transformative B2B strategies."
+    "orgDescription": "Strategic business consulting that combines artificial intelligence and human creativity to create transformative B2B strategies."
   }
 };

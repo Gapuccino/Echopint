@@ -25,7 +25,7 @@ export const PT = {
   "manifesto": {
     "subtitle": "Impacto comprovado",
     "title": "O crescimento não se prevê, <br/><span class=\"text-accent\">ele se planeja</span>",
-    "desc": "Descubra como nossa consultoria transforma os principais indicadores. Desde o aumento exponencial da receita até a otimização dos processos operacionais, impulsionados pela sinergia entre o talento humano e a inteligência artificial.",
+    "desc": "Descubra como nossa consultoria transforma as principais métricas. Desde o aumento exponencial da receita até a otimização dos processos operacionais, impulsionados pela sinergia entre o talento humano e a inteligência artificial.",
     "legal": "*Os dados apresentados são anônimos e estão em conformidade com nossas políticas de privacidade. Aprovado pela equipe jurídica."
   },
   "reviews": {
@@ -39,7 +39,7 @@ export const PT = {
       "text": "&quot;A profundidade da análise preditiva da Echopoint nos permitiu identificar um nicho de mercado no Brasil que havíamos deixado passar. O ROI no primeiro trimestre superou nossas expectativas mais otimistas.&quot;"
     },
     "r2": {
-      "date": "Há um mês",
+      "date": "Há 1 mês",
       "text": "&quot;A implementação da estratégia de expansão internacional foi um processo tranquilo. A equipe deles não apenas apresentou um plano, mas também nos acompanhou na execução operacional no dia a dia.&quot;"
     },
     "r3": {
@@ -62,7 +62,7 @@ export const PT = {
     "readArticle": "Ler artigo",
     "filterAll": "Todos",
     "nextArticle": "Próximo artigo",
-    "comingSoon": "O artigo completo será publicado em breve...",
+    "comingSoon": "O artigo completo estará disponível em breve...",
     "authorBio": "Estrategista sênior de B2B com mais de 15 anos de experiência liderando transformações digitais e expansões de mercado.",
     "categories": {
       "estrategia": "Estratégia",
@@ -125,7 +125,7 @@ export const PT = {
       "longDesc": "Implementamos metodologias de prospecção B2B de alto desempenho para conquistar contas corporativas de forma recorrente.",
       "i1": "Prospecção B2B segmentada.",
       "i2": "Pontuação de MQL-SQL com critérios BANT.",
-      "i3": "Abertura de contas corporativas e reuniões com a alta administração.",
+      "i3": "Abertura de contas corporativas e reuniões com a alta direção.",
       "i4": "Conclusão de vendas estratégicas."
     },
     "s4": {
@@ -178,7 +178,7 @@ export const PT = {
     "aiDesc": "Implementamos soluções de IA generativa e modelos preditivos para automatizar processos e melhorar a tomada de decisões.",
     "p1": {
       "slug": "dashboards-ejecutivos",
-      "title": "Painéis Executivos",
+      "title": "Painéis executivos",
       "desc": "Controle total dos KPIs para a alta administração.",
       "heroTitle": "Controle total por parte da alta administração",
       "longDesc": "Painéis de controle em tempo real projetados especificamente para executivos de alto escalão. Visualize o desempenho da sua empresa em um único olhar.",
@@ -273,14 +273,14 @@ export const PT = {
       "i1": "Análise de sentimentos dos clientes.",
       "i2": "Transcrição e resumo automático.",
       "i3": "Detecção de intenções de compra.",
-      "i4": "Painel de controle de reputação da marca."
+      "i4": "Painel de reputação da marca."
     },
     "common": {
       "featuresTitle": "O que inclui:",
       "formTitle": "Comece hoje mesmo",
       "formDesc": "Deixe seus dados para agendar uma sessão estratégica sobre",
       "whyTitle": "Por que escolher o Echopoint AI?",
-      "whyDesc": "Combinamos nossa experiência em consultoria tradicional com o poder da Inteligência Artificial para entregar resultados que se refletem em sua demonstração de resultados.",
+      "whyDesc": "Combinamos nossa experiência em consultoria tradicional com o poder da Inteligência Artificial para oferecer resultados que se refletem em sua demonstração de resultados.",
       "card1Title": "Implementação Ágil",
       "card1Desc": "Não perdemos tempo com teorias. Vamos direto à ação com planos de 90 dias.",
       "card2Title": "Tecnologia de ponta",
@@ -319,9 +319,9 @@ export const PT = {
     "faqDesc": "Respondemos às suas dúvidas com transparência antes da nossa primeira reunião."
   },
   "metadata": {
-    "title": "Echopoint AI - Consultoria Empresarial Estratégica",
-    "description": "Echopoint une intuição humana e poder de IA para estratégias B2B transformadoras. Consultoria empresarial, análise preditiva e expansão internacional.",
+    "title": "Echopoint AI - Consultoria Estratégica Empresarial",
+    "description": "A Echopoint combina a intuição humana com o poder da IA para criar estratégias B2B transformadoras. Consultoria empresarial, análise preditiva e expansão internacional.",
     "siteName": "Echopoint AI",
-    "orgDescription": "Consultoria empresarial estratégica que une inteligência artificial e criatividade humana para estratégias B2B transformadoras."
+    "orgDescription": "Consultoria empresarial estratégica que combina inteligência artificial e criatividade humana para criar estratégias B2B transformadoras."
   }
 };

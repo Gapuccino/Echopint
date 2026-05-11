@@ -15,7 +15,7 @@ export const FR = {
       "demo": "Prenez rendez-vous pour une démonstration"
     }
   },
-  "trust": "Favoriser l'épanouissement de leaders mondiaux :",
+  "trust": "Favoriser l'épanouissement des leaders mondiaux :",
   "popularServices": {
     "subtitle": "Conseil stratégique",
     "title": "Solutions stratégiques",
@@ -25,13 +25,13 @@ export const FR = {
   "manifesto": {
     "subtitle": "Impact avéré",
     "title": "La croissance ne se prédit pas, <br/><span class=\"text-accent\">elle se conçoit</span>",
-    "desc": "Découvrez comment notre intervention de conseil transforme les indicateurs clés. De l'augmentation exponentielle du chiffre d'affaires à l'optimisation des processus opérationnels, grâce à la synergie entre les talents humains et l'intelligence artificielle.",
+    "desc": "Découvrez comment notre intervention de conseil transforme les indicateurs clés. De l'augmentation exponentielle du chiffre d'affaires à l'optimisation des processus opérationnels, grâce à la synergie entre les ressources humaines et l'intelligence artificielle.",
     "legal": "*Les données présentées sont anonymes et respectent nos politiques de confidentialité. Approuvé par l'équipe juridique."
   },
   "reviews": {
     "title": "Voix du leadership",
     "desc": "Des partenaires stratégiques qui ont transformé leurs secteurs d'activité grâce à Echopoint.",
-    "rating": "4,9/5 sur la base d'avis vérifiés",
+    "rating": "4,9/5 d'après des avis vérifiés",
     "verified": "Partenaire vérifié",
     "cta": "Lire les études de cas sur le blog",
     "r1": {
@@ -60,10 +60,10 @@ export const FR = {
     "backToBlog": "Retour au blog",
     "minRead": "temps de lecture :",
     "readArticle": "Lire l'article",
-    "filterAll": "Tout le monde",
+    "filterAll": "Tous",
     "nextArticle": "Article suivant",
     "comingSoon": "L'intégralité de l'article sera bientôt disponible...",
-    "authorBio": "Stratège B2B senior comptant plus de 15 ans d'expérience dans la conduite de transformations numériques et d'expansions de marché.",
+    "authorBio": "Stratège B2B senior comptant plus de 15 ans d'expérience dans la conduite de transformations numériques et d'expansions sur les marchés.",
     "categories": {
       "estrategia": "Stratégie",
       "tecnologia": "Technologie",
@@ -83,7 +83,7 @@ export const FR = {
   },
   "magnet": {
     "title": "Télécharger le rapport 2024",
-    "desc": "Téléchargez notre guide exclusif : « Synergie homme-IA : la nouvelle norme dans la vente B2B ».",
+    "desc": "Téléchargez notre guide exclusif : « Synergie entre l'humain et l'IA : la nouvelle norme dans la vente B2B ».",
     "placeholder": "Ton adresse e-mail professionnelle",
     "btn": "Télécharger maintenant",
     "success": "Envoi réussi ! Vérifie ta boîte mail.",
@@ -94,7 +94,7 @@ export const FR = {
     "navTitle": "Stratégie de croissance",
     "filterTitle": "Explorer les catégories",
     "desc": "Plan global de croissance de l'entreprise assorti d'objectifs mesurables et d'indicateurs clés de performance (KPI) clairement définis.",
-    "heroTitle": "Tous les outils dont vous avez besoin pour dynamiser votre entreprise",
+    "heroTitle": "Tous les outils dont vous avez besoin pour développer votre entreprise",
     "heroDesc": "Conseil stratégique, analyse avancée et solutions d'IA sous un même toit.",
     "cta": "Prendre rendez-vous pour une consultation",
     "s1": {
@@ -116,7 +116,7 @@ export const FR = {
       "i1": "Recherche systématique de partenaires à l'aide de Scoring Matrix.",
       "i2": "Mise en place de coentreprises et mécanismes de sortie.",
       "i3": "Négociation d'accords stratégiques.",
-      "i4": "Représentation commerciale avec indicateurs clés de performance mensuels."
+      "i4": "Représentation commerciale avec des indicateurs clés de performance (KPI) mensuels."
     },
     "s3": {
       "slug": "generacion-ventas",
@@ -132,7 +132,7 @@ export const FR = {
       "slug": "expansion-internacional",
       "title": "Expansion internationale",
       "heroTitle": "Votre porte d'entrée vers les marchés mondiaux",
-      "longDesc": "Nous réduisons les risques liés à l'internationalisation grâce à des études de faisabilité approfondies et à des équipes locales dédiées au lancement.",
+      "longDesc": "Nous réduisons les risques liés à l'internationalisation grâce à des études de faisabilité approfondies et à des équipes de lancement locales dédiées.",
       "i1": "Études de faisabilité PESTEL.",
       "i2": "Adaptation du modèle économique et conformité aux réglementations locales.",
       "i3": "Vérification préalable des partenaires et des distributeurs locaux.",
@@ -146,7 +146,7 @@ export const FR = {
       "i1": "Validation par le Design Thinking et le MVP.",
       "i2": "Étude de la demande et des tendances.",
       "i3": "Stratégie de mise sur le marché et segmentation de la clientèle.",
-      "i4": "Tarification stratégique et récupération de la marge."
+      "i4": "Tarification stratégique et récupération de la marge bénéficiaire."
     },
     "s6": {
       "slug": "inteligencia-comercial",
@@ -182,7 +182,7 @@ export const FR = {
       "desc": "Maîtrise totale des indicateurs clés de performance (KPI) pour la direction générale.",
       "heroTitle": "Contrôle total par la direction générale",
       "longDesc": "Des tableaux de bord en temps réel spécialement conçus pour les cadres supérieurs. Visualisez le pouls de votre entreprise en un seul coup d'œil.",
-      "i1": "Indicateurs clés de performance (KPI) stratégiques unifiés.",
+      "i1": "Indicateurs clés de performance stratégiques harmonisés.",
       "i2": "Alertes intelligentes en cas d'écarts.",
       "i3": "Accès mobile sécurisé 24 h/24, 7 j/7.",
       "i4": "Intégration avec plusieurs sources de données."
@@ -203,7 +203,7 @@ export const FR = {
       "title": "Analyse des ventes",
       "desc": "Performance commerciale et entonnoir de vente.",
       "heroTitle": "Boostez vos performances commerciales",
-      "longDesc": "Découvrez les tendances d'achat, les performances des vendeurs et la rentabilité par produit afin d'optimiser vos revenus.",
+      "longDesc": "Découvrez les habitudes d'achat, les performances des vendeurs et la rentabilité par produit afin de maximiser vos revenus.",
       "i1": "Suivi du pipeline en temps réel.",
       "i2": "Analyse du taux de conversion.",
       "i3": "Classement des clients et des produits.",
@@ -269,7 +269,7 @@ export const FR = {
       "title": "Analyse de la voix et du texte",
       "desc": "Extraction d'informations à partir de conversations.",
       "heroTitle": "Écoute ce que tes données ont à dire",
-      "longDesc": "Nous analysons des milliers d'appels et de messages afin d'en dégager les sentiments exprimés, les thèmes récurrents et les opportunités commerciales non identifiées.",
+      "longDesc": "Nous analysons des milliers d'appels et de messages afin d'en dégager les sentiments exprimés, les thèmes récurrents et les opportunités commerciales non détectées.",
       "i1": "Analyse des sentiments des clients.",
       "i2": "Transcription et résumé automatique.",
       "i3": "Détection des intentions d'achat.",
@@ -298,12 +298,12 @@ export const FR = {
     "whatDesc": "Nous libérons le potentiel caché de votre organisation. Grâce à un diagnostic approfondi et à des outils prédictifs, nous élaborons des feuilles de route sur mesure qui optimisent les opérations, ouvrent de nouveaux marchés et garantissent une rentabilité évolutive dans un environnement concurrentiel.",
     "essSub": "Notre essence",
     "essTitle": "Une technologie qui <br/><span class=\"text-accent\">met en valeur le talent</span>",
-    "essDesc": "Nous ne cherchons pas à remplacer l'intuition humaine, mais à la renforcer. Echopoint est le point de rencontre où la puissance de traitement de l'IA s'allie à la créativité stratégique des individus.",
+    "essDesc": "Nous ne cherchons pas à remplacer l'intuition humaine, mais à la renforcer. Echopoint est le point de rencontre où la puissance de calcul de l'IA s'allie à la créativité stratégique des individus.",
     "essF1": "Des décisions fondées sur des données, mises en œuvre par des experts.",
     "essF2": "Une communication précise : un message juste, au bon moment.",
     "essF3": "Apprentissage continu : ta stratégie évolue chaque jour.",
     "teamTitle": "Esprits brillants",
-    "role1": "Responsable Data Scientist",
+    "role1": "Responsable des données",
     "role2": "Stratège B2B"
   },
   "contact": {
@@ -319,9 +319,9 @@ export const FR = {
     "faqDesc": "Nous répondons à vos questions en toute transparence avant notre première rencontre."
   },
   "metadata": {
-    "title": "Echopoint AI - Conseil en Stratégie d'Entreprise",
-    "description": "Echopoint fusionne l'intuition humaine et la puissance de l'IA pour des stratégies B2B transformatrices. Conseil en entreprise, analyse prédictive et expansion internationale.",
+    "title": "Echopoint AI - Conseil stratégique en gestion d'entreprise",
+    "description": "Echopoint allie l'intuition humaine et la puissance de l'IA pour élaborer des stratégies B2B transformatrices. Conseil en gestion d'entreprise, analyse prédictive et expansion internationale.",
     "siteName": "Echopoint AI",
-    "orgDescription": "Conseil stratégique en entreprise qui fusionne l'intelligence artificielle et la créativité humaine pour des stratégies B2B transformatrices."
+    "orgDescription": "Conseil stratégique en entreprise alliant intelligence artificielle et créativité humaine pour des stratégies B2B transformatrices."
   }
 };
