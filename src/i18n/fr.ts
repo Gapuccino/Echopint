@@ -31,7 +31,7 @@ export const FR = {
   "reviews": {
     "title": "Voix du leadership",
     "desc": "Des partenaires stratégiques qui ont transformé leurs secteurs d'activité grâce à Echopoint.",
-    "rating": "4,9/5 d'après des avis vérifiés",
+    "rating": "4,9/5 sur la base d'avis vérifiés",
     "verified": "Partenaire vérifié",
     "cta": "Lire les études de cas sur le blog",
     "r1": {
@@ -60,10 +60,10 @@ export const FR = {
     "backToBlog": "Retour au blog",
     "minRead": "temps de lecture :",
     "readArticle": "Lire l'article",
-    "filterAll": "Tous",
+    "filterAll": "Tout le monde",
     "nextArticle": "Article suivant",
     "comingSoon": "L'intégralité de l'article sera bientôt disponible...",
-    "authorBio": "Stratège B2B senior comptant plus de 15 ans d'expérience dans la conduite de transformations numériques et d'expansions sur les marchés.",
+    "authorBio": "Stratège B2B senior comptant plus de 15 ans d'expérience dans la conduite de transformations numériques et d'expansions de marché.",
     "categories": {
       "estrategia": "Stratégie",
       "tecnologia": "Technologie",
@@ -94,7 +94,7 @@ export const FR = {
     "navTitle": "Stratégie de croissance",
     "filterTitle": "Explorer les catégories",
     "desc": "Plan global de croissance de l'entreprise assorti d'objectifs mesurables et d'indicateurs clés de performance (KPI) clairement définis.",
-    "heroTitle": "Tous les outils dont vous avez besoin pour développer votre entreprise",
+    "heroTitle": "Tous les outils dont vous avez besoin pour dynamiser votre entreprise",
     "heroDesc": "Conseil stratégique, analyse avancée et solutions d'IA sous un même toit.",
     "cta": "Prendre rendez-vous pour une consultation",
     "s1": {
@@ -132,7 +132,7 @@ export const FR = {
       "slug": "expansion-internacional",
       "title": "Expansion internationale",
       "heroTitle": "Votre porte d'entrée vers les marchés mondiaux",
-      "longDesc": "Nous réduisons les risques liés à l'internationalisation grâce à des études de faisabilité approfondies et à des équipes de lancement locales dédiées.",
+      "longDesc": "Nous réduisons les risques liés à l'internationalisation grâce à des études de faisabilité approfondies et à des équipes locales dédiées au lancement.",
       "i1": "Études de faisabilité PESTEL.",
       "i2": "Adaptation du modèle économique et conformité aux réglementations locales.",
       "i3": "Vérification préalable des partenaires et des distributeurs locaux.",
@@ -146,7 +146,7 @@ export const FR = {
       "i1": "Validation par le Design Thinking et le MVP.",
       "i2": "Étude de la demande et des tendances.",
       "i3": "Stratégie de mise sur le marché et segmentation de la clientèle.",
-      "i4": "Tarification stratégique et récupération de la marge bénéficiaire."
+      "i4": "Tarification stratégique et récupération de la marge."
     },
     "s6": {
       "slug": "inteligencia-comercial",
@@ -181,8 +181,8 @@ export const FR = {
       "title": "Tableaux de bord de direction",
       "desc": "Maîtrise totale des indicateurs clés de performance (KPI) pour la direction générale.",
       "heroTitle": "Contrôle total par la direction générale",
-      "longDesc": "Des tableaux de bord en temps réel spécialement conçus pour les cadres supérieurs. Visualisez le pouls de votre entreprise en un seul coup d'œil.",
-      "i1": "Indicateurs clés de performance stratégiques harmonisés.",
+      "longDesc": "Des tableaux de bord en temps réel spécialement conçus pour les cadres dirigeants. Visualisez le pouls de votre entreprise en un seul coup d'œil.",
+      "i1": "Indicateurs clés de performance (KPI) stratégiques unifiés.",
       "i2": "Alertes intelligentes en cas d'écarts.",
       "i3": "Accès mobile sécurisé 24 h/24, 7 j/7.",
       "i4": "Intégration avec plusieurs sources de données."
@@ -245,13 +245,13 @@ export const FR = {
     "p7": {
       "slug": "agentes-ia-personalizados",
       "title": "Agents d'IA générative",
-      "desc": "Automatisation des flux à l'aide des grands modèles de langage (LLM).",
+      "desc": "Automatisation des flux avec les grands modèles de langage (LLM).",
       "heroTitle": "Votre propre IA experte dans votre domaine d'activité",
       "longDesc": "Nous développons des agents intelligents qui connaissent vos manuels, vos processus et votre base de connaissances afin d'aider vos employés ou vos clients.",
       "i1": "Une assistance disponible 24 heures sur 24, 7 jours sur 7.",
       "i2": "Automatisation de la rédaction technique.",
       "i3": "Recherche avancée dans les documents.",
-      "i4": "Intégration via API avec vos systèmes."
+      "i4": "Intégration via une API avec vos systèmes."
     },
     "p8": {
       "slug": "vision-artificial",
@@ -293,7 +293,7 @@ export const FR = {
     "headerTitle": "À propos d'Echopoint AI",
     "headerDesc": "Renforcer l'avenir des entreprises grâce à la synergie entre l'humain et le numérique.",
     "whoTitle": "Qui sommes-nous ?",
-    "whoDesc": "Nous sommes des architectes de la transformation d'entreprise. Echopoint AI est né de la conviction que la véritable croissance naît de la fusion entre l'intuition humaine experte et la précision analytique de l'intelligence artificielle. Nous ne sommes pas seulement des consultants ; nous sommes vos partenaires pour vous guider vers l'avenir.",
+    "whoDesc": "Nous sommes des architectes de la transformation d'entreprise. Echopoint AI est né de la conviction que la véritable croissance résulte de la fusion entre l'intuition humaine experte et la précision analytique de l'intelligence artificielle. Nous ne sommes pas seulement des consultants ; nous sommes vos partenaires pour vous guider vers l'avenir.",
     "whatTitle": "Ce que nous faisons",
     "whatDesc": "Nous libérons le potentiel caché de votre organisation. Grâce à un diagnostic approfondi et à des outils prédictifs, nous élaborons des feuilles de route sur mesure qui optimisent les opérations, ouvrent de nouveaux marchés et garantissent une rentabilité évolutive dans un environnement concurrentiel.",
     "essSub": "Notre essence",
@@ -303,7 +303,7 @@ export const FR = {
     "essF2": "Une communication précise : un message juste, au bon moment.",
     "essF3": "Apprentissage continu : ta stratégie évolue chaque jour.",
     "teamTitle": "Esprits brillants",
-    "role1": "Responsable des données",
+    "role1": "Responsable Data Scientist",
     "role2": "Stratège B2B"
   },
   "contact": {
@@ -323,5 +323,114 @@ export const FR = {
     "description": "Echopoint allie l'intuition humaine et la puissance de l'IA pour élaborer des stratégies B2B transformatrices. Conseil en gestion d'entreprise, analyse prédictive et expansion internationale.",
     "siteName": "Echopoint AI",
     "orgDescription": "Conseil stratégique en entreprise alliant intelligence artificielle et créativité humaine pour des stratégies B2B transformatrices."
+  },
+  "privacy": {
+    "lastUpdated": "11 mai 2026",
+    "s1": {
+      "title": "1. Responsable du traitement",
+      "p1": "EchoPoint, dont le siège social est situé à Mexico, au Mexique, est responsable du traitement des données à caractère personnel que vous fournissez via le site web echopointmx.com (le « Site »).",
+      "p2": "Pour toute question concernant la présente déclaration de confidentialité, veuillez nous contacter à l'adresse suivante :"
+    },
+    "s2": {
+      "title": "2. Les données à caractère personnel que nous collectons",
+      "p1": "Par le biais des formulaires disponibles sur le Site, nous recueillons les données à caractère personnel suivantes :",
+      "l1": "Nom complet",
+      "l2": "Courriel professionnel",
+      "l3": "Objet et message de contact",
+      "l4": "Adresse IP (enregistrée automatiquement à des fins de sécurité et de prévention du spam)",
+      "after1": "Pour télécharger des documents, nous vous demandons uniquement votre adresse e-mail.",
+      "after2": "Nous ne collectons pas de données à caractère personnel sensibles au sens de la loi fédérale sur la protection des données à caractère personnel détenues par des particuliers (LFPDPPP)."
+    },
+    "s3": {
+      "title": "3. Finalités du traitement",
+      "p1": "Vos données à caractère personnel sont traitées aux fins suivantes :",
+      "l1": "Répondre à vos demandes d'informations ou à vos messages",
+      "l2": "Vous envoyer les documents ou ressources téléchargeables que vous avez demandés",
+      "l3": "Prévenir la fraude et garantir la sécurité du site (adresse IP)",
+      "l4": "Assurer le suivi des demandes commerciales ou relatives aux services"
+    },
+    "s4": {
+      "title": "4. Transmission de données à des tiers",
+      "p1": "Pour assurer le bon fonctionnement du Site, nous partageons des données avec les prestataires de services suivants :",
+      "l1": "Resend — Fournisseur de services d'envoi d'e-mails transactionnels. Vos coordonnées sont transmises à ce service afin de vous envoyer une notification concernant votre message.",
+      "l2": "New Relic — Plateforme de surveillance des performances. Elle recueille des données anonymes sur la navigation et les performances du site.",
+      "l3": "Drift — Plateforme de chat en direct. Elle peut collecter des données relatives aux sessions et aux interactions à l'aide de cookies.",
+      "l4": "Cloudflare — Fournisseur d'hébergement et de CDN. Traite le trafic web de manière standard dans le cadre de l'infrastructure du site.",
+      "l5": "Google Fonts — Service de polices de caractères. Il effectue des requêtes pour obtenir des fichiers de polices auprès des serveurs de Google lors du chargement du site.",
+      "after1": "Nous ne vendons pas, ne louons pas et ne partageons pas vos données personnelles avec des tiers à des fins commerciales propres."
+    },
+    "s5": {
+      "title": "5. Droits d'accès, de rectification, d'annulation et d'opposition",
+      "p1": "Vous disposez d'un droit d'accès, de rectification, d'annulation et d'opposition (droits ARCO) concernant le traitement de vos données personnelles, conformément à la LFPDPPP. Pour exercer ces droits, veuillez adresser votre demande à :",
+      "p2": "Votre demande doit inclure : votre nom complet, l'adresse e-mail que vous avez utilisée pour nous contacter, une description claire du droit que vous souhaitez exercer et les documents justifiant votre identité. Nous vous répondrons dans un délai maximal de 20 jours ouvrables, conformément à la loi."
+    },
+    "s6": {
+      "title": "6. Cookies et technologies de suivi",
+      "p1": "Le Site utilise des cookies et des technologies similaires par l'intermédiaire de services tiers, principalement Drift (chat en direct) et New Relic (surveillance des performances). Ces cookies peuvent stocker des informations relatives à votre session de navigation.",
+      "p2": "Vous pouvez configurer votre navigateur pour qu'il refuse ou supprime les cookies, mais cela peut affecter le bon fonctionnement du chat en direct."
+    },
+    "s7": {
+      "title": "7. Conservation des données",
+      "p1": "Les données issues des formulaires de contact sont reçues et stockées dans la messagerie professionnelle d'EchoPoint. Nous ne disposons pas d'une base de données distincte pour les utilisateurs ou les contacts. Les messages sont conservés aussi longtemps que nécessaire pour assurer le suivi de la demande concernée."
+    },
+    "s8": {
+      "title": "8. Modifications apportées à la présente déclaration de confidentialité",
+      "p1": "Nous nous réservons le droit de mettre à jour la présente déclaration de confidentialité à tout moment. Les modifications seront publiées sur cette page, accompagnées d'une nouvelle date de mise à jour. Nous vous recommandons de la consulter régulièrement."
+    },
+    "s9": {
+      "title": "9. Législation applicable",
+      "p1": "La présente déclaration de confidentialité est régie par la loi fédérale sur la protection des données à caractère personnel détenues par des particuliers (LFPDPPP) et par toute autre réglementation applicable aux États-Unis mexicains. Pour les utilisateurs situés dans l'Espace économique européen, nous appliquons les principes du règlement général sur la protection des données (RGPD/GDPR) dans la mesure où ils s'appliquent."
+    }
+  },
+  "terms": {
+    "lastUpdated": "11 mai 2026",
+    "s1": {
+      "title": "1. Acceptation des conditions",
+      "p1": "En accédant au site web echopointmx.com (le « Site ») et en l'utilisant, vous acceptez d'être lié par les présentes Conditions d'utilisation. Si vous n'acceptez pas l'une de ces conditions, nous vous prions de ne pas utiliser le Site.",
+      "p2": "Ces conditions s'appliquent à tous les visiteurs et utilisateurs du Site."
+    },
+    "s2": {
+      "title": "2. Description du service",
+      "p1": "EchoPoint est une société de conseil stratégique B2B basée à Mexico. Ce site a pour objectif de présenter des informations sur nos services de conseil, d'analyse prédictive, d'expansion internationale et d'optimisation des ventes, ainsi que de recueillir les demandes de contact de clients potentiels.",
+      "p2": "Le site ne propose ni services d'abonnement, ni comptes d'utilisateur, ni traitement des paiements en ligne. Les formulaires de contact constituent le seul moyen d'interaction disponible."
+    },
+    "s3": {
+      "title": "3. Utilisation autorisée du site",
+      "p1": "En utilisant le Site, vous vous engagez à :",
+      "l1": "Utiliser le Site uniquement à des fins légales et légitimes",
+      "l2": "Fournir des informations exactes et complètes dans les formulaires de contact",
+      "l3": "Ne pas tenter d'accéder à des systèmes, réseaux ou données non autorisés",
+      "l4": "Ne pas envoyer de contenu offensant, frauduleux ou malveillant via les formulaires",
+      "l5": "Ne pas utiliser d'outils automatisés (bots, scrapers) pour extraire du contenu du Site",
+      "l6": "Ne pas tenter de perturber le fonctionnement normal du Site par des attaques par déni de service ou d'autres techniques similaires"
+    },
+    "s4": {
+      "title": "4. Propriété intellectuelle",
+      "p1": "L'ensemble du contenu du Site, y compris les textes, graphiques, logos, images, icônes et logiciels, est la propriété d'EchoPoint ou de ses fournisseurs de contenu et est protégé par les lois sur la propriété intellectuelle applicables au Mexique et au niveau international.",
+      "p2": "Toute reproduction, distribution, modification ou utilisation commerciale de tout contenu du Site est interdite sans l'autorisation expresse et écrite d'EchoPoint.",
+      "p3": "Certaines images utilisées sur le site proviennent d'Unsplash et sont soumises à leur propre licence d'utilisation."
+    },
+    "s5": {
+      "title": "5. Limitation de responsabilité",
+      "p1": "Le contenu du Site est fourni à titre d'information générale. EchoPoint ne garantit pas l'exactitude, l'exhaustivité ou l'actualité des informations publiées et se réserve le droit de les modifier sans préavis.",
+      "p2": "Dans toute la mesure permise par la loi applicable, EchoPoint ne saurait être tenu responsable des dommages directs, indirects, accessoires ou consécutifs résultant de l'utilisation ou de l'impossibilité d'utiliser le Site, y compris la perte de données ou d'opportunités commerciales.",
+      "p3": "EchoPoint décline toute responsabilité quant au contenu des sites web tiers vers lesquels des liens peuvent être proposés sur le Site."
+    },
+    "s6": {
+      "title": "6. Disponibilité du site",
+      "p1": "EchoPoint s'efforce d'assurer la disponibilité permanente du Site, mais ne garantit pas une disponibilité ininterrompue. Le Site peut être temporairement indisponible pour des raisons de maintenance, de mises à jour ou pour des causes indépendantes de notre volonté."
+    },
+    "s7": {
+      "title": "7. Modifications des conditions",
+      "p1": "EchoPoint se réserve le droit de modifier les présentes Conditions d'utilisation à tout moment. Les modifications entreront en vigueur dès leur publication sur le Site, accompagnées d'une nouvelle date de mise à jour. La poursuite de l'utilisation du Site après ces modifications vaut acceptation des nouvelles conditions."
+    },
+    "s8": {
+      "title": "8. Législation applicable et juridiction compétente",
+      "p1": "Les présentes Conditions d'utilisation sont régies et interprétées conformément à la législation en vigueur aux États-Unis mexicains. Pour le règlement de tout litige découlant de l'utilisation du Site, les parties se soumettent à la compétence des tribunaux compétents de Mexico, renonçant expressément à toute autre juridiction qui pourrait leur correspondre en raison de leur domicile actuel ou futur."
+    },
+    "s9": {
+      "title": "9. Contact",
+      "p1": "Si vous avez des questions concernant les présentes Conditions d'utilisation, vous pouvez nous contacter à l'adresse suivante :"
+    }
   }
 };

@@ -20,7 +20,7 @@ export const EN = {
     "subtitle": "Strategic Consulting",
     "title": "Strategic Solutions",
     "cta": "See All Solutions",
-    "viewAll": "See all services"
+    "viewAll": "View all services"
   },
   "manifesto": {
     "subtitle": "Proven Impact",
@@ -58,7 +58,7 @@ export const EN = {
     "pageSubtitle": "Thought Leadership",
     "pageDesc": "Trends, analysis, and strategies for driving B2B growth in the digital age.",
     "backToBlog": "Back to the Blog",
-    "minRead": "reading time: 1 min",
+    "minRead": "Reading time: min",
     "readArticle": "Read article",
     "filterAll": "Everyone",
     "nextArticle": "Next Article",
@@ -95,7 +95,7 @@ export const EN = {
     "filterTitle": "Browse Categories",
     "desc": "Comprehensive business growth plan with measurable goals and defined KPIs.",
     "heroTitle": "All the tools you need to grow your business",
-    "heroDesc": "Strategic consulting, advanced analytics, and AI solutions—all under one roof.",
+    "heroDesc": "Strategic consulting, advanced analytics, and AI solutions all under one roof.",
     "cta": "Schedule a Consultation",
     "s1": {
       "slug": "estrategia-crecimiento",
@@ -122,7 +122,7 @@ export const EN = {
       "slug": "generacion-ventas",
       "title": "Sales Generation",
       "heroTitle": "Speed up your sales pipeline",
-      "longDesc": "We implement high-performance B2B prospecting methodologies to secure recurring business with enterprise clients.",
+      "longDesc": "We implement high-performance B2B prospecting methodologies to secure recurring business with enterprise-level clients.",
       "i1": "Targeted B2B prospecting.",
       "i2": "Scoring MQLs and SQLs using BANT criteria.",
       "i3": "Opening Enterprise accounts and engaging with C-level executives.",
@@ -316,12 +316,121 @@ export const EN = {
     "phone": "Phone",
     "address": "Location",
     "faqTitle": "Frequently Asked Questions",
-    "faqDesc": "We’ll address your questions openly before our first meeting."
+    "faqDesc": "We’ll address your questions openly and transparently before our first meeting."
   },
   "metadata": {
     "title": "Echopoint AI - Strategic Business Consulting",
     "description": "Echopoint combines human intuition with the power of AI to deliver transformative B2B strategies. Business consulting, predictive analytics, and international expansion.",
     "siteName": "Echopoint AI",
-    "orgDescription": "Strategic business consulting that combines artificial intelligence and human creativity to create transformative B2B strategies."
+    "orgDescription": "Strategic business consulting that combines artificial intelligence and human creativity to develop transformative B2B strategies."
+  },
+  "privacy": {
+    "lastUpdated": "May 11, 2026",
+    "s1": {
+      "title": "1. Data Controller",
+      "p1": "EchoPoint, located in Mexico City, Mexico, is responsible for processing the personal data you provide through the website echopointmx.com (the &quot;Site&quot;).",
+      "p2": "If you have any questions regarding this Privacy Notice, please contact us at:"
+    },
+    "s2": {
+      "title": "2. Personal information we collect",
+      "p1": "We collect the following personal information through the forms on the Site:",
+      "l1": "Full name",
+      "l2": "Corporate email",
+      "l3": "Subject and message",
+      "l4": "IP address (collected automatically for security purposes and to prevent spam)",
+      "after1": "To download materials, we only ask for your email address.",
+      "after2": "We do not collect sensitive personal data as defined by the Federal Law on the Protection of Personal Data Held by Private Parties (LFPDPPP)."
+    },
+    "s3": {
+      "title": "3. Purposes of the processing",
+      "p1": "Your personal data is processed for the following purposes:",
+      "l1": "Respond to your requests for information or contact",
+      "l2": "Send you the requested materials or downloadable resources",
+      "l3": "To prevent fraud and ensure the security of the Site (IP address)",
+      "l4": "Follow up on sales or service inquiries"
+    },
+    "s4": {
+      "title": "4. Transfer of data to third parties",
+      "p1": "To operate the Site, we share data with the following service providers:",
+      "l1": "Resend — A transactional email delivery provider. Your contact information is shared with this service to send you a notification about your message.",
+      "l2": "New Relic — Performance monitoring platform. Collects anonymous browsing and performance metrics from the Site.",
+      "l3": "Drift — Live chat platform. It may collect session and interaction data using cookies.",
+      "l4": "Cloudflare — A web hosting and CDN provider. It processes web traffic as standard as part of the Site's infrastructure.",
+      "l5": "Google Fonts — A font service. It requests font files from Google's servers when the site loads.",
+      "after1": "We do not sell, rent, or share your personal information with third parties for our own commercial purposes."
+    },
+    "s5": {
+      "title": "5. ARCO Rights",
+      "p1": "You have the right to access, correct, delete, or object to (ARCO rights) the processing of your personal data, in accordance with the LFPDPPP. To exercise these rights, please send your request to:",
+      "p2": "Your request must include: your full name, the email address you used to contact us, a clear description of the right you wish to exercise, and documents proving your identity. We will respond within a maximum of 20 business days, in accordance with the law."
+    },
+    "s6": {
+      "title": "6. Cookies and Tracking Technologies",
+      "p1": "The Site uses cookies and similar technologies through third-party services, primarily Drift (live chat) and New Relic (performance monitoring). These cookies may store information about your browsing session.",
+      "p2": "You can configure your browser to block or delete cookies, although this may affect the functionality of the live chat."
+    },
+    "s7": {
+      "title": "7. Data Retention",
+      "p1": "Data from contact forms is received and stored in EchoPoint’s corporate email account. We do not maintain a separate database of users or contacts. Messages are retained for as long as necessary to follow up on the corresponding inquiry."
+    },
+    "s8": {
+      "title": "8. Changes to this Privacy Notice",
+      "p1": "We reserve the right to update this Privacy Notice at any time. Changes will be posted on this page with a new update date. We recommend that you review it periodically."
+    },
+    "s9": {
+      "title": "9. Applicable Law",
+      "p1": "This Privacy Notice is governed by the Federal Law on the Protection of Personal Data Held by Private Parties (LFPDPPP) and other applicable regulations in the United Mexican States. For users located in the European Economic Area, we apply the principles of the General Data Protection Regulation (GDPR) as applicable."
+    }
+  },
+  "terms": {
+    "lastUpdated": "May 11, 2026",
+    "s1": {
+      "title": "1. Acceptance of the Terms",
+      "p1": "By accessing and using the echopointmx.com website (the &quot;Site&quot;), you agree to be bound by these Terms of Service. If you do not agree to any of these terms, please do not use the Site.",
+      "p2": "These terms apply to all visitors and users of the Site."
+    },
+    "s2": {
+      "title": "2. Service Description",
+      "p1": "EchoPoint is a B2B strategic consulting firm based in Mexico City. The purpose of this website is to provide information about our consulting services, predictive analytics, international expansion, and sales optimization, as well as to receive contact requests from potential clients.",
+      "p2": "The Site does not offer subscription services, user accounts, or online payment processing. Contact forms are the only means of interaction available."
+    },
+    "s3": {
+      "title": "3. Permitted Use of the Site",
+      "p1": "By using the Site, you agree to:",
+      "l1": "Use the Site only for lawful and legitimate purposes",
+      "l2": "Provide accurate and complete information on the contact forms",
+      "l3": "Do not attempt to access unauthorized systems, networks, or data",
+      "l4": "Do not submit offensive, fraudulent, or malicious content through the forms",
+      "l5": "Do not use automated tools (bots, scrapers) to extract content from the Site",
+      "l6": "Do not attempt to interfere with the normal operation of the Site through denial-of-service attacks or other similar techniques"
+    },
+    "s4": {
+      "title": "4. Intellectual Property",
+      "p1": "All content on the Site, including text, graphics, logos, images, icons, and software, is the property of EchoPoint or its content providers and is protected by applicable intellectual property laws in Mexico and internationally.",
+      "p2": "The reproduction, distribution, modification, or commercial use of any content on the Site is prohibited without the express written permission of EchoPoint.",
+      "p3": "Some of the images used on the Site are from Unsplash and are subject to their own license terms."
+    },
+    "s5": {
+      "title": "5. Limitation of Liability",
+      "p1": "The content of this Site is provided for general informational purposes only. EchoPoint does not guarantee the accuracy, completeness, or timeliness of the information posted, and reserves the right to modify it without prior notice.",
+      "p2": "To the fullest extent permitted by applicable law, EchoPoint shall not be liable for any direct, indirect, incidental, or consequential damages arising out of the use of or inability to use the Site, including loss of data or business opportunities.",
+      "p3": "EchoPoint is not responsible for the content of third-party websites that may be linked from the Site."
+    },
+    "s6": {
+      "title": "6. Site Availability",
+      "p1": "EchoPoint strives to keep the Site available at all times, but does not guarantee uninterrupted availability. The Site may be temporarily unavailable due to maintenance, updates, or reasons beyond our control."
+    },
+    "s7": {
+      "title": "7. Changes to the Terms",
+      "p1": "EchoPoint reserves the right to modify these Terms of Service at any time. Any modifications will take effect upon their publication on the Site with a new update date. Your continued use of the Site following such changes constitutes your acceptance of the new terms."
+    },
+    "s8": {
+      "title": "8. Applicable Law and Jurisdiction",
+      "p1": "These Terms of Service are governed by and construed in accordance with the laws in force in the United Mexican States. For the resolution of any dispute arising from the use of the Site, the parties submit to the jurisdiction of the competent courts of Mexico City, expressly waiving any other jurisdiction to which they might be entitled by reason of their present or future domicile."
+    },
+    "s9": {
+      "title": "9. Contact",
+      "p1": "If you have any questions about these Terms of Service, you can contact us at:"
+    }
   }
 };

@@ -237,5 +237,114 @@ export const ES = {
     description: "Echopoint fusiona intuición humana y potencia de IA para estrategias B2B transformadoras. Consultoría empresarial, análisis predictivo y expansión internacional.",
     siteName: "Echopoint AI",
     orgDescription: "Consultoría empresarial estratégica que fusiona inteligencia artificial y creatividad humana para estrategias B2B transformadoras."
+  },
+  privacy: {
+    lastUpdated: "11 de mayo de 2026",
+    s1: {
+      title: "1. Responsable del tratamiento",
+      p1: "EchoPoint, con domicilio en la Ciudad de México, México, es responsable del tratamiento de los datos personales que usted proporciona a través del sitio web echopointmx.com (el \"Sitio\").",
+      p2: "Para cualquier consulta relacionada con este Aviso de Privacidad, contáctenos en:"
+    },
+    s2: {
+      title: "2. Datos personales que recabamos",
+      p1: "A través de los formularios del Sitio recabamos los siguientes datos personales:",
+      l1: "Nombre completo",
+      l2: "Correo electrónico corporativo",
+      l3: "Asunto y mensaje de contacto",
+      l4: "Dirección IP (de forma automática, para control de seguridad y prevención de spam)",
+      after1: "Para la descarga de materiales, únicamente recabamos su dirección de correo electrónico.",
+      after2: "No recabamos datos personales sensibles en el sentido de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)."
+    },
+    s3: {
+      title: "3. Finalidades del tratamiento",
+      p1: "Sus datos personales son tratados para las siguientes finalidades:",
+      l1: "Responder a sus solicitudes de información o contacto",
+      l2: "Enviarle materiales o recursos descargables solicitados",
+      l3: "Prevenir fraudes y garantizar la seguridad del Sitio (dirección IP)",
+      l4: "Dar seguimiento a consultas comerciales o de servicios"
+    },
+    s4: {
+      title: "4. Transferencia de datos a terceros",
+      p1: "Para operar el Sitio, compartimos datos con los siguientes proveedores de servicios:",
+      l1: "Resend — Proveedor de entrega de correos electrónicos transaccionales. Sus datos de contacto son transmitidos a este servicio para el envío de la notificación de su mensaje.",
+      l2: "New Relic — Plataforma de monitoreo de rendimiento. Recopila métricas anónimas de navegación y rendimiento del Sitio.",
+      l3: "Drift — Plataforma de chat en vivo. Puede recopilar datos de sesión e interacción mediante cookies.",
+      l4: "Cloudflare — Proveedor de alojamiento y CDN. Procesa tráfico web de forma estándar como parte de la infraestructura del Sitio.",
+      l5: "Google Fonts — Servicio de tipografías. Realiza solicitudes de archivos de fuente desde los servidores de Google al cargar el Sitio.",
+      after1: "No vendemos, arrendamos ni compartimos sus datos personales con terceros con fines comerciales propios."
+    },
+    s5: {
+      title: "5. Derechos ARCO",
+      p1: "Usted tiene derecho a Acceder, Rectificar, Cancelar u Oponerse (derechos ARCO) al tratamiento de sus datos personales, de conformidad con la LFPDPPP. Para ejercer estos derechos, envíe su solicitud a:",
+      p2: "Su solicitud debe incluir: nombre completo, correo electrónico con el que nos contactó, descripción clara del derecho que desea ejercer y documentos que acrediten su identidad. Responderemos en un plazo máximo de 20 días hábiles conforme a lo establecido en la ley."
+    },
+    s6: {
+      title: "6. Cookies y tecnologías de rastreo",
+      p1: "El Sitio utiliza cookies y tecnologías similares a través de servicios de terceros, principalmente Drift (chat en vivo) y New Relic (monitoreo de rendimiento). Estas cookies pueden almacenar información sobre su sesión de navegación.",
+      p2: "Puede configurar su navegador para rechazar o eliminar cookies, aunque esto puede afectar la funcionalidad del chat en vivo."
+    },
+    s7: {
+      title: "7. Retención de datos",
+      p1: "Los datos de los formularios de contacto son recibidos y almacenados en la cuenta de correo electrónico corporativo de EchoPoint. No mantenemos una base de datos independiente de usuarios o contactos. Los mensajes se conservan mientras sean necesarios para dar seguimiento a la consulta correspondiente."
+    },
+    s8: {
+      title: "8. Cambios a este Aviso de Privacidad",
+      p1: "Nos reservamos el derecho de actualizar este Aviso de Privacidad en cualquier momento. Los cambios serán publicados en esta página con una nueva fecha de actualización. Le recomendamos revisarlo periódicamente."
+    },
+    s9: {
+      title: "9. Legislación aplicable",
+      p1: "Este Aviso de Privacidad se rige por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) y demás normativa aplicable en los Estados Unidos Mexicanos. Para usuarios ubicados en el Espacio Económico Europeo, aplicamos los principios del Reglamento General de Protección de Datos (RGPD/GDPR) en lo conducente."
+    }
+  },
+  terms: {
+    lastUpdated: "11 de mayo de 2026",
+    s1: {
+      title: "1. Aceptación de los términos",
+      p1: "Al acceder y utilizar el sitio web echopointmx.com (el \"Sitio\"), usted acepta quedar vinculado por los presentes Términos de Servicio. Si no está de acuerdo con alguno de estos términos, le pedimos que no utilice el Sitio.",
+      p2: "Estos términos aplican a todos los visitantes y usuarios del Sitio."
+    },
+    s2: {
+      title: "2. Descripción del servicio",
+      p1: "EchoPoint es una empresa de consultoría estratégica B2B con sede en la Ciudad de México. El Sitio tiene como finalidad presentar información sobre nuestros servicios de consultoría, análisis predictivo, expansión internacional y optimización de ventas, así como recibir solicitudes de contacto de potenciales clientes.",
+      p2: "El Sitio no ofrece servicios de suscripción, cuentas de usuario, ni procesamiento de pagos en línea. Los formularios de contacto son el único medio de interacción disponible."
+    },
+    s3: {
+      title: "3. Uso permitido del Sitio",
+      p1: "Al utilizar el Sitio, usted se compromete a:",
+      l1: "Hacer uso del Sitio únicamente con fines legales y legítimos",
+      l2: "Proporcionar información veraz y completa en los formularios de contacto",
+      l3: "No intentar acceder a sistemas, redes o datos no autorizados",
+      l4: "No enviar contenido ofensivo, fraudulento o malicioso a través de los formularios",
+      l5: "No utilizar herramientas automatizadas (bots, scrapers) para extraer contenido del Sitio",
+      l6: "No intentar interferir con el funcionamiento normal del Sitio mediante ataques de denegación de servicio u otras técnicas similares"
+    },
+    s4: {
+      title: "4. Propiedad intelectual",
+      p1: "Todo el contenido del Sitio, incluyendo textos, gráficos, logotipos, imágenes, íconos y software, es propiedad de EchoPoint o de sus proveedores de contenido y está protegido por las leyes de propiedad intelectual aplicables en México y en el ámbito internacional.",
+      p2: "Queda prohibida la reproducción, distribución, modificación o uso comercial de cualquier contenido del Sitio sin autorización expresa y por escrito de EchoPoint.",
+      p3: "Algunas imágenes utilizadas en el Sitio provienen de Unsplash y están sujetas a su propia licencia de uso."
+    },
+    s5: {
+      title: "5. Limitación de responsabilidad",
+      p1: "El contenido del Sitio se proporciona con fines informativos generales. EchoPoint no garantiza la exactitud, integridad o vigencia de la información publicada, y se reserva el derecho de modificarla sin previo aviso.",
+      p2: "En la máxima medida permitida por la ley aplicable, EchoPoint no será responsable por daños directos, indirectos, incidentales o consecuentes derivados del uso o la imposibilidad de usar el Sitio, incluyendo pérdida de datos o de oportunidades de negocio.",
+      p3: "EchoPoint no se hace responsable del contenido de sitios web de terceros que puedan estar enlazados desde el Sitio."
+    },
+    s6: {
+      title: "6. Disponibilidad del Sitio",
+      p1: "EchoPoint se esfuerza por mantener el Sitio disponible de manera continua, pero no garantiza una disponibilidad ininterrumpida. El Sitio puede estar temporalmente fuera de servicio por mantenimiento, actualizaciones o causas fuera de nuestro control."
+    },
+    s7: {
+      title: "7. Modificaciones a los términos",
+      p1: "EchoPoint se reserva el derecho de modificar estos Términos de Servicio en cualquier momento. Las modificaciones entrarán en vigor desde su publicación en el Sitio con una nueva fecha de actualización. El uso continuado del Sitio después de dichos cambios constituye su aceptación de los nuevos términos."
+    },
+    s8: {
+      title: "8. Legislación aplicable y jurisdicción",
+      p1: "Estos Términos de Servicio se rigen e interpretan de conformidad con las leyes vigentes en los Estados Unidos Mexicanos. Para la resolución de cualquier controversia derivada del uso del Sitio, las partes se someten a la jurisdicción de los tribunales competentes de la Ciudad de México, renunciando expresamente a cualquier otro fuero que pudiera corresponderles por razón de su domicilio presente o futuro."
+    },
+    s9: {
+      title: "9. Contacto",
+      p1: "Si tiene preguntas sobre estos Términos de Servicio, puede contactarnos en:"
+    }
   }
 };
