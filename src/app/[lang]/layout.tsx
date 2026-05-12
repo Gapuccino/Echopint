@@ -25,15 +25,6 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       "crecimiento empresarial", "expansión internacional", "análisis predictivo", "Echopoint AI"
     ],
     metadataBase: new URL(baseUrl),
-    alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages: {
-        "es-MX": `${baseUrl}/es`,
-        "en-US": `${baseUrl}/en`,
-        "fr-FR": `${baseUrl}/fr`,
-        "pt-BR": `${baseUrl}/pt`,
-      },
-    },
     openGraph: {
       title: dictionary.metadata.title,
       description: dictionary.metadata.description,

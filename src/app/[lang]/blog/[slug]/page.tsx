@@ -37,16 +37,26 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { lang, slug } = await params;
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
     return { title: "No encontrado" };
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://echopoint-intsolutions.com';
   return {
     title: `${post.title} - Echopoint AI`,
     description: post.excerpt,
+    alternates: {
+      canonical: `${baseUrl}/${lang}/blog/${slug}`,
+      languages: {
+        'es-MX': `${baseUrl}/es/blog/${slug}`,
+        'en-US': `${baseUrl}/en/blog/${slug}`,
+        'fr-FR': `${baseUrl}/fr/blog/${slug}`,
+        'pt-BR': `${baseUrl}/pt/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,

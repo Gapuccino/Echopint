@@ -16,9 +16,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dictionary = getDictionary(lang);
   const t = createTranslator(dictionary);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://echopoint-intsolutions.com';
   return {
     title: `${t("insights.title")} - Echopoint AI`,
     description: t("insights.pageDesc"),
+    alternates: {
+      canonical: `${baseUrl}/${lang}/blog`,
+      languages: {
+        'es-MX': `${baseUrl}/es/blog`,
+        'en-US': `${baseUrl}/en/blog`,
+        'fr-FR': `${baseUrl}/fr/blog`,
+        'pt-BR': `${baseUrl}/pt/blog`,
+      },
+    },
   };
 }
 

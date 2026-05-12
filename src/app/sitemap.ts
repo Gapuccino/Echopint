@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { blogPosts } from '@/lib/content/posts';
+import { getLocalizedPath } from '@/i18n/routing';
 
 export const dynamic = 'force-static';
 
@@ -15,79 +16,92 @@ function parseBlogDate(dateStr: string): Date {
   return new Date(parseInt(year), BLOG_DATE_MAP[month] ?? 0, parseInt(day));
 }
 
+const locales = ['es', 'en', 'fr', 'pt'] as const;
+type Locale = typeof locales[number];
+
+const localeHreflang: Record<Locale, string> = {
+  es: 'es-MX',
+  en: 'en-US',
+  fr: 'fr-FR',
+  pt: 'pt-BR',
+};
+
+function buildAlternates(baseUrl: string, internalPath: string): Record<string, string> {
+  const langs: Record<string, string> = {};
+  for (const locale of locales) {
+    langs[localeHreflang[locale]] = `${baseUrl}${getLocalizedPath(locale, internalPath)}`;
+  }
+  return langs;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://echopoint-intsolutions.com';
 
-  const locales = ['es', 'en', 'fr', 'pt'];
+  const mainPages = [
+    { internal: '/',          priority: 1.0, freq: 'weekly'  as const, date: SITE_UPDATED },
+    { internal: '/servicios', priority: 0.9, freq: 'monthly' as const, date: SITE_UPDATED },
+    { internal: '/nosotros',  priority: 0.8, freq: 'monthly' as const, date: SITE_UPDATED },
+    { internal: '/contacto',  priority: 0.8, freq: 'monthly' as const, date: SITE_UPDATED },
+    { internal: '/blog',      priority: 0.7, freq: 'weekly'  as const, date: SITE_UPDATED },
+  ];
+
+  const serviceSlugs = [
+    'estrategia-crecimiento',
+    'desarrollo-alianzas',
+    'generacion-ventas',
+    'expansion-internacional',
+    'nuevos-productos',
+    'inteligencia-comercial',
+    'dashboards-ejecutivos',
+    'reportes-financieros',
+    'analisis-ventas',
+    'optimizacion-operaciones',
+    'estrategia-datos',
+    'analisis-predictivo',
+  ];
+
   const allUrls: MetadataRoute.Sitemap = [];
 
-  locales.forEach((locale) => {
-    allUrls.push(
-      {
-        url: `${baseUrl}/${locale}`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'weekly',
-        priority: 1,
-      },
-      {
-        url: `${baseUrl}/${locale}/servicios`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'monthly',
-        priority: 0.9,
-      },
-      {
-        url: `${baseUrl}/${locale}/nosotros`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: `${baseUrl}/${locale}/contacto`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'monthly',
-        priority: 0.8,
-      },
-      {
-        url: `${baseUrl}/${locale}/blog`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'weekly',
-        priority: 0.7,
-      }
-    );
-
-    const serviceSlugs = [
-      'estrategia-crecimiento',
-      'desarrollo-alianzas',
-      'generacion-ventas',
-      'expansion-internacional',
-      'nuevos-productos',
-      'inteligencia-comercial',
-      'dashboards-ejecutivos',
-      'reportes-financieros',
-      'analisis-ventas',
-      'optimizacion-operaciones',
-      'estrategia-datos',
-      'analisis-predictivo',
-    ];
-
-    serviceSlugs.forEach((slug) => {
+  for (const { internal, priority, freq, date } of mainPages) {
+    const langs = buildAlternates(baseUrl, internal);
+    for (const locale of locales) {
       allUrls.push({
-        url: `${baseUrl}/${locale}/servicios/${slug}`,
-        lastModified: SITE_UPDATED,
-        changeFrequency: 'monthly',
-        priority: 0.8,
+        url: `${baseUrl}${getLocalizedPath(locale, internal)}`,
+        lastModified: date,
+        changeFrequency: freq,
+        priority,
+        alternates: { languages: langs },
       });
-    });
+    }
+  }
 
-    blogPosts.forEach((post) => {
+  for (const slug of serviceSlugs) {
+    const internalPath = `/servicios/${slug}`;
+    const langs = buildAlternates(baseUrl, internalPath);
+    for (const locale of locales) {
       allUrls.push({
-        url: `${baseUrl}/${locale}/blog/${post.slug}`,
+        url: `${baseUrl}${getLocalizedPath(locale, internalPath)}`,
+        lastModified: SITE_UPDATED,
+        changeFrequency: 'monthly',
+        priority: 0.8,
+        alternates: { languages: langs },
+      });
+    }
+  }
+
+  for (const post of blogPosts) {
+    const internalPath = `/blog/${post.slug}`;
+    const langs = buildAlternates(baseUrl, internalPath);
+    for (const locale of locales) {
+      allUrls.push({
+        url: `${baseUrl}${getLocalizedPath(locale, internalPath)}`,
         lastModified: parseBlogDate(post.date),
         changeFrequency: 'monthly',
         priority: 0.6,
+        alternates: { languages: langs },
       });
-    });
-  });
+    }
+  }
 
   return allUrls;
 }

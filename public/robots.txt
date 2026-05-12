@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /_next/
+Disallow: /*?s=
 
 Sitemap: https://echopoint-intsolutions.com/sitemap.xml
